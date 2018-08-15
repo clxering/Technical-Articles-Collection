@@ -9,3 +9,4 @@
 - **Java 基础技术（Basics of Java）**
 	- [Java SimpleDateFormat Example（Java SimpleDateFormat 类案例）](Java-SimpleDateFormat-Example.md)
 	- [Java Custom Exception Example（Java 自定义异常案例）](Java-Custom-Exception-Example.md)
+	- [How to design Classes and Interfaces（如何设计类和接口）](How-to-design-Classes-and-Interfaces.md)
