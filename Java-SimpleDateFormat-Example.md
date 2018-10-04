@@ -10,7 +10,7 @@ You can make this conversion using the constructors provided by java.text.Simple
 
 可以使用java.text.SimpleDateFormat类提供的构造方法再结合一些**式样**来进行上述转化，例如：dd/MM/yyyy, dd-MM-yy等等**式样**。下面的部分将展示更多有关**式样**和格式的案例。
 
-#### 1、SimpleDateFormat constructors（SimpleDateFormat类的构造方法）
+### 1、SimpleDateFormat constructors（SimpleDateFormat类的构造方法）
 There are four constructors that you can use so as to create a java.text.SimpleDateFormat.
 
 创建java.text.SimpleDateFormat对象可以使用四种构造方法。
@@ -35,7 +35,7 @@ Constructs a java.text.SimpleDateFormat with the given pattern and a specific lo
 
 构造一个具有指定**式样**和具体**地区**的java.text.SimpleDateFormat对象。
 
-#### 2.、Example of SimpleDateFormat
+### 2.、Example of SimpleDateFormat
 Create a java class named SimpleDateFormatExample.java with the following code:
 
 创建一个名为SimpleDateFormatExample.java 的class文件，内容如下：

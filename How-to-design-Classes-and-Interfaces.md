@@ -2,7 +2,7 @@
 
 > 转译自：https://examples.javacodegeeks.com
 
-#### 1、Introduction（介绍）
+### 1、Introduction（介绍）
 
 Whatever programming language you are using (and Java is not an exception here), following good design principles is a key factor to write clean, understandable, testable code and deliver（交付） long-living, easy to maintain solutions. In this part of the tutorial we are going to discuss the foundational building blocks which the Java language provides and introduce a couple of design principles, aiming to help you to make better design decisions.
 
@@ -12,7 +12,7 @@ More precisely, we are going to discuss interfaces and interfaces with default m
 
 更准确的说，我们准备讨论接口和带有默认方法的接口（Java 8的新特性），抽象类和终态类，不可变类、继承、组合，并且重新讨论一下本教程第1部分中简要介绍的可见性（或可访问性）规则，即如何创建和销毁对象。
 
-#### 2、Interfaces（接口）
+### 2、Interfaces（接口）
 
 In object-oriented programming, the concept（概念） of interfaces forms the basics of contract-driven (or contract-based) development. In a nutshell（简而言之）, interfaces define the set of methods (contract) and every class which claims to support this particular interface must provide the implementation of those methods: a pretty simple, but powerful idea.
 
@@ -102,7 +102,7 @@ Which style you are going to choose is a personal preference, however knowledge 
 
 选择哪种风格是个人的喜好，但是了解这些简单的接口特性可以避免不必要的输入。
 
-#### 3、Marker Interfaces（标记接口）
+### 3、Marker Interfaces（标记接口）
 
 Marker interfaces are a special kind of interfaces which have no methods or other nested constructs defined. We have already seen one example of the marker interface in part 2 of the tutorial Using methods common to all objects, the interface Cloneable. Here is how it is defined in the Java library:
 
@@ -130,7 +130,7 @@ The marker interfaces have their place in object-oriented design, although they 
 
 标记接口在面向对象设计中有自己的位置，尽管它们不满足接口作为契约的主要目的。
 
-#### 4、Functional interfaces, default and static methods（功能接口，默认和静态方法）
+### 4、Functional interfaces, default and static methods（功能接口，默认和静态方法）
 
 With the release of Java 8, interfaces have obtained new very interesting capabilities: static methods, default methods and automatic conversion from lambdas (functional interfaces).
 
@@ -202,7 +202,7 @@ Additionally, the @FunctionalInterface annotation (annotations will be covered i
 
 此外，@FunctionalInterface注释（注释将在本教程的第5部分中详细介绍，如何以及何时使用枚举和注释）提示编译器验证该接口只包含一个抽象方法，将来接口引入的任何更改都不能打破这个假设。
 
-#### 5、Abstract classes（抽象类）
+### 5、Abstract classes（抽象类）
 
 Another interesting concept（概念） supported by Java language is the notion（概念） of abstract classes. Abstract classes are somewhat（有些，稍微） similar to the interfaces in Java 7 and very close to interfaces with default methods in Java 8. By contrast to regular（常规的） classes, abstract classes cannot be instantiated but could be subclassed (please refer to the section Inheritance for more details). More importantly, abstract classes may contain abstract methods: the special kind of methods without implementations, much like interfaces do. For example:
 
@@ -228,7 +228,7 @@ One thing to mention, in contrast（对比） to interfaces which can contain on
 
 值得一提的是，与只能包含public声明的接口不同，抽象类可以使用可访问性规则的全部功能来控制抽象方法的可见性（有关详细信息，请参阅可见性和继承部分）。
 
-#### 6、Immutable classes（不可变类）
+### 6、Immutable classes（不可变类）
 
 Immutability is becoming more and more important in the software development nowadays. The rise of multi-core systems has raised a lot of concerns related to data sharing and concurrency (in the part 9, Concurrency（并发性） best practices, we are going to discuss in details those topics). But the one thing definitely emerged: less (or even absence of) mutable state leads to better scalability（可伸缩性） and simpler reasoning（推理） about the systems.
 
@@ -291,7 +291,7 @@ There are a couple of great Java source code analyzers like FindBugs) and PMD) w
 
 有一些很棒的Java源代码分析程序，比如FindBugs和PMD，它们可以通过检查您的代码并指出常见的Java编程缺陷来帮助您。这些工具是任何Java开发人员的好朋友。
 
-#### 7、Anonymous classes（匿名类）
+### 7、Anonymous classes（匿名类）
 
 In the pre-Java 8 era, anonymous classes were the only way to provide in-place class definitions and immediate instantiations. The purpose of the anonymous classes was to reduce boilerplate（样板） and provide a concise and easy way to represent classes as expressions. Let us take a look on the typical old-fashioned way to spawn（大量生产） new thread in Java:
 
@@ -342,7 +342,7 @@ public class AnonymousClass {
 }
 ```
 
-#### 8、Visibility（可见性）
+### 8、Visibility（可见性）
 
 We have already talked a bit about Java visibility and accessibility rules in part 1 of the tutorial（教程）, How to design Classes and Interfaces. In this part we are going to get back to this subject again but in the context of subclassing
 
@@ -363,7 +363,7 @@ In next section, Inheritance, we are going to see that in action.
 
 在下一节“继承”中，我们将看到它的实际应用。
 
-#### 9、Inheritance（继承）
+### 9、Inheritance（继承）
 
 Inheritance is one of the key concepts of object-oriented programming, serving as a basis of building class relationships. Combined together with visibility and accessibility rules, inheritance allows designing extensible and maintainable class hierarchies.
 
@@ -445,7 +445,7 @@ Another dilemma Java developers are often facing in design is building class hie
 
 Java开发人员在设计中经常面临的另一个难题是构建类层次结构(使用具体的或抽象的类)和接口实现。强烈建议尽可能选择接口而不是类或抽象类。接口更轻量，更易于测试(使用模拟)和维护，并且它们最小化了实现更改的副作用。许多高级编程技术，如在标准Java库中创建类代理，严重依赖于接口。
 
-#### 10、Multiple inheritance（多重继承）
+### 10、Multiple inheritance（多重继承）
 
 In contrast to C++ and some other languages, Java does not support multiple inheritance: in Java every class has exactly one direct parent (with Object class being on top of the hierarchy as we have already known from part 2 of the tutorial, Using methods common to all objects). However, the class may implement multiple interfaces and as such, stacking interfaces is the only way to achieve (or mimic) multiple inheritance in Java.
 
@@ -567,7 +567,7 @@ At this point it is fair to say that Java as a language always tried to escape t
 
 在这一点上，可以说Java作为一种语言总是试图逃避面向对象编程的极端情况，但是随着语言的发展，其中一些不利情况也开始出现。
 
-#### 11、Inheritance and composition（继承和组合）
+### 11、Inheritance and composition（继承和组合）
 
 Fortunately, inheritance is not the only way to design your classes. Another alternative, which many developers consider being better than inheritance, is composition. The idea is very simple: instead of building class hierarchies, the classes should be composed from other classes.
 
@@ -614,7 +614,7 @@ However, the inheritance has its own place, solves real design issues in differe
 
 然而，继承有它自己的位置，同样以不同的方式解决了真正的设计问题，不应该被忽视。在设计面向对象的模型时，请记住这两个原则。
 
-#### 12、Encapsulation（封装）
+### 12、Encapsulation（封装）
 
 The concept of encapsulation in object-oriented programming is all about hiding the implementation details (like state, internal methods, etc.) from the outside world. The benefits of encapsulation are maintainability and ease of change. The less intrinsic details classes expose, the more control the developers have over changing their internal implementation, without the fear to break the existing code (a real problem if you are developing a library or framework used by many people).
 
@@ -657,7 +657,7 @@ As we already emphasized in the Inheritance section, please always try to keep t
 
 正如我们在继承部分中已经强调的，请始终按照封装原则尽量减少类public契约。任何不应该公开的内容都应该是私有的（或者受保护/包私有，这取决于您正在解决的问题）。从长远来看，它会给你带来回报，让你在不引入破坏性变化的情况下自由地改进你的设计（或者最小化破坏）。
 
-#### 13、Final classes and methods（终态类和终态方法）
+### 13、Final classes and methods（终态类和终态方法）
 
 In Java, there is a way to prevent the class to be subclassed by any other class: it should be declared as final.
 
@@ -691,7 +691,7 @@ Java standard library has some examples of final classes, with most known being 
 
 Java标准库中有一些终态类的例子，其中最著名的是String类。在早期阶段，已经采取了积极的措施，以防止任何开发人员试图提出自己的、“更好的”字符串实现。
 
-#### 14、What’s next（接下来是什么）
+### 14、What’s next（接下来是什么）
 
 In this part of the tutorial we have looked at object-oriented design concepts in Java. We also briefly walked through contract-based development, touched some functional concepts and saw how the language evolved over time. In next part of the tutorial we are going to meet generics and how they are changing the way we approach type-safe programming.
 

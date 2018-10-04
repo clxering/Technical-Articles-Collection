@@ -6,7 +6,7 @@ In this example we will look briefly（短暂的） at the basics of `Exception`
 
 在这个案例中，我们将使用Java语言来简要介绍“异常”的基础知识。我们同样也能够了解如何创建一个自定义的Exception类。
 
-#### 1、Basics of Exception（异常的基础知识）
+### 1、Basics of Exception（异常的基础知识）
 As per（按照） oracle docs, An exception is an event, which occurs during the execution of a program, that disrupts（扰乱） the normal flow of the program’s instructions（指令）.
 
 按照oracle的文档介绍，异常是一个在程序运行期间发生的事件，会扰乱正常程序流程的指令。
@@ -43,7 +43,7 @@ Unchecked或运行时异常（由java.lang.RuntimeException类及其子类表示
 
 应用程序应该捕获这类异常并合理恢复。例如FileNotFoundException（文件未找到异常）和ParseException（解析异常）。
 
-#### 2、Creating custom Exception（创建自定义异常）
+### 2、Creating custom Exception（创建自定义异常）
 The first thing before creating a custom exception, the developer should be able to justify（证明） the creation（创建，n.）. As per（按照） Java Docs, You should write your own exception classes if you answer yes to any of the following questions; otherwise, you can probably use someone else’s.
 
 创建自定义异常前，开发者应为此（行为）找到依据。按照Java文档，如果你对以下任何一个问题回答yes，你应该编写自己的异常类；否则，你（最好）用别人的。
@@ -138,7 +138,7 @@ Similarly, an unchecked exception can be created by sub-classing from the `java.
 ```
 public class CustomException extends RuntimeException{...}
 ```
-#### 3、Points to note（注意事项）
+### 3、Points to note（注意事项）
 （1）An unchecked exception should be preferred（首选） to a checked exception. This will help programmes to be free of unnecessary `try..catch blocks`.
 
 相比一个unchecked异常，应首选checked异常。这有助于程序摆脱不必要的try..catch块。
@@ -171,13 +171,13 @@ catch块不应该是空的，如上面的示例所示。由于没有日志记录
 
 当使用ARM/try-with-resources块时，如果异常被try-with-resources语句抑制，我们可以使用Throwable# getrepression()方法。
 
-#### 4、Closing Words（结束语）
+### 4、Closing Words（结束语）
 
 Here,we tried to understand the basics of exception and how to create a custom exception of our own. We learned the best practices while creating a custom exception class and also how to handle（处理） an exception in a reasonable manner.
 
 在这里，我们尝试理解异常的基本原理，以及如何创建我们自己的自定义异常。我们在创建自定义异常类时学习了最佳实践，以及如何以合理的方式处理异常。
 
-#### 附录，相关资料1（可与上述转译内容互参）
+### 附录，相关资料1（可与上述转译内容互参）
 Throwable是所有Java中所有异常类的父类，有两种子类：**Error**和**Exception**
 
 **1、Error：** 表示由JVM所侦测到的无法预期的错误，由于这是属于JVM层次的严重错误，导致JVM无法继续执行，这是不可捕捉到的，无法采取任何恢复的操作，只能显示错误信息。Error类体系描述了Java运行系统中的内部错误以及资源耗尽的情形，应用程序不应该抛出这种类型的对象（一般是由虚拟机抛出）。假如出现这种错误，除了尽力使程序安全退出外，在其他方面是无能为力的。

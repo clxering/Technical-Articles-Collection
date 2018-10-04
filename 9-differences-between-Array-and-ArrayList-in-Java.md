@@ -20,13 +20,13 @@ It’s best to compare two things on some points, this will make the differences
 
 最好在某些点上比较两件事情，这将使区别容易理解。那么，让我们看看在哪些点上可以将数组与Java中的ArrayList进行比较。
 
-#### 1、Implementation（实现）
+### 1、Implementation（实现）
 
 The array is a native programming component or data structure but ArrayList is a class from Java Collections framework, an API. In fact, ArrayList is internally implemented using an array. Since ArrayList is a class, it holds all properties of a class e.g. you can create objects and call methods but even though the array is an object in Java it doesn’t provide any method. It just exposes a length attribute to give you the length of the array, which is constant.
 
 数组是原生编程组件或数据结构，而ArrayList是Java Collections framework中的一个类，是一个API。实际上，ArrayList是使用数组在内部实现的。因为ArrayList是一个类，它包含一个类的所有属性，例如，你可以创建对象和调用方法，但即使数组是Java中的一个对象，它也不提供任何方法。它只是公开了一个length属性来给你数组的长度，这是常量。
 
-#### 2、Performance（性能）
+### 2、Performance（性能）
 
 Since ArrayList is based upon array, you would assume that it provides the same performance as an array. This is true at some extent but because of extra functionality ArrayList provides there is some difference in performance between ArrayList and array, mainly in terms of memory usage and CPU time.
 
@@ -36,19 +36,19 @@ For index-based access, both ArrayList and array provides **O(1)** performance b
 
 对于基于索引的访问，ArrayList和array都提供了O(1)性能，但是如果在ArrayList中添加一个新元素会触发调整大小，那么add可以是O(logN)，因为它涉及在后台创建一个新数组，并将元素从旧数组复制到新数组。ArrayList的内存需求也不仅仅是存储相同数量对象的数组，例如int[]比ArrayList存储20个int变量的内存更少，因为ArrayList和包装类上都有对象元数据开销。
 
-#### 3、Type Safety（类型安全）
+### 3、Type Safety（类型安全）
 
 ArrayList is type safe because it supports generics which allows the compiler to check if all objects stored in ArrayList are of the correct type. On the other hand, the array doesn’t support Generics. Which means compile time checking is not possible but array provides runtime type checking by throwing ArrayStoreException if you try to store an incorrect object into array e.g. storing a String into an int array.
 
 ArrayList是类型安全的，因为它支持泛型，允许编译器检查存储在ArrayList中的所有对象是否都是正确的类型。另一方面，数组不支持泛型。这意味着编译时检查是不可能的，但是如果你试图将一个不正确的对象存储到数组中，例如将一个字符串存储到int数组中，数组通过抛出ArrayStoreException（体现其）提供了运行时类型检查。
 
-#### 4、Flexibility（灵活性）
+### 4、Flexibility（灵活性）
 
 Flexibility is the single most important thing that separates array and ArrayList. In short, ArrayList is more flexible than a plain native array because it’s dynamic. It can grow itself when needed, which is not possible with the native array. ArrayList also allows you to remove elements which are not possible with native arrays. By remove, we mean not just assigning null to the corresponding index but also copying rest of elements one index down, which ArrayList automatically does for you. You can learn more about removing objects from ArayList in my article difference between clear() and removeAll().
 
 灵活性是区分数组和数组列表最重要的一点。简而言之，ArrayList比普通的原生数组更灵活，因为它是动态的。它可以在需要时自行增长，这在原生数组中是不可能的。ArrayList还允许删除原生数组无法删除的元素。所谓删除，我们的意思不仅仅是给相应的索引分配null，还包括将其他元素的一个索引复制下来，ArrayList会自动为您这样做。在我的文章《clear()和removeAll()的区别》中，您可以了解关于从ArayList中删除对象的更多信息。
 
-#### 5、Primitives（基本数据类型）
+### 5、Primitives（基本数据类型）
 
 If you first start using ArrayList then you will realize that you cannot store primitives on ArrayList. This is a key difference between array and ArrayList because array allows storing both primitives and object. For example int[] numbers are valid but ArrayList of int is not valid. how do you deal with this problem?
 
@@ -58,19 +58,19 @@ Suppose you want to store int primitives into ArrayList than how do you that? We
 
 假设你想把int类型存储到ArrayList中，你会怎么做？您可以使用包装器类。这是Java中引入包装类的原因之一。如果你想把int 2存储到ArrayList中，只要把它放进去，自动装箱就能完成剩下的。顺便说一下，从Java 5开始，由于自动装箱的原因，这种差异就不那么明显了，因为您将看到ArrayList.add(21)是完全有效的，并且可以工作。
 
-#### 6、Generics（泛型）
+### 6、Generics（泛型）
 
 One more significant（重要的） difference between an ArrayList and an array is that the former supports Generic but the latter doesn’t. Since an array is of covariant type, you can use Generics with them. This means it’s not possible for a compiler to check the type-safety of an array at compile time but they can verify type-safety of Array. So how do you deal with this problem while writing a type-safe class in Java? Well, you can use the technique shown in Effective Java, where you can declare an array like E[] and later use type casting.
 
 ArrayList和数组的另一个重要区别是前者支持泛型，而后者不支持泛型。由于数组是协变类型的，所以可以使用泛型。这意味着编译器不可能在编译时检查数组的类型安全性，但它们可以验证数组的类型安全性。那么，在用Java编写类型安全类时，如何处理这个问题呢？您可以使用Effective Java中所示的技术，可以声明一个像E[]这样的数组，然后使用类型转换。
 
-#### 7、Iteration（迭代）
+### 7、Iteration（迭代）
 
 ArrayList provides more ways for iteration i.e. accessing all elements one by one than an array. You can only use loop e.g. for, while, enhanced for loop and do-while to iterate over an array but you can also use Iterator and ListIterator class to iterate over ArrayList. See here to learn different ways to iterate over ArrayList in Java.
 
 ArrayList相比数组而言为迭代，即逐个访问所有元素，提供了更多的方法。你只能使用for循环、 while循环、增强for循环和do-while来迭代数组，但你也可以使用Iterator和ListIterator类来迭代ArrayList。请参阅此处以了解在Java中迭代ArrayList的不同方法。
 
-#### 8、Supported Operations（运算符支持）
+### 8、Supported Operations（运算符支持）
 
 Since ArrayList is backed by an array internally, it exposes（揭露） the operation which is possible with an array but given its dynamic nature it also added operation which is not possible with native array e.g. you can store elements in both array and ArrayList, but only ArrayList allows you to remove an element. Though you can simulate that with an array by assigning null to respective index, it won’t be like remove unless you also move all element above that index in the array to one level down.
 
@@ -84,13 +84,13 @@ ArrayList also provides an operation to clear and reuse（重chong用） e.g. cl
 
 ArrayList还提供了一个清除和重用的操作，例如clear()和removeAll()，数组没有提供这个功能，但是你可以用循环数组，为每个索引分配null的方式来模拟它。
 
-#### 9、Size() vs length（Size()方法与length属性）
+### 9、Size() vs length（Size()方法与length属性）
 
 Array only provides a length attribute which tells you the number of slots in the array i.e. how many elements it can store, it doesn’t provide you any method to find out how many are filled and how many slots are empty i.e. the current number of elements. While ArrayList does provides a size() method which tells a number of objects stored in ArrayList at a given point of time. The size() is always different than length, which is also the capacity of ArrayList. If you want to know more, I suggest you read the difference between size() and length in ArrayList article.
 
 数组只提供一个length属性，它告诉你数组中的槽数，也就是它可以存储多少个元素，它不提供任何方法来找出有多少个被填充，有多少个槽是空的，也就是当前元素的数量。虽然ArrayList提供了一个size()方法，它告诉在给定时间点存储在ArrayList中的许多对象。size()总是与length不同，length也是ArrayList的容量。如果您想了解更多，我建议您阅读ArrayList文章中的size()和length之间的区别。
 
-#### 10、Dimension（维度）
+### 10、Dimension（维度）
 
 Another significant（重要的） difference between an array and an ArrayList is that array can be multi-dimensional e.g. you can have a two-dimensional array or a three-dimensional array, which makes it a really special data structure to represent matrices and 2D terrains. On the other hand, ArrayList doesn’t allow you to specify dimension. See this tutorial learn more about how to use a multi-dimensional array in Java.
 
@@ -136,43 +136,43 @@ So far you have seen the difference between an ArrayList and an array, now let�
 
 到目前为止，您已经看到了ArrayList和数组之间的区别，现在让我们关注一些相似之处。由于ArrayList内部使用数组，两者肯定有很多相似之处，如下所示：
 
-#### 1、Data Structure（数据结构）
+### 1、Data Structure（数据结构）
 
 Both allow you to store objects in Java and both are an index-based data structure which provides O(1) performance to retrieve an element, but search without an index is still log(N) if your array is sorted and you use binary search algorithm.
 
 这两种方法都允许在Java中存储对象，并且都是基于索引的数据结构，它提供了O(1)性能来检索元素，但是如果数组是有序的，并且使用二进制搜索算法，那么没有索引的搜索仍然是log(N)。
 
-#### 2、Order（有序性）
+### 2、Order（有序性）
 
 Both array and ArrayList maintain（维护） order on which elements are added into them.
 
 数组和ArrayList的元素顺序就是添加时的顺序。
 
-#### 3、Search（搜索）
+### 3、Search（搜索）
 
 You can search for an element using an index, that’s O(1) otherwise you can use linear search if your array is not sorted, which takes around O(n) time or you can use binary search after sorting an array in Java, this is sorting + O(logN).
 
 你可以用索引来搜索一个元素，它是O(1)的，如果你的数组没有排序，你可以用线性搜索，这需要大约O(n)的时间，或者你可以用二进制搜索，在Java中对一个数组排序后，这是排序+ O(logN)。
 
-#### 4、Null values（空值）
+### 4、Null values（空值）
 
 Both array and ArrayList allow null values but remember only object array allows null primitive array doesn’t they store the default value of primitive type e.g. zero for int and false for boolean.
 
 数组和ArrayList都允许空值，但记住只有对象数组允许空基元数组，它们不存储基元类型的默认值，例如，0表示int, false表示boolean。
 
-#### 5、Duplicates（重复）
+### 5、Duplicates（重复）
 
 Both array and ArrayList allow duplicates. It’s also one of the common array based coding questions to write a program to find out duplicates from an array in place.
 
 数组和ArrayList都允许（元素）重复。它也是一个常见的基于数组的编码问题，即编写一个程序从一个数组中找出（元素）副本。
 
-#### 6、Performance（性能）
+### 6、Performance（性能）
 
 ArrayList mimic array’s performance e.g. O(1) access if you know the index but it has additional memory overhead because it’s an object and also holds additional data to automatic resize the ArrayList.
  
 ArrayList模拟数组的性能，如O(1)访问，如果你知道索引，但是它有额外的内存开销，因为它是一个对象，而且还包含额外的数据来自动调整ArrayList的大小。
 
-#### 7、Zero-based Index（从零开始的索引）
+### 7、Zero-based Index（从零开始的索引）
 
 Both array and ArrayList have zero-based index i.e. first element starts at zeroth index.
 
