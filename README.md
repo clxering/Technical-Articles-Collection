@@ -5,6 +5,7 @@
 - 搜集英文版技术文稿并进行翻译，借此提高英文阅读能力，也将文稿中提及的技术点作为资料备查。文稿转译自以下网站：
     - https://examples.javacodegeeks.com
     - https://scotch.io
+    - https://www.codespeedy.com
 
 ## 目录（Contents）
 - **Java 基础技术（Basics of Java）**
@@ -14,3 +15,4 @@
 	- [9 differences between Array and ArrayList in Java（Java中数组和ArrayList的9个区别）](9-differences-between-Array-and-ArrayList-in-Java.md)
 - **JavaScript**
 	- [5 Tips to Write Better Conditionals in JavaScript（用JavaScript写出更好条件语句的5个技巧）](5-Tips-to-Write-Better-Conditionals-in-JavaScript.md)
+	- [Difference between JavaScript function in href and onclick（JavaScript函数在href和onclick中的区别）](https://github.com/clxering/Technical-Document-Collection/blob/master/Difference-between-JavaScript-function-in-href-and-onclick.md)
