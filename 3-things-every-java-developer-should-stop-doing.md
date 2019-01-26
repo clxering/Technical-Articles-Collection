@@ -1,4 +1,4 @@
-## 3 Things Every Java Developer Should Stop Doing
+## 3 Things Every Java Developer Should Stop Doing（每个 Java 开发者都应该停止的三件事））
 
 > 转译自：https://dzone.com/articles/3-things-every-java-developer-should-stop-doing
 
