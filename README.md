@@ -17,6 +17,7 @@
 - [9 differences between Array and ArrayList in Java（Java 中数组和 ArrayList 的 9 个区别）](Java/9-differences-between-Array-and-ArrayList-in-Java.md)
 - [Java optional parameters（Java 中的可选参数）](Java/Java-optional-parameters.md)
 - [3-things-every-java-developer-should-stop-doing（每个 Java 开发者都应该停止的三件事）](Java/3-things-every-java-developer-should-stop-doing.md)
+- [Java 8 中的 Streams API 详解](Java/Java%208%20中的%20Streams%20API%20详解.md)
 
 ### JavaScript
 - [5 Tips to Write Better Conditionals in JavaScript（优化 JavaScript 条件语句的 5 个技巧）](JavaScript/5-Tips-to-Write-Better-Conditionals-in-JavaScript.md)
