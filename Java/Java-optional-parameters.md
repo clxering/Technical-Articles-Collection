@@ -247,7 +247,7 @@ How to avoid multiple constructors? Use a builder class.
 
 如何避免多个构造函数？使用构建器类。
 
-***译注：关于构建器的内容，可以参考《Effective-Java-3rd-edition》，Item-2: Consider-a-builder-when-faced-with-many-constructor-parameters（[Item-2](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-2-Item-2-Consider-a-builder-when-faced-with-many-constructor-parameters.md)）***
+***译注：关于构建器的内容，可以参考《Effective-Java-3rd-edition》，Item-2: Consider-a-builder-when-faced-with-many-constructor-parameters（[Item-2](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-2/Chapter-2-Item-2-Consider-a-builder-when-faced-with-many-constructor-parameters.md)）***
 
 You usually implement the builder as an inner class of the class it suppose to build. That way, both classes have access to their private members.
 
