@@ -1,3 +1,5 @@
+# 9 differences between Array and ArrayList in Java（Java 中数组和 ArrayList 的 9 个区别）
+
 > 转译自：https://www.javacodegeeks.com/2016/01/9-differences-between-array-and-arraylist-in-java.html
 
 Both array and ArrayList are two important data structures in Java and are frequentl used in Java programs. Even though ArrayList is internally backed by an array, knowing the difference between an array and an ArrayList in Java is critical for becoming a good Java developer. If you know the similarity and differences, you can judiciously decide when to use an array over an AraryList or vice-versa.

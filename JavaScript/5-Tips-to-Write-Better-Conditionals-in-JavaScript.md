@@ -1,4 +1,4 @@
-## 5 Tips to Write Better Conditionals in JavaScript（优化 JavaScript 条件语句的5个技巧）
+# 5 Tips to Write Better Conditionals in JavaScript（优化 JavaScript 条件语句的 5 个技巧）
 
 > 转译自：https://scotch.io/tutorials/5-tips-to-write-better-conditionals-in-javascript
 
@@ -6,7 +6,7 @@ When working with JavaScript, we deal a lot with conditionals, here are the 5 ti
 
 在使用 JavaScript 时，我们会处理很多条件语句，这里有 5 个技巧可以帮助您编写更好、更简洁的条件语句。
 
-### 1、Use Array.includes for Multiple Criteria（对多个条件使用 Array.includes）
+## 1、Use Array.includes for Multiple Criteria（对多个条件使用 Array.includes）
 
 Let's take a look at the example below:
 
@@ -44,7 +44,7 @@ We extract the red fruits (conditions) to an array. By doing this, the code look
 
 我们将红色水果（条件）提取到一个数组中。这样做之后，代码看起来更整洁。
 
-### 2、Less Nesting, Return Early（更少的嵌套，尽早返回）
+## 2、Less Nesting, Return Early（更少的嵌套，尽早返回）
 
 Let's expand the previous example to include two more conditions:
 
@@ -179,7 +179,7 @@ Tim Oxley 的文章，避免 Else，尽早返回
 
 StackOverflow 基于 if/else 编码风格的讨论
 
-### 3、Use Default Function Parameters and Destructuring（使用默认的函数参数和解构）
+## 3、Use Default Function Parameters and Destructuring（使用默认的函数参数和解构）
 
 I guess the code below might look familiar to you, we always need to check for null / undefined value and assign default value when working with JavaScript:
 
@@ -294,7 +294,7 @@ You may run the demo code [here](https://jsbin.com/bopovajiye/edit?js,console). 
 
 您可以在 [这里](https://jsbin.com/bopovajiye/edit?js,console) 运行演示代码。此外，如果你喜欢函数式编程（FP），你可以选择使用 Lodash fp, 即 Lodash 的函数式版本（方法改为 `get` 或 `getOr`）。
 
-### 4、Favor Map / Object Literal than Switch Statement（选择 Map 或对象字面量，而不是 Switch 语句）
+## 4、Favor Map / Object Literal than Switch Statement（选择 Map 或对象字面量，而不是 Switch 语句）
 
 Let's look at the example below, we want to print fruits based on color:
 
@@ -365,7 +365,7 @@ Todd Motto has an article that dig deeper on switch statement vs object literal,
 
 Todd Motto 有一篇文章深入讨论 switch 语句与对象字面量，你可以在 [这里](https://toddmotto.com/deprecating-the-switch-statement-for-object-literals/) 阅读。
 
-### TL;DR; Refactor the syntax（重构的语法）
+## TL;DR; Refactor the syntax（重构的语法）
 
 For the example above, we can actually refactor our code to achieve the same result with `Array.filter`.
 
@@ -392,7 +392,7 @@ There's always more than 1 way to achieve the same result. We have shown 4 with 
 
 总有不止一种方法可以达到同样的效果。我们展示了 4 个相同效果的例子。编码是有趣的！
 
-### 5、Use Array.every & Array.some for All / Partial Criteria（所有或部分使用 Array.every & Array.some 的条件）
+## 5、Use Array.every & Array.some for All / Partial Criteria（所有或部分使用 Array.every & Array.some 的条件）
 
 This last tip is more about utilizing new (but not so new) Javascript Array function to reduce the lines of code. Look at the code below, we want to check if all fruits are in red color:
 
@@ -456,7 +456,7 @@ function test() {
 }
 ```
 
-### Summary
+## Summary
 
 Let's produce more readable code together. I hope you learn something new in this article.
 
