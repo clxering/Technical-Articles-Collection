@@ -27,5 +27,6 @@
 
 ### React
 - [How to useReducer in React?（在 React 中如何使用 useReducer）](React/How-to-useReducer-in-React.md)
+- [What is a Reducer in JavaScript?](React/What-is-a-Reducer-in-JavaScript.md)
 
 <!-- 注意：文件名必须用连字符，否则 markdown 不识别文件链接。 -->

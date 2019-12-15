@@ -1,5 +1,4 @@
-
-## How to useReducer in React?（在 React 中如何使用 useReducer）
+# How to useReducer in React?（在 React 中如何使用 useReducer）
 
 > 转译自：https://www.robinwieruch.de/react-usereducer-hook
 
@@ -7,7 +6,7 @@ Since [React Hooks]() have been released, [function components]() can use state 
 
 自 [React Hooks]() 发布以来，[函数组件]() 可以使用状态和副作用。React 中有两个用于现代状态管理的 hook：useState 和 useReducer。本教程将逐步介绍 React 中的 useReducer 示例，帮助你初步使用 React Hook 用于状态管理。
 
-# Reducer in React（React 的 Reducer 实现）
+## Reducer in React（React 的 Reducer 实现）
 
 If you haven't heard about reducers as concept or as implementation in JavaScript, you should read more about them over here: [Reducers in JavaScript](). This tutorial builds up on this knowledge, so be prepared what's coming. The following function is a reducer function for managing state transitions for a list of items:
 
@@ -16,7 +15,7 @@ If you haven't heard about reducers as concept or as implementation in JavaScrip
 ```js
 const todoReducer = (state, action) => {
   switch (action.type) {
-    case 'DO_TODO':
+    case "DO_TODO":
       return state.map(todo => {
         if (todo.id === action.id) {
           return { ...todo, complete: true };
@@ -24,7 +23,7 @@ const todoReducer = (state, action) => {
           return todo;
         }
       });
-    case 'UNDO_TODO':
+    case "UNDO_TODO":
       return state.map(todo => {
         if (todo.id === action.id) {
           return { ...todo, complete: false };
@@ -49,15 +48,15 @@ The state which is managed in this reducer is an array of items:
 ```javascript
 const todos = [
   {
-    id: 'a',
-    task: 'Learn React',
-    complete: false,
+    id: "a",
+    task: "Learn React",
+    complete: false
   },
   {
-    id: 'b',
-    task: 'Learn Firebase',
-    complete: false,
-  },
+    id: "b",
+    task: "Learn Firebase",
+    complete: false
+  }
 ];
 ```
 
@@ -68,20 +67,20 @@ In code, the reducer function could be used the following way with an initial st
 ```js
 const todos = [
   {
-    id: 'a',
-    task: 'Learn React',
-    complete: false,
+    id: "a",
+    task: "Learn React",
+    complete: false
   },
   {
-    id: 'b',
-    task: 'Learn Firebase',
-    complete: false,
-  },
+    id: "b",
+    task: "Learn Firebase",
+    complete: false
+  }
 ];
 
 const action = {
-  type: 'DO_TODO',
-  id: 'a',
+  type: "DO_TODO",
+  id: "a"
 };
 
 const newTodos = todoReducer(todos, action);
@@ -90,26 +89,27 @@ console.log(newTodos);
 ```
 
 输出结果：
+
 ```js
 [
   {
-    id: 'a',
-    task: 'Learn React',
-    complete: true,
+    id: "a",
+    task: "Learn React",
+    complete: true
   },
   {
-    id: 'b',
-    task: 'Learn Firebase',
-    complete: false,
-  },
-]
+    id: "b",
+    task: "Learn Firebase",
+    complete: false
+  }
+];
 ```
 
 So far, everything demonstrated here is not related to React. If you have any difficulties to understand the reducer concept, please revisit the referenced tutorial from the beginning for Reducers in JavaScript. Now, let's dive into React's useReducer hook to integrate reducers in React step by step.
 
 到目前为止，这里所演示的一切都与 React 无关。如果你在理解 reducer 概念上有任何困难，请重新阅读在 JavaScript 中从一开始引用的 reducer 教程。现在，让我们深入到 React 的 useReducer 钩子中，一步一步地将 reducer 集成到 React 中。
 
-# React's useReducer Hook（React 的 useReducer 钩子）
+## React's useReducer Hook（React 的 useReducer 钩子）
 
 The useReducer hook is used for complex state and state transitions. It takes a reducer function and an initial state as input and returns the current state and a dispatch function as output with [array destructuring]():
 
@@ -118,20 +118,20 @@ useReducer 钩子用于复杂的状态和状态转换。它以一个 reducer 函
 ```js
 const initialTodos = [
   {
-    id: 'a',
-    task: 'Learn React',
-    complete: false,
+    id: "a",
+    task: "Learn React",
+    complete: false
   },
   {
-    id: 'b',
-    task: 'Learn Firebase',
-    complete: false,
-  },
+    id: "b",
+    task: "Learn Firebase",
+    complete: false
+  }
 ];
 
 const todoReducer = (state, action) => {
   switch (action.type) {
-    case 'DO_TODO':
+    case "DO_TODO":
       return state.map(todo => {
         if (todo.id === action.id) {
           return { ...todo, complete: true };
@@ -139,7 +139,7 @@ const todoReducer = (state, action) => {
           return todo;
         }
       });
-    case 'UNDO_TODO':
+    case "UNDO_TODO":
       return state.map(todo => {
         if (todo.id === action.id) {
           return { ...todo, complete: false };
@@ -162,7 +162,7 @@ The dispatch function can be used to send an action to the reducer which would i
 ```js
 const [todos, dispatch] = React.useReducer(todoReducer, initialTodos);
 
-dispatch({ type: 'DO_TODO', id: 'a' });
+dispatch({ type: "DO_TODO", id: "a" });
 ```
 
 The previous example wouldn't work without being executed in a React component, but it demonstrates how the state can be changed by dispatching an action. Let's see how this would look like in a React component. We will start with a [React component rendering a list of items](). Each item has a checkbox as [controlled component]():
@@ -170,19 +170,19 @@ The previous example wouldn't work without being executed in a React component, 
 如果不在 React 组件中执行，前面的示例将无法工作，但它演示了如何通过 dispatch 操作来更改状态。我们来看看 React 组件是怎样的。我们将从一个 [呈现 item 列表的 React 组件]() 开始。每个 item 都有一个复选框作为 [受控组件]()：
 
 ```js
-import React from 'react';
+import React from "react";
 
 const initialTodos = [
   {
-    id: 'a',
-    task: 'Learn React',
-    complete: false,
+    id: "a",
+    task: "Learn React",
+    complete: false
   },
   {
-    id: 'b',
-    task: 'Learn Firebase',
-    complete: false,
-  },
+    id: "b",
+    task: "Learn Firebase",
+    complete: false
+  }
 ];
 
 const App = () => {
@@ -269,13 +269,10 @@ Now we can use the handler to dispatch an action for our reducer function. Since
 
 ```js
 const App = () => {
-  const [todos, dispatch] = React.useReducer(
-    todoReducer,
-    initialTodos
-  );
+  const [todos, dispatch] = React.useReducer(todoReducer, initialTodos);
 
   const handleChange = todo => {
-    dispatch({ type: 'DO_TODO', id: todo.id });
+    dispatch({ type: "DO_TODO", id: todo.id });
   };
 
   return (
@@ -303,15 +300,12 @@ This implementation works only one way though: Todo items can be completed, but 
 
 ```js
 const App = () => {
-  const [todos, dispatch] = React.useReducer(
-    todoReducer,
-    initialTodos
-  );
+  const [todos, dispatch] = React.useReducer(todoReducer, initialTodos);
 
   const handleChange = todo => {
     dispatch({
-      type: todo.complete ? 'UNDO_TODO' : 'DO_TODO',
-      id: todo.id,
+      type: todo.complete ? "UNDO_TODO" : "DO_TODO",
+      id: todo.id
     });
   };
 
