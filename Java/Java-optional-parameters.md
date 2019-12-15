@@ -1,4 +1,4 @@
-## Java optional parameters（Java中的可选参数）
+# Java optional parameters（Java中的可选参数）
 
 > 转译自：https://www.javacodegeeks.com/2018/11/java-optional-parameters.html
 
@@ -14,13 +14,13 @@ Let’s get started.
 
 让我们开始吧。
 
-### 1. Optional method parameters（可选的方法参数）
+## 1. Optional method parameters（可选的方法参数）
 
 You can tackle（vt. 处理；抓住） Java optional parameters in method in several different ways. I’ll walk you through from the simplest to more complex.
 
 你可以用几种不同的方法处理方法中的Java可选参数。我将引导你（理解）从最简单到更复杂的（情况）。
 
-#### 1.1 @Nullable annotation（@Nullable注解）
+## 1.1 @Nullable annotation（@Nullable注解）
 Why just don’t pass the null around? It’s a simple solution which doesn’t require any extra work. You don’t have any object which is required as one of method’s parameters? No problem. Just pass the null and the compiler is happy.
 
 为什么不传递null呢？这是一个简单的答案，不需要任何额外的工作。你没有需要作为方法参数之一的对象吗？没有问题。把null传递给编译器就好了。
@@ -51,7 +51,7 @@ There are other options, though.
 
 不过，还有其他选择。
 
-#### 1.2. Optional lists
+## 1.2. Optional lists
 Instead of null, we can sometime create an empty representation（n. 代表；表现） of a class. Think about Java collections. **If a method accepts a list or a map, you should never use nulls as the input.**
 
 有时我们可以创建一个类的空表示，而不是null。想想Java集合。**如果方法接受List或Map（作为参数），则永远不应该使用null作为（参数）输入。**
@@ -88,7 +88,7 @@ import java.util.Collections;
 create("bob", Collections.emptyList());
 ```
 
-#### 1.3. Null object pattern（Null对象模式）
+## 1.3. Null object pattern（Null对象模式）
 The concept of empty collections also applies to other classes. An empty collection is just a regular collection with zero elements. By the same token, you can think about other objects in your applications.
 
 空集合的概念也适用于其他类。空集合只是一个包含零元素的常规集合。同样，你可以考虑应用程序中的其他对象。
@@ -151,7 +151,7 @@ A dedicated Null object class allows you to put many corner cases in a single pl
 
 一个专用的Null对象类允许你将许多偏僻个案放在一个地方，这使得维护更加愉快。
 
-#### 1.4. Method overloading（方法重载）
+## 1.4. Method overloading（方法重载）
 If your design a method with optional parameters, you can expose（vt. 揭露，揭发；使曝光；显示） overloaded versions of that method. **Each method should accept only parameters which are required.**
 
 如果你设计的方法具有可选参数，则可以公开该方法的重载版本。**每个方法只能接受需要的参数。**
@@ -180,7 +180,7 @@ It’s worth mentioning that method overloading is widely used inside the standa
 
 值得一提的是，方法重载在标准Java库中被广泛使用。当你学习如何设计API时，请向具有更丰富经验的人学习。
 
-#### 1.5. Parameter Object pattern（参数对象模式）
+## 1.5. Parameter Object pattern（参数对象模式）
 The majority of developers agree that when the list of method parameters grows too long it become hard to read. Usually, you handle the issue with the Parameter Object pattern. The parameter object is a named container class which groups all method parameters.
 
 大多数开发人员都同意，当方法参数列表增长得太长时，就会变得难以读取。通常，你使用参数对象模式来处理这个问题。参数对象是一个命名容器类，它对所有方法参数进行分组。
@@ -201,7 +201,7 @@ Let’s see how do we solve this more general problem with …
 
 让我们看看如何解决这个更普遍的问题。
 
-### 2. Optional constructor parameters（可选的构造函数参数）
+## 2. Optional constructor parameters（可选的构造函数参数）
 In the perspective（n. 观点） of the problem with optional parameters, simple constructors don’t differ from regular member methods. You can successfully use all the techniques we’ve already discussed also with constructors.
 
 对于可选参数的问题，简单构造函数与常规成员方法没有区别。你可以成功地使用我们已经与构造函数讨论过的所有技术。
@@ -214,7 +214,7 @@ If you agree, you should check out the Builder pattern.
 
 如果你同意，你应该检查构建器模式。
 
-#### 2.1. Builder pattern（构建器模式）
+## 2.1. Builder pattern（构建器模式）
 Let’s consider a class with multiple optional fields:
 
 让我们考虑一个具有多个可选字段的类：
@@ -247,7 +247,7 @@ How to avoid multiple constructors? Use a builder class.
 
 如何避免多个构造函数？使用构建器类。
 
-***译注：关于构建器的内容，可以参考《Effective-Java-3rd-edition》，Item-2: Consider-a-builder-when-faced-with-many-constructor-parameters（[Item-2](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-2-Item-2-Consider-a-builder-when-faced-with-many-constructor-parameters.md)）***
+***译注：关于构建器的内容，可以参考《Effective-Java-3rd-edition》，Item-2: Consider-a-builder-when-faced-with-many-constructor-parameters（[Item-2](https://github.com/clxering/Effective-Java-3rd-edition-Chinese-English-bilingual/blob/master/Chapter-2/Chapter-2-Item-2-Consider-a-builder-when-faced-with-many-constructor-parameters.md)）***
 
 You usually implement the builder as an inner class of the class it suppose to build. That way, both classes have access to their private members.
 
@@ -334,7 +334,7 @@ With the builder, you can create all possible combinations with optional paramet
 
 使用构建器，你可以使用对象的可选参数创建所有可能的组合。
 
-#### 2.2. Compile time safe class builder（编译时安全类构建器）
+## 2.2. Compile time safe class builder（编译时安全类构建器）
 Unfortunately, just by look at the methods of the builder from the previous paragraph you can’t really tell which parameters are optional and which are required. What is more, without knowing you can omit the required parameters by accident.
 
 不幸的是，仅通过查看前一段中构建器的方法，你无法真正判断哪些参数是可选的，哪些是必需的。更重要的是，如果不知道你可以意外地忽略所需的参数。
@@ -390,7 +390,7 @@ class ProgrammerProfile {
 }
 ```
 
-#### 2.3. Builder class generation（构建器类生成）
+## 2.3. Builder class generation（构建器类生成）
 You may think that builders require hell of a lot of code.
 
 你可能认为构建器需要大量的代码。
@@ -407,12 +407,12 @@ If you use the project Lombok, it also simplify working with class builders. You
 
 如果你使用Project Lombok，它还可以简化与类构建器的工作。如果你需要一个开始的地方，可以查看Lombok构建器的简短介绍。
 
-### 3. Java optional parameters anti-patterns（Java可选参数的反模式）
+## 3. Java optional parameters anti-patterns（Java可选参数的反模式）
 While browsing the web in search for approaches to work with Java optional parameters, you can find a few additional suggestions than we already covered. Let me explain why you should consider them as wrong approaches.
 
 在浏览web以寻找使用Java可选参数的方法时，你可以找到一些我们已经介绍过的其他建议。让我解释一下为什么你应该认为它们是错误的方法。
 
-#### 3.1. Maps
+## 3.1. Maps
 Technically speaking, method’s input is a set of key-value pairs. In Java, we have a standard built-in data structure which matches this description – the Map.
 
 从技术上讲，方法的输入是一组key-value对。在Java中，我们有一个标准的内置数据结构来匹配这个描述，它就是Map。
@@ -433,7 +433,7 @@ You should definitely consider switching your career to a JavaScript developer. 
 
 你绝对应该考虑转行到JavaScript开发人员。（和这个相比），在公司里哭要容易得多。
 
-#### 3.2. Java varargs（Java可变参数）
+## 3.2. Java varargs（Java可变参数）
 Just to be clear, there’s absolutely nothing wrong in using Java varargs. If you don’t know with how many arguments your method will be called, varargs is a perfect fit.
 
 需要明确的是，使用Java的可变参数绝对没有什么错。如果不知道方法将被调用多少个参数，那么可变参数非常适合。
@@ -442,12 +442,12 @@ But using varargs as a container for a single value, which might be present or n
 
 但是使用可变参数作为单个值的容器（可能存在也可能不存在）是一种误用。这样的声明允许调用一个方法比预期更多的可选值。我们讨论了更多的描述方法来处理单一的可选参数。
 
-#### 3.3. Why not Optional as method argument?（为什么不将Optional对象作为方法参数呢?）
+## 3.3. Why not Optional as method argument?（为什么不将Optional对象作为方法参数呢?）
 Finally, the most controversial approach – Java 8 Optional as a method input. I’ve already written a post about Optional use cases in which I also covered method parameters. Let me extend what you can find there.
 
 最后，最具争议的方法就是将Java 8的Optional对象作为方法输入。我已经写了一篇关于Optional用例的文章，其中也涉及了方法参数。我把你能找到的扩展一下。
 
-##### Memory usage（内存使用情况）
+### Memory usage（内存使用情况）
 When you create an instance of the Optional class, you have to allocate the memory for it. While the empty optional instance accessed with Optional.empty() is a reusable singleton (just like empty collections we’ve already discussed), non empty instances will occupy the operating memory.
 
 当你创建Optional类的实例时，你必须为它分配内存。虽然使用Optional.empty()访问的空Optional实例是可重用的单例（就像我们已经讨论过的空集合一样），但是非空实例将占用操作内存。
@@ -460,7 +460,7 @@ Yet, nowadays Garbage Collectors handle short-lived objects very well. The memor
 
 然而，现在垃圾收集器可以很好地处理短期对象。内存分配不是什么大问题。我们还有其他缺点吗?
 
-##### Coding with reader in mind（为读者编写代码）
+### Coding with reader in mind（为读者编写代码）
 What about code readability?
 
 那么代码可读性呢?
@@ -474,7 +474,7 @@ Maybe it’s just a matter of personal preference but for many developers multip
 
 也许这只是个人喜好的问题，但是对于许多开发人员来说，多个Optional工厂调用会分散他们的注意力。代码中的噪声是为读者准备的。但这只是品味的问题。让我们找些更有说服力的。
 
-##### Java language architect opinion（Java语言架构师看法）
+### Java language architect opinion（Java语言架构师看法）
 ***译注：原文的language拼写错误***
 
 Brian Goetz, who is Java language architect at Oracle once stated that Optional was added to the standard library with methods’ results in mind, not their inputs.
@@ -485,7 +485,7 @@ But software developers are rebels and don’t like listening to authorities. Th
 
 但软件开发者是叛逆者，不喜欢听当局的。这一论点似乎也站不住脚。我们必须更深入。
 
-##### Does Optional solve optional parameter problem?（可选是否解决可选参数问题？）
+### Does Optional solve optional parameter problem?（可选是否解决可选参数问题？）
 If you have a method declaration like this:
 
 如果你有这样的方法声明：
@@ -518,7 +518,7 @@ I pretty sure I have not exhausted the topic yet. As this is one of potential ho
 
 我敢肯定我还没有穷尽这个话题。由于这是Java编程的潜在圣战之一，你应该形成自己的观点。如果你想在可选参数的参数列表中添加一些内容，请在评论中分享你的想法。非常欢迎。
 
-### Conclusion（结论）
+## Conclusion（结论）
 Let’s recap what we’ve learned. Java doesn’t have a possibility to set a default value to method parameters. The language provides us we many other alternatives for handling optional parameters.
 
 让我们回顾一下我们所学到的。Java不可能为方法参数设置默认值。该语言为我们提供了许多处理可选参数的其他选择。

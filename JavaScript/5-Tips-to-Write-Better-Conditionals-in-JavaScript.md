@@ -1,4 +1,4 @@
-## 5 Tips to Write Better Conditionals in JavaScript（优化 JavaScript 条件语句的5个技巧）
+# 5 Tips to Write Better Conditionals in JavaScript（优化 JavaScript 条件语句的 5 个技巧）
 
 > 转译自：https://scotch.io/tutorials/5-tips-to-write-better-conditionals-in-javascript
 
@@ -6,13 +6,13 @@ When working with JavaScript, we deal a lot with conditionals, here are the 5 ti
 
 在使用 JavaScript 时，我们会处理很多条件语句，这里有 5 个技巧可以帮助您编写更好、更简洁的条件语句。
 
-### 1、Use Array.includes for Multiple Criteria（对多个条件使用 Array.includes）
+## 1、Use Array.includes for Multiple Criteria（对多个条件使用 Array.includes）
 
 Let's take a look at the example below:
 
 让我们看看下面的例子：
 
-```
+```js
 // condition
 function test(fruit) {
   if (fruit == 'apple' || fruit == 'strawberry') {
@@ -29,7 +29,7 @@ We can rewrite the conditional above by using Array.includes
 
 我们可以用 Array.includes 重写上面的条件。[可参见 Array.includes 相关文档](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
 
-```
+```js
 function test(fruit) {
   // extract conditions to array
   const redFruits = ['apple', 'strawberry', 'cherry', 'cranberries'];
@@ -44,7 +44,7 @@ We extract the red fruits (conditions) to an array. By doing this, the code look
 
 我们将红色水果（条件）提取到一个数组中。这样做之后，代码看起来更整洁。
 
-### 2、Less Nesting, Return Early（更少的嵌套，尽早返回）
+## 2、Less Nesting, Return Early（更少的嵌套，尽早返回）
 
 Let's expand the previous example to include two more conditions:
 
@@ -58,7 +58,7 @@ Let's expand the previous example to include two more conditions:
 
 如果（红色水果）数量超过 10 个，接受并打印。
 
-```
+```js
 function test(fruit, quantity) {
   const redFruits = ['apple', 'strawberry', 'cherry', 'cranberries'];
 
@@ -100,7 +100,7 @@ A general rule I personally follow is **return early when invalid conditions** f
 
 我个人遵循的一般规则是，**当发现无效条件时，提前返回。**
 
-```
+```js
 /_ return early when invalid conditions found _/
 
 function test(fruit, quantity) {
@@ -129,7 +129,7 @@ We can further reduce the nesting if, by inverting the conditions & return early
 
 通过反转条件和提早返回，我们可以进一步减少嵌套。看看下面的条件 2，我们是怎么做的：
 
-```
+```js
 /_ return early when invalid conditions found _/
 
 function test(fruit, quantity) {
@@ -179,13 +179,13 @@ Tim Oxley 的文章，避免 Else，尽早返回
 
 StackOverflow 基于 if/else 编码风格的讨论
 
-### 3、Use Default Function Parameters and Destructuring（使用默认的函数参数和解构）
+## 3、Use Default Function Parameters and Destructuring（使用默认的函数参数和解构）
 
 I guess the code below might look familiar to you, we always need to check for null / undefined value and assign default value when working with JavaScript:
 
 我想下面的代码对您来说可能很熟悉，我们在使用 JavaScript 时总是需要检查 null 或 undefined 值并分配默认值:
 
-```
+```js
 function test(fruit, quantity) {
   if (!fruit) return;
   const q = quantity || 1; // if quantity not provided, default to one
@@ -202,7 +202,7 @@ In fact, we can eliminate the variable `q` by assigning default function paramet
 
 事实上，我们可以通过指定默认的函数参数来消除变量 `q`。
 
-```
+```js
 function test(fruit, quantity = 1) { // if quantity not provided, default to one
   if (!fruit) return;
   console.log(`We have ${quantity} ${fruit}!`);
@@ -221,7 +221,7 @@ What if our `fruit` is an object? Can we assign default parameter?
 
 如果我们的 `fruit` 是一个对象呢？我们可以指定默认参数吗？
 
-```
+```js
 function test(fruit) {
   // printing fruit name if value provided
   if (fruit && fruit.name)  {
@@ -241,7 +241,7 @@ Look at the example above, we want to print the fruit name if it's available or 
 
 请看上面的示例，如果 `fruit.name` 是可用的，我们将打印该水果名称，否则我们将打印 `unknown`。我们可以避免使用与默认函数参数和解构对条件 `fruit && fruit.name` 进行检查。
 
-```
+```js
 // destructing - get name property only
 // assign default empty object {}
 function test({name} = {}) {
@@ -278,7 +278,7 @@ Here is an example of using Lodash:
 
 这是使用 Lodash 的例子：
 
-```
+```js
 // Include lodash library, you will get _
 function test(fruit) {
   console.log(__.get(fruit, 'name', 'unknown'); // get property name, if not available, assign default value 'unknown'
@@ -294,13 +294,13 @@ You may run the demo code [here](https://jsbin.com/bopovajiye/edit?js,console). 
 
 您可以在 [这里](https://jsbin.com/bopovajiye/edit?js,console) 运行演示代码。此外，如果你喜欢函数式编程（FP），你可以选择使用 Lodash fp, 即 Lodash 的函数式版本（方法改为 `get` 或 `getOr`）。
 
-### 4、Favor Map / Object Literal than Switch Statement（选择 Map 或对象字面量，而不是 Switch 语句）
+## 4、Favor Map / Object Literal than Switch Statement（选择 Map 或对象字面量，而不是 Switch 语句）
 
 Let's look at the example below, we want to print fruits based on color:
 
 让我们看看下面的例子，我们想要基于颜色打印水果名称：
 
-```
+```js
 function test(color) {
   // use switch case to find fruits in color
   switch (color) {
@@ -324,7 +324,7 @@ The above code seems nothing wrong, but I find it quite verbose. The same result
 
 上面的代码似乎没有什么问题，但我发现它相当冗长。同样的结果可以通过对象字面量和更简洁的语法来实现：
 
-```
+```js
 // use object literal to find fruits in color
   const fruitColor = {
     red: ['apple', 'strawberry'],
@@ -341,7 +341,7 @@ Alternatively, you may use Map to achieve the same result:
 
 或者，可以使用 [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) 来实现相同的结果：
 
-```
+```js
 // use Map to find fruits in color
   const fruitColor = new Map()
     .set('red', ['apple', 'strawberry'])
@@ -365,13 +365,13 @@ Todd Motto has an article that dig deeper on switch statement vs object literal,
 
 Todd Motto 有一篇文章深入讨论 switch 语句与对象字面量，你可以在 [这里](https://toddmotto.com/deprecating-the-switch-statement-for-object-literals/) 阅读。
 
-### TL;DR; Refactor the syntax（重构的语法）
+## TL;DR; Refactor the syntax（重构的语法）
 
 For the example above, we can actually refactor our code to achieve the same result with `Array.filter`.
 
 对于上面的示例，我们实际上可以重构代码，以使用 `Array.filter` 获得相同的结果。
 
-```
+```js
 const fruits = [
    { name: 'apple', color: 'red' },
    { name: 'strawberry', color: 'red' },
@@ -392,13 +392,13 @@ There's always more than 1 way to achieve the same result. We have shown 4 with 
 
 总有不止一种方法可以达到同样的效果。我们展示了 4 个相同效果的例子。编码是有趣的！
 
-### 5、Use Array.every & Array.some for All / Partial Criteria（所有或部分使用 Array.every & Array.some 的条件）
+## 5、Use Array.every & Array.some for All / Partial Criteria（所有或部分使用 Array.every & Array.some 的条件）
 
 This last tip is more about utilizing new (but not so new) Javascript Array function to reduce the lines of code. Look at the code below, we want to check if all fruits are in red color:
 
 最后一个技巧是关于使用新的（但不是很新）Javascript 数组函数来减少代码行。看看下面的代码，我们想检查所有的水果是否都是红色的:
 
-```
+```js
 const fruits = [
     { name: 'apple', color: 'red' },
     { name: 'banana', color: 'yellow' },
@@ -422,7 +422,7 @@ The code is so long! We can reduce the number of lines with `Array.every`:
 
 代码太长了！我们可以用 `Array.every` 来减少行数：
 
-```
+```js
 const fruits = [
     { name: 'apple', color: 'red' },
     { name: 'banana', color: 'yellow' },
@@ -441,7 +441,7 @@ Much cleaner now right? In a similar way, if we want to test if any of the fruit
 
 现在干净多了，对吧？类似地，如果我们想用一行代码来判断任何一个水果是否为红色，我们可以使用 `Array.some`。
 
-```
+```js
 const fruits = [
     { name: 'apple', color: 'red' },
     { name: 'banana', color: 'yellow' },
@@ -456,7 +456,7 @@ function test() {
 }
 ```
 
-### Summary
+## Summary
 
 Let's produce more readable code together. I hope you learn something new in this article.
 
