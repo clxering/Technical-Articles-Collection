@@ -32,7 +32,7 @@ It's an uncontrolled input field, because once you start the application, you ca
 
 这是一个不受控的 input field，因为一旦启动应用程序，可以在其中键入一些内容并查看更改，即使我们在源代码中没有给出任何指令。在 input field 中没有用于显示值的 line written，也没有用于在输入内容时更改值的 line written。毕竟，这是因为我们在这里处理 HTML，而它是 input field 的本机行为，因为它管理自己的内部状态。
 
-# Uncontrolled vs. Controlled Component（非受控和受控组件）
+## Uncontrolled vs. Controlled Component（非受控和受控组件）
 
 Let's see another case where it isn't clear whether we are dealing with an uncontrolled or controlled component. The next example adds [state management]() with [React Hooks]() to our function component:
 
@@ -109,7 +109,7 @@ Having an uncontrolled element/component in your React application can lead to u
 
 在 React 应用程序中有一个非受控的元素或组件可能会导致不必要的行为，从而导致 bug。你想把你的 UI 从一个真实的来源；在 React 中应该是属性和状态。给定一个组件相同的属性和状态，它应该总是呈现相同的输出：`(props, state) => view`
 
-# From Uncontrolled to Controlled Component（从非受控组件到受控组件）
+## From Uncontrolled to Controlled Component（从非受控组件到受控组件）
 
 You can change the input from uncontrolled to controlled by controlling its value yourself. For instance, in this case the input field offers a value attribute:
 
