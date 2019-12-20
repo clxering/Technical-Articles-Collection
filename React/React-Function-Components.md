@@ -14,25 +14,24 @@ This in-depth guide shows you everything about React Function Components -- whic
 
 ## Table of Contents（目录列表）
 
-- [React Function Component Example（函数组件的例子）](#React-Function-Component-Example（函数组件的例子）)
-- [React Function Component: props（函数组件的 props）](#React-Function-Component:props（函数组件的-props）)
-- [React Arrow Function Component（React 的箭头函数组件）](#React-Arrow-Function-Component（React-的箭头函数组件）)
-- [React Stateless Function Component（React 的无状态函数组件）](#React-Stateless-Function-Component（React-的无状态函数组件）)
-- [React Function Component: state（React 函数组件之：状态）](#React-Function-Component:state（React-函数组件之：状态）)
-- [React Function Component: Event Handler（React 函数组件之：事件处理程序）](#React-Function-Component:Event-Handler（React-函数组件之：事件处理程序）)
-- [React Function Component: Callback Function（React 函数组件之：回调函数）](#React-Function-Component:Callback-Function（React-函数组件之：回调函数）)
-  - [Override Component Function with React（覆盖 React 组件）](#Override-Component-Function-with-React（覆盖-React-组件）)
-  - [Async Function in Component with React（在 React 组件的异步函数）](#Async-Function-in-Component-with-React（在-React-组件的异步函数）)
-- [React Function Component: Lifecycle（React 函数组件之生命周期）](#React-Function-Component:Lifecycle（React-函数组件之生命周期）)
-  - [React Functional Component: Mount（React 函数组件之挂载）](#React-Functional-Component:Mount（React-函数组件之挂载）)
-  - [React Functional Component: Update（React 函数组件之：更新）](#React-Functional-Component:Update（React-函数组件之：更新）)
-- [Pure React Function Component（纯 React 函数组件）](#Pure-React-Function-Component（纯-React-函数组件）)
-- [React Function Component: Export and Import（React 函数组件之：Export 和 Import）](#React-Function-Component:Export-and-Import（React-函数组件之：Export-和-Import）)
-- [React Function Component: ref（React 函数组件之：ref）](#React-Function-Component:ref（React-函数组件之：ref）)
-- [React Function Component: PropTypes（React 函数组件之：PropTypes）](#React-Function-Component:PropTypes（React-函数组件之：PropTypes）)
-- [React Function Component: TypeScript（React 函数组件之：TypeScript）](#React-Function-Component:TypeScript（React-函数组件之：TypeScript）)
-- [React Function Component vs Class Component（React 的函数组件和类组件）](#React-Function-Component-vs-Class-Component（React-的函数组件和类组件）)
-
+- [React Function Component Example（函数组件的例子）](#react-function-component-example函数组件的例子)
+- [React Function Component: props（函数组件的 props）](#react-function-component-props函数组件的-props)
+- [React Arrow Function Component（React 的箭头函数组件）](#react-arrow-function-componentreact-的箭头函数组件)
+- [React Stateless Function Component（React 的无状态函数组件）](#react-stateless-function-componentreact-的无状态函数组件)
+- [React Function Component: state（React 函数组件之：状态）](#react-function-component-statereact-函数组件之状态)
+- [React Function Component: Event Handler（React 函数组件之：事件处理程序）](#react-function-component-event-handlerreact-函数组件之事件处理程序)
+- [React Function Component: Callback Function（React 函数组件之：回调函数）](#react-function-component-callback-functionreact-函数组件之回调函数)
+  - [Override Component Function with React（覆盖 React 组件）](#override-component-function-with-react覆盖-react-组件)
+  - [Async Function in Component with React（在 React 组件的异步函数）](#async-function-in-component-with-react在-react-组件的异步函数)
+- [React Function Component: Lifecycle（React 函数组件之生命周期）](#react-function-component-lifecyclereact-函数组件之生命周期)
+  - [React Functional Component: Mount（React 函数组件之挂载）](#react-functional-component-mountreact-函数组件之挂载)
+  - [React Functional Component: Update（React 函数组件之：更新）](#react-functional-component-updatereact-函数组件之更新)
+- [Pure React Function Component（纯 React 函数组件）](#pure-react-function-component纯-react-函数组件)
+- [React Function Component: Export and Import（React 函数组件之：Export 和 Import）](#react-function-component-export-and-importreact-函数组件之export-和-import)
+- [React Function Component: ref（React 函数组件之：ref）](#react-function-component-refreact-函数组件之ref)
+- [React Function Component: PropTypes（React 函数组件之：PropTypes）](#react-function-component-proptypesreact-函数组件之proptypes)
+- [React Function Component: TypeScript（React 函数组件之：TypeScript）](#react-function-component-typescriptreact-函数组件之typescript)
+- [React Function Component vs Class Component（React 的函数组件和类组件）](#react-function-component-vs-class-componentreact-的函数组件和类组件)
 
 ## React-Function-Component-Example（函数组件的例子）
 
