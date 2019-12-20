@@ -4,7 +4,7 @@
 
 The concept of a Reducer became popular in JavaScript with the rise of [Redux as state management solution for React](). But no worries, you don't need to learn Redux to understand Reducers. Basically reducers are there to manage state in an application. For instance, if a user writes something in an HTML input field, the application has to manage this UI state (e.g. [controlled components]()).
 
-随着以 [Redux 作为 React 的状态管理解决方案]() 的兴起，Reducer 的概念在 JavaScript 中变得流行起来。但是不用担心，你不需要学习 Redux 来理解 Reducer。基本上，reducer 用于管理应用程序状态。例如，如果用户在 HTML 的 input 中写入内容，应用程序必须管理这个 UI 状态（例如 [受控组件](React/What-are-Controlled-Components-in-React.md)）。
+随着以 [Redux 作为 React 的状态管理解决方案]() 的兴起，Reducer 的概念在 JavaScript 中变得流行起来。但是不用担心，你不需要学习 Redux 来理解 Reducer。基本上，reducer 用于管理应用程序状态。例如，如果用户在 HTML 的 input 中写入内容，应用程序必须管理这个 UI 状态（例如 [受控组件](What-are-Controlled-Components-in-React.md)）。
 
 Let's dive into the implementation details: In essence, a reducer is a function which takes two arguments -- the current state and an action -- and returns based on both arguments a new state. In a pseudo function it could be expressed as:
 
