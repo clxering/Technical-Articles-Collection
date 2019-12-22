@@ -30,6 +30,6 @@
 - [What is a Reducer in JavaScript?（JavaScript 中的 Reducer 是什么）](React/What-is-a-Reducer-in-JavaScript.md)
 - [What are Controlled Components in React?（什么是 React 的受控组件）](React/What-are-Controlled-Components-in-React.md)
 - [React Function Components（React 的函数组件）](React/React-Function-Components.md)
-- [React State Hooks: useReducer, useState, useContext（React 状态钩子：useReducer、useState、useContext）](React-State-Hooks-useReducer-useState-useContext.md)
+- [React State Hooks: useReducer, useState, useContext（React 状态钩子：useReducer、useState、useContext）](React/React-State-Hooks-useReducer-useState-useContext.md)
 
 <!-- 注意：文件名必须用连字符，否则 markdown 不识别文件链接。 -->
