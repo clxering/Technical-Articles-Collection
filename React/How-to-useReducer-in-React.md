@@ -2,13 +2,13 @@
 
 > 转译自：https://www.robinwieruch.de/react-usereducer-hook
 
-Since [React Hooks]() have been released, [function components]() can use state and side-effects. There are two hooks that are used for modern state management in React: useState and useReducer. This tutorial goes step by step through a useReducer example in React for getting you started with this React Hook for state management.
+Since [React Hooks](https://www.robinwieruch.de/react-hooks/) have been released, [function components](https://www.robinwieruch.de/react-function-component/) can use state and side-effects. There are two hooks that are used for modern state management in React: useState and useReducer. This tutorial goes step by step through a useReducer example in React for getting you started with this React Hook for state management.
 
-自 [React Hooks]() 发布以来，[函数组件]() 可以使用状态和副作用。React 中有两个用于现代状态管理的 hook：useState 和 useReducer。本教程将逐步介绍 React 中的 useReducer 示例，帮助你初步使用 React Hook 用于状态管理。
+自 [React Hooks]() 发布以来，[函数组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Function-Components.md) 可以使用状态和副作用。React 中有两个用于现代状态管理的 hook：useState 和 useReducer。本教程将逐步介绍 React 中的 useReducer 示例，帮助你初步使用 React Hook 用于状态管理。
 
 ## Reducer in React（React 的 Reducer 实现）
 
-If you haven't heard about reducers as concept or as implementation in JavaScript, you should read more about them over here: [Reducers in JavaScript](). This tutorial builds up on this knowledge, so be prepared what's coming. The following function is a reducer function for managing state transitions for a list of items:
+If you haven't heard about reducers as concept or as implementation in JavaScript, you should read more about them over here: [Reducers in JavaScript](https://www.robinwieruch.de/javascript-reducer/). This tutorial builds up on this knowledge, so be prepared what's coming. The following function is a reducer function for managing state transitions for a list of items:
 
 如果你还没有听说过 JavaScript 中的 reduce 概念或实现，那么你应该在这里阅读更多关于它们的内容：[Reducers in JavaScript]()。本教程建立在这些知识的基础上，所以请做好准备。下面的函数是一个用于管理 item 列表状态转换的 reducer 函数：
 
@@ -111,9 +111,9 @@ So far, everything demonstrated here is not related to React. If you have any di
 
 ## React's useReducer Hook（React 的 useReducer 钩子）
 
-The useReducer hook is used for complex state and state transitions. It takes a reducer function and an initial state as input and returns the current state and a dispatch function as output with [array destructuring]():
+The useReducer hook is used for complex state and state transitions. It takes a reducer function and an initial state as input and returns the current state and a dispatch function as output with [array destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment):
 
-useReducer 钩子用于复杂的状态和状态转换。它以一个 reducer 函数和一个初始状态作为输入，返回当前状态和一个 dispatch 函数作为输出，并伴随着 [array destructuring]()：
+useReducer 钩子用于复杂的状态和状态转换。它以一个 reducer 函数和一个初始状态作为输入，返回当前状态和一个 dispatch 函数作为输出，并伴随着 [array destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)：
 
 ```js
 const initialTodos = [
@@ -165,9 +165,9 @@ const [todos, dispatch] = React.useReducer(todoReducer, initialTodos);
 dispatch({ type: "DO_TODO", id: "a" });
 ```
 
-The previous example wouldn't work without being executed in a React component, but it demonstrates how the state can be changed by dispatching an action. Let's see how this would look like in a React component. We will start with a [React component rendering a list of items](). Each item has a checkbox as [controlled component]():
+The previous example wouldn't work without being executed in a React component, but it demonstrates how the state can be changed by dispatching an action. Let's see how this would look like in a React component. We will start with a [React component rendering a list of items](https://www.robinwieruch.de/react-list-components/). Each item has a checkbox as [controlled component](https://www.robinwieruch.de/react-controlled-components/):
 
-如果不在 React 组件中执行，前面的示例将无法工作，但它演示了如何通过 dispatch 操作来更改状态。我们来看看 React 组件是怎样的。我们将从一个 [呈现 item 列表的 React 组件]() 开始。每个 item 都有一个复选框作为 [受控组件]()：
+如果不在 React 组件中执行，前面的示例将无法工作，但它演示了如何通过 dispatch 操作来更改状态。我们来看看 React 组件是怎样的。我们将从一个 [呈现 item 列表的 React 组件]() 开始。每个 item 都有一个复选框作为 [受控组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-Controlled-Components-in-React.md)：
 
 ```js
 import React from "react";
@@ -328,10 +328,10 @@ const App = () => {
 };
 ```
 
-Depending on the state of our todo item, the correct action is dispatched for our reducer function. Afterward, the React component is rendered again but using the new state from the useReducer hook. The demonstrated useReducer example can be found in this [GitHub repository]().
+Depending on the state of our todo item, the correct action is dispatched for our reducer function. Afterward, the React component is rendered again but using the new state from the useReducer hook. The demonstrated useReducer example can be found in this [GitHub repository](https://github.com/the-road-to-learn-react/react-usereducer-hook).
 
-根据待办 item 的状态，为我们的 reducer 函数分配正确的 action。然后，再次渲染 React 组件，但是使用来自 useReducer 钩子的新状态来渲染。演示的 useReducer 示例可以在这个 [GitHub 存储库]() 中找到。
+根据待办 item 的状态，为我们的 reducer 函数分配正确的 action。然后，再次渲染 React 组件，但是使用来自 useReducer 钩子的新状态来渲染。演示的 useReducer 示例可以在这个 [GitHub 存储库](https://github.com/the-road-to-learn-react/react-usereducer-hook) 中找到。
 
-React's useReducer hook is a powerful way to manage state in React. It can be used [with useState and useContext]() for modern state management in React. Also, it is often used [in favor of useState]() for complex state and state transitions. After all, the useReducer hook hits the sweet spot for middle sized applications that don't need [Redux for React]() yet.
+React's useReducer hook is a powerful way to manage state in React. It can be used [with useState and useContext](https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext/) for modern state management in React. Also, it is often used [in favor of useState](https://www.robinwieruch.de/react-usereducer-vs-usestate/) for complex state and state transitions. After all, the useReducer hook hits the sweet spot for middle sized applications that don't need [Redux for React](https://www.robinwieruch.de/react-redux-tutorial/) yet.
 
-useReducer 钩子是 React 状态管理的强大方法。它可以与 [useState 和 useContext]() 一起用于 React 中的现代状态管理。而且，在复杂的状态和状态转换中，它经常被用于 [支持 useState]()。毕竟，useReducer 钩子适用于中等规模的应用程序，这些应用程序还不需要引入 [React 的 Redux]()。
+useReducer 钩子是 React 状态管理的强大方法。它可以与 [useState 和 useContext](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-State-Hooks-useReducer-useState-useContext.md) 一起用于 React 中的现代状态管理。而且，在复杂的状态和状态转换中，它经常被用于 [支持 useState]()。毕竟，useReducer 钩子适用于中等规模的应用程序，这些应用程序还不需要引入 [React 的 Redux]()。
