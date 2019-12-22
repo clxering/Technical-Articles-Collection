@@ -1,5 +1,7 @@
 # React Function Components（React 的函数组件）
 
+> 转译自：https://www.robinwieruch.de/react-function-component
+
 React Function Components -- also known as React Functional Components -- are the status quo of writing modern React applications. In the past, there have been various [React Component Types](https://www.robinwieruch.de/react-component-types/), but with the introduction of [React Hooks](https://www.robinwieruch.de/react-hooks/) it's possible to write your entire application with just functions as React components.
 
 React Function Components（也称为 React 函数组件）是现代 React 应用程序的组成模块。在过去，有多种 [React 组件类型]()，但是随着 [React 钩子]() 的引入，仅用 React 函数组件来编写整个应用程序成为可能。
