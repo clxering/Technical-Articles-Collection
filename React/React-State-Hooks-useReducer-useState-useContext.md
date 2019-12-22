@@ -4,7 +4,7 @@
 
 If you haven't used state management excessively in [React Function Components](https://www.robinwieruch.de/react-function-component/), this tutorial may help you to get a better understanding of how [React Hooks](https://www.robinwieruch.de/react-hooks/) -- such as useState, useReducer, and useContext -- can be used in combination for impressive state management in React applications. In this tutorial, we will almost reach the point where these hooks mimic sophisticated state management libraries like [Redux](https://www.robinwieruch.de/react-redux-tutorial/) for globally managed state. Let's dive into the application which we will implement together step by step.
 
-如果你还没有在 [React 函数组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Function-Components.md) 中过多地使用状态管理，本教程可以帮助你更好地理解如何将 React 钩子（如 useState、useReducer 和 useContext）组合起来，在 React 应用程序中进行状态管理。在本教程中，我们要讲这些钩子模拟复杂的状态管理库，比如全局管理状态的 [Redux]()。让我们深入研究一下我们将逐步实现的应用程序。
+如果你还没有在 [React 函数组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Function-Components.md) 中过多地使用状态管理，本教程可以帮助你更好地理解如何将 [React 钩子]()（如 useState、useReducer 和 useContext）组合起来，在 React 应用程序中进行状态管理。在本教程中，我们要讲这些钩子模拟复杂的状态管理库，比如全局管理状态的 [Redux]()。让我们深入研究一下我们将逐步实现的应用程序。
 
 ## Table of Contents（目录列表）
 
@@ -16,7 +16,7 @@ If you haven't used state management excessively in [React Function Components](
 
 We start with a list of items -- in our scenario a list of todo items -- which are rendered in our function component with a [JavaScript Map Method for Arrays](https://www.robinwieruch.de/javascript-map-array/). Each todo item rendered as list item receives a [key attribute](https://www.robinwieruch.de/react-list-key) to notify React about its place in the [rendered list](https://www.robinwieruch.de/react-list-component):
 
-我们从一个项目列表开始（在我们的场景中是一个待办事项列表），它在我们的函数组件中使用一个基于 [数组的 JavaScript map方法]() 渲染。作为列表项渲染的每个待办事项将接收一个 key 属性来告知 React 其在 [渲染列表]() 中的位置：
+我们从一个项目列表开始（在我们的场景中是一个待办事项列表），它在我们的函数组件中使用一个基于 [数组的 JavaScript map方法]() 渲染。作为列表项渲染的每个待办事项将接收一个 [key 属性]() 来告知 React 其在 [渲染列表]() 中的位置：
 
 ```js
 import React from 'react';
@@ -567,7 +567,7 @@ const App = () => {
 
 Second, -- after we are able to transition from state to state with the reducer function and the action with action type -- the filter state can be used to show only the matching todo items by using the [built-in array filter method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter):
 
-第二步，（在我们能够使用 reducer 函数和 action 类型从一个状态转换到另一个状态之后）filter 状态可以使用数组内置的 filter 方法只显示匹配的待办事项：
+第二步，（在我们能够使用 reducer 函数和 action 类型从一个状态转换到另一个状态之后）filter 状态可以使用 [数组内置的 filter 方法](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) 只显示匹配的待办事项：
 
 ```js
 const App = () => {
