@@ -8,15 +8,15 @@ If you haven't used state management excessively in [React Function Components](
 
 ## Table of Contents（目录列表）
 
-- [React useState: simple State（React useState：简单状态）]()
-- [React useReducer: complex State（React useReducer：复杂状态）]()
-- [React useContext: global State（React useContext：全局状态）]()
+- [React useState: simple State（React useState：简单状态）](#react-usestate-simple-statereact-usestate%E7%AE%80%E5%8D%95%E7%8A%B6%E6%80%81)
+- [React useReducer: complex State（React useReducer：复杂状态）](#react-usereducer-complex-statereact-usereducer%E5%A4%8D%E6%9D%82%E7%8A%B6%E6%80%81)
+- [React useContext: global State（React useContext：全局状态）](#react-usecontext-global-statereact-usecontext%E5%85%A8%E5%B1%80%E7%8A%B6%E6%80%81)
 
 ## React useState: simple State（React useState：简单状态）
 
 We start with a list of items -- in our scenario a list of todo items -- which are rendered in our function component with a [JavaScript Map Method for Arrays](https://www.robinwieruch.de/javascript-map-array/). Each todo item rendered as list item receives a [key attribute](https://www.robinwieruch.de/react-list-key) to notify React about its place in the [rendered list](https://www.robinwieruch.de/react-list-component):
 
-我们从一个项目列表开始（在我们的场景中是一个待办事项列表），它在我们的函数组件中使用一个基于 [数组的 JavaScript map方法]() 渲染。作为列表项渲染的每个待办事项将接收一个 key 属性来告知 React 其在渲染列表中的位置：
+我们从一个项目列表开始（在我们的场景中是一个待办事项列表），它在我们的函数组件中使用一个基于 [数组的 JavaScript map方法]() 渲染。作为列表项渲染的每个待办事项将接收一个 key 属性来告知 React 其在 [渲染列表]() 中的位置：
 
 ```js
 import React from 'react';
