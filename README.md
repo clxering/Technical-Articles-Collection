@@ -1,6 +1,6 @@
 # Technical-Articles-Collection
 
-技术文章的中文或中英文对照合集，仅将其中提及的技术点作为资料备查。所有内容转译自以下链接或网站：
+从网络收集的中文或中英文对照的技术文章合集，仅将其中提及的技术点作为资料备查。所有内容来自以下链接或网站：
 
 - https://examples.javacodegeeks.com
 - https://scotch.io
@@ -8,6 +8,7 @@
 - https://dzone.com
 - https://www.ibm.com
 - https://www.robinwieruch.de
+- https://www.samanthaming.com
 
 ## 目录（Contents）
 
@@ -28,6 +29,7 @@
 - [Difference between JavaScript function in href and onclick（JavaScript 函数在 href 和 onclick 中的区别）](JavaScript/Difference-between-JavaScript-function-in-href-and-onclick.md)
 - [How to Remove Array Duplicates in ES6](JavaScript/How-to-Remove-Array-Duplicates-in-ES6.md)
 - [Use console.table to display your data](JavaScript/Use-console.table-to-display-your-data.md)
+- [Better Array check with Array.isArray](JavaScript/Better-Array-check-with-Array.isArray.md)
 
 ### React
 
@@ -40,5 +42,6 @@
 ### CSS
 
 - [CSS :empty Selector](CSS/CSS-empty-Selector.md)
+- [CSS :not Selector](CSS/CSS-not-Selector.md)
 
 <!-- 注意：文件名必须用连字符，否则 markdown 不识别文件链接。 -->
