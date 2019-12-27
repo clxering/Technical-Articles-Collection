@@ -1,6 +1,8 @@
 # Use `console.table` to display your data
 
-This is a cool way to display your data in your browser dev tools. Works great with Array and Objects. Instead of console.log, try console.table next time ⭐️
+> 转译自：https://www.samanthaming.com/tidbits/2-console-table
+
+This is a cool way to display your data in your browser dev tools. Works great with Array and Objects. Instead of console.log, try `console.table` next time ⭐️
 
 ```js
 const amazingAthletes = [
