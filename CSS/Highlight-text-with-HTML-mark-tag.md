@@ -23,7 +23,7 @@ The default background color of `<mark>` is yellow.
 
 Output
 
-<mark>Default Yellow Highlight</mark>
+![Highlight-text-with-HTML-mark-tag-1](/pic/Highlight-text-with-HTML-mark-tag-1.png)
 
 ## Custom Styling `<mark>` with CSS
 
@@ -38,7 +38,7 @@ mark {
 
 Output
 
-<mark>Custom Highlight</mark>
+![Highlight-text-with-HTML-mark-tag-2](/pic/Highlight-text-with-HTML-mark-tag-2.png)
 
 ## `<mark>` vs Other Text HTML Tags
 
@@ -129,11 +129,7 @@ Here's a popular one. You can use it to highlight the term a user has searched f
 
 Output
 
-```
-Search Result for "Vue"
-
-Vue is a awesome JavaScript framework. Vue is awesome. Can you tell I really like Vue 😆
-```
+![Highlight-text-with-HTML-mark-tag-3](/pic/Highlight-text-with-HTML-mark-tag-3.png)
 
 ### Use Case: Quotes
 
@@ -147,9 +143,7 @@ It's great to provide highlights for quotation (`<q>`) and block quote (`<blockq
 
 Output
 
-```
-According to Samantha, "Vue is AWESOME"
-```
+![Highlight-text-with-HTML-mark-tag-4](/pic/Highlight-text-with-HTML-mark-tag-4.png)
 
 ## Resources
 

@@ -44,9 +44,9 @@ Thanks: @agm1984
 
 ## Resources
 
-[Be Expressive: How to Give Your Variables Better Names](https://spin.atomicobject.com/2017/11/01/good-variable-names/)
-[The art of naming variables](https://hackernoon.com/the-art-of-naming-variables-52f44de00aad)
-[The Importance Of Naming In Programming](https://carlalexander.ca/importance-naming-programming/)
-[More on JavaScript Variable Naming Conventions](https://www.htmlgoodies.com/html5/javascript/back-by-popular-demand-more-on-javascript-variable-naming-conventions.html)
-[JavaScript naming convention](http://trungk18.github.io/experience/javascript-naming-convention/)
+- [Be Expressive: How to Give Your Variables Better Names](https://spin.atomicobject.com/2017/11/01/good-variable-names/)
+- [The art of naming variables](https://hackernoon.com/the-art-of-naming-variables-52f44de00aad)
+- [The Importance Of Naming In Programming](https://carlalexander.ca/importance-naming-programming/)
+- [More on JavaScript Variable Naming Conventions](https://www.htmlgoodies.com/html5/javascript/back-by-popular-demand-more-on-javascript-variable-naming-conventions.html)
+- [JavaScript naming convention](http://trungk18.github.io/experience/javascript-naming-convention/)
 

@@ -1,5 +1,7 @@
 # How to give your boolean variables a better name 👏
 
+> 转译自：https://www.samanthaming.com/tidbits/34-better-boolean-variable-names
+
 Coming up with good variable names can always be a challenge. So there is some convention you can follow that makes the process easier. For boolean values, you can simply prefix it with `is`, `has`, or `can`. Just by reading the name, you can easily infer that this variable will give you boolean value. Awesome! 👍
 
 ```js
