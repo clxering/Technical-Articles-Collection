@@ -33,7 +33,7 @@ Yes, they are both strikethroughs. However, they convey different meaning about 
 
 ![Strikethrough-using-HTML5-1](/pic/Strikethrough-using-HTML5-1.png)
 
-❌ However, this tag shouldn't be used when indicating document edits. That's where <del> come in.
+❌ However, this tag shouldn't be used when indicating document edits. That's where `<del>` come in.
 
 ### `<del>`
 

@@ -36,7 +36,7 @@
 - [Code Smell: No AND in Function name](JavaScript/Code-Smell-No-AND-in-Function-name.md)
 - [Colorful Console Message](JavaScript/Colorful-Console-Message.md)
 - [JS Essentials: Falsy Values](JavaScript/JS-Essentials-Falsy-Values.md)
-- [Refactoring the if Condition](JavaScript/Refactoring-the-if-Condition.md.md)
+- [Refactoring the if Condition](JavaScript/Refactoring-the-if-Condition.md)
 
 ### React
 
