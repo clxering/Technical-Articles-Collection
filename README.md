@@ -30,6 +30,9 @@
 - [How to Remove Array Duplicates in ES6](JavaScript/How-to-Remove-Array-Duplicates-in-ES6.md)
 - [Use console.table to display your data](JavaScript/Use-console.table-to-display-your-data.md)
 - [Better Array check with Array.isArray](JavaScript/Better-Array-check-with-Array.isArray.md)
+- [ES6 Arrow Functions Cheatsheet](JavaScript/ES6-Arrow-Functions-Cheatsheet.md)
+- [Bad Variable Names to Avoid](JavaScript/Bad-Variable-Names-to-Avoid.md)
+- [How to give your boolean variables a better name](JavaScript/How-to-give-your-boolean-variables-a-better-name.md)
 
 ### React
 
@@ -43,5 +46,6 @@
 
 - [CSS :empty Selector](CSS/CSS-empty-Selector.md)
 - [CSS :not Selector](CSS/CSS-not-Selector.md)
+- [Highlight text with HTML `<mark>` tag](CSS/Highlight-text-with-HTML-mark-tag.md)
 
 <!-- 注意：文件名必须用连字符，否则 markdown 不识别文件链接。 -->
