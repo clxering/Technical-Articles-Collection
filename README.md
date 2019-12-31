@@ -37,6 +37,12 @@
 - [Colorful Console Message](JavaScript/Colorful-Console-Message.md)
 - [JS Essentials: Falsy Values](JavaScript/JS-Essentials-Falsy-Values.md)
 - [Refactoring the if Condition](JavaScript/Refactoring-the-if-Condition.md)
+- [2 Ways to Merge Arrays in JavaScript](JavaScript/2-Ways-to-Merge-Arrays-in-JavaScript.md)
+- [3 Ways to Clone Objects in JavaScript](JavaScript/3-Ways-to-Clone-Objects-in-JavaScript.md)
+- [Flatten Array using Array.flat() in JavaScript](<JavaScript/Flatten-Array-using-Array.flat()-in-JavaScript.md>)
+- [5 Ways to Convert a Value to String in JavaScript](JavaScript/5-Ways-to-Convert-a-Value-to-String-in-JavaScript.md)
+- [Passing Arrays as Function Arguments](JavaScript/Passing-Arrays-as-Function-Arguments.md)
+- [Quick Debug using || with console.log](JavaScript/Quick-Debug-using-II-with-console.log.md)
 
 ### React
 
@@ -52,5 +58,8 @@
 - [CSS :not Selector](CSS/CSS-not-Selector.md)
 - [Highlight text with HTML `<mark>` tag](CSS/Highlight-text-with-HTML-mark-tag.md)
 - [Strikethrough using HTML5](CSS/Strikethrough-using-HTML5.md)
+- [Styling Placeholder Text with CSS](CSS/Styling-Placeholder-Text-with-CSS.md)
+- [CSS only-child](CSS/CSS-only-child.md)
+- [HTML `<kbd>` Tag](CSS/HTML-kbd-Tag.md)
 
 <!-- 注意：文件名必须用连字符，否则 markdown 不识别文件链接。 -->
