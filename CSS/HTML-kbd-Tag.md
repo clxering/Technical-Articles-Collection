@@ -1,5 +1,7 @@
 # HTML `<kbd>` Tag
 
+> 转译自：https://www.samanthaming.com/tidbits/77-html-kbd-tag
+
 Wrap your keyboard command text with `<kbd>`. Great to use especially in documentations! It's more semantically correct & allows you to target it to apply some nice styling. You can also use this tag for other user input such as voice input or text entry device 🙌
 
 #### HTML
