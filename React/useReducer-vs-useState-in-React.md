@@ -8,12 +8,12 @@ Since [React Hooks](https://www.robinwieruch.de/react-hooks/) have been released
 
 ## Table of Contents（目录列表）
 
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
+- [When to use useState or useReducer?（何时使用 useState 或 useReducer）](#when-to-use-usestate-or-usereducer%E4%BD%95%E6%97%B6%E4%BD%BF%E7%94%A8-usestate-%E6%88%96-usereducer)
+- [Simple vs. Complex State with Hooks（钩子的简单与复杂状态）](#when-to-use-usestate-or-usereducer%E4%BD%95%E6%97%B6%E4%BD%BF%E7%94%A8-usestate-%E6%88%96-usereducer)
+- [Simple vs. Complex State Transitions with Hooks（使用钩子实现简单状态转换到复杂状态）](#simple-vs-complex-state-transitions-with-hooks%E4%BD%BF%E7%94%A8%E9%92%A9%E5%AD%90%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2%E5%88%B0%E5%A4%8D%E6%9D%82%E7%8A%B6%E6%80%81)
+- [Multiple State Transitions operate on one State Object（在一个状态对象上进行多个状态转换操作）](#multiple-state-transitions-operate-on-one-state-object%E5%9C%A8%E4%B8%80%E4%B8%AA%E7%8A%B6%E6%80%81%E5%AF%B9%E8%B1%A1%E4%B8%8A%E8%BF%9B%E8%A1%8C%E5%A4%9A%E4%B8%AA%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2%E6%93%8D%E4%BD%9C)
+- [Logic for State Changes（状态更改的逻辑）](#logic-for-state-changes%E7%8A%B6%E6%80%81%E6%9B%B4%E6%94%B9%E7%9A%84%E9%80%BB%E8%BE%91)
+- [Trigger of the State Change（触发状态改变）](#trigger-of-the-state-change%E8%A7%A6%E5%8F%91%E7%8A%B6%E6%80%81%E6%94%B9%E5%8F%98)
 
 ## When to use useState or useReducer?（何时使用 useState 或 useReducer）
 
