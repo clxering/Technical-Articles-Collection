@@ -169,7 +169,7 @@ dispatch({ type: "DO_TODO", id: "a" });
 
 The previous example wouldn't work without being executed in a React component, but it demonstrates how the state can be changed by dispatching an action. Let's see how this would look like in a React component. We will start with a [React component rendering a list of items](https://www.robinwieruch.de/react-list-components/). Each item has a checkbox as [controlled component](https://www.robinwieruch.de/react-controlled-components/):
 
-如果不在 React 组件中执行，前面的示例将无法工作，但它演示了如何通过 dispatch 操作来更改状态。我们来看看 React 组件是怎样的。我们将从一个 [呈现 item 列表的 React 组件（缺少译文）]() 开始。每个 item 都有一个复选框作为 [受控组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-Controlled-Components-in-React.md)：
+如果不在 React 组件中执行，前面的示例将无法工作，但它演示了如何通过 dispatch 操作来更改状态。我们来看看 React 组件是怎样的。我们将从一个 [渲染 item 列表的 React 组件（缺少译文）]() 开始。每个 item 都有一个复选框作为 [受控组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-Controlled-Components-in-React.md)：
 
 ```js
 import React from "react";

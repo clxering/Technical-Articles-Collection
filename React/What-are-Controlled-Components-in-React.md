@@ -8,7 +8,7 @@ There are quite a lot of articles about React out there speaking about controlle
 
 Let's take the following input field element which is rendered within our [function component](https://www.robinwieruch.de/react-function-component/). Even though the input field is the uncontrolled input element here, we are often referring to the enclosing App component being the uncontrolled component:
 
-让我们使用下面的 input field 元素，它是在我们的 [函数组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Function-Components.md) 中呈现的。虽然这里的 input field 是非受控的 input 元素，但我们通常说封装它的 App 组件是非受控组件：
+让我们使用下面的 input field 元素，它是在我们的 [函数组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Function-Components.md) 中渲染的。虽然这里的 input field 是非受控的 input 元素，但我们通常说封装它的 App 组件是非受控组件：
 
 ```js
 import React from "react";
