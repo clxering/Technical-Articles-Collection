@@ -4,7 +4,7 @@
 
 React Function Components -- also known as React Functional Components -- are the status quo of writing modern React applications. In the past, there have been various [React Component Types](https://www.robinwieruch.de/react-component-types/), but with the introduction of [React Hooks](https://www.robinwieruch.de/react-hooks/) it's possible to write your entire application with just functions as React components.
 
-React Function Components（也称为 React 函数组件）是现代 React 应用程序的组成模块。在过去，有多种 [React 组件类型]()，但是随着 [React 钩子]() 的引入，仅用 React 函数组件来编写整个应用程序成为可能。
+React Function Components（也称为 React 函数组件）是现代 React 应用程序的组成模块。在过去，有多种 [React 组件类型（暂缺译文）]()，但是随着 [React 钩子](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-React-Hooks.md) 的引入，仅用 React 函数组件来编写整个应用程序成为可能。
 
 This in-depth guide shows you everything about React Function Components -- which are basically **just JavaScript Functions being React Components** which return JSX (React's Syntax) -- so that after you have read this tutorial you should be well prepared to implement modern React applications with them.
 
@@ -83,13 +83,13 @@ export default App;
 
 Basically you have a function as Child Component now. Defining React Components and rendering them within each other makes [Composition in React](https://www.robinwieruch.de/react-component-composition/) possible. You can decide where to render a component and how to render it.
 
-你现在有了一个函数作为子组件。定义 React 组件并互相渲染，使得 [在 React 中组合]() 成为可能。你可以决定在何处渲染组件以及如何渲染它。
+你现在有了一个函数作为子组件。定义 React 组件并互相渲染，使得 [在 React 中组合（暂缺译文）]() 成为可能。你可以决定在何处渲染组件以及如何渲染它。
 
 ## React Function Component: props（函数组件的 props）
 
 Let's learn about a React Function Component with props. In React, [props are used to pass information from component to component](https://www.robinwieruch.de/react-pass-props-to-component/). If you don't know about props in React, cross-read the linked article. Essentially props in React are always passed down the component tree:
 
-让我们学习一下 React 函数组件的 props。在 React 中，[props 用于在组件之间传递信息]()。如果你不知道 React 里的 props，可交叉阅读相关文章。本质上，React 中的 props 总是沿着组件树向下传递：
+让我们学习一下 React 函数组件的 props。在 React 中，[props 用于在组件之间传递信息（暂缺译文）]()。如果你不知道 React 里的 props，可交叉阅读相关文章。本质上，React 中的 props 总是沿着组件树向下传递：
 
 ```js
 import React from 'react';
@@ -113,7 +113,7 @@ props 是 React 函数组件的参数。虽然组件可以保持通用，但是�
 
 Since props are always coming as object, and most often you need to extract the information from the props anyway, [JavaScript object destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring) comes in handy. You can directly use it in the function signature for the props object:
 
-由于 props 总是以对象形式出现，而且大多数情况下无论如何都需要从 props 中提取信息，因此 [JavaScript 对象解构]() 就派上用场了。你可以直接在 props 对象的函数签名中使用：
+由于 props 总是以对象形式出现，而且大多数情况下无论如何都需要从 props 中提取信息，因此 [JavaScript 对象解构](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring) 就派上用场了。你可以直接在 props 对象的函数签名中使用：
 
 ```js
 import React from 'react';
@@ -143,7 +143,7 @@ If you want to learn more tricks and tips about React props, again check out the
 
 With the introduction of JavaScript ES6, [new coding concepts were introduced to JavaScript and therefore to React](https://www.robinwieruch.de/javascript-fundamentals-react-requirements/). For instance, a JavaScript function can be expressed as lambda ([arrow function](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)). That's why a Function Component is sometimes called Arrow Function Components (or maybe also Lambda Function Component). Let's see our refactored React Component with an Arrow Function:
 
-随着 JavaScript ES6 的引入，[新的编码概念被引入到 JavaScript 中，React 也不例外]()。例如，一个 JavaScript 函数可以表示为 lambda [箭头函数]()。这就是为什么一个函数组件有时被称为箭头函数组件（或者 Lambda 函数组件）。让我们看看用箭头函数重构的 React 组件：
+随着 JavaScript ES6 的引入，[新的编码概念被引入到 JavaScript 中，React 也不例外（暂缺译文）]()。例如，一个 JavaScript 函数可以表示为 lambda [箭头函数（暂缺译文）]()。这就是为什么一个函数组件有时被称为箭头函数组件（或者 Lambda 函数组件）。让我们看看用箭头函数重构的 React 组件：
 
 ```js
 import React from 'react';
@@ -186,7 +186,7 @@ When using arrow functions for React components, nothing changes for the props. 
 
 *Note: If you run into a "React Component Arrow Function Unexpected Token" error, make sure that JavaScript ES6 is available for your React application. Normally when using create-react-app this should be given, otherwise, if you set up the project yourself, [Babel is enabling ES6 and beyond features for your React application](https://www.robinwieruch.de/minimal-react-webpack-babel-setup/).*
 
-*注意：如果遇到 React Component Arrow Function Unexpected Token 错误，请确保 React 应用程序可用 JavaScript ES6。通常情况下，当使用 create-react-app 时，应该确认这个选项，否则，如果你自己设置项目，Babel 将为你的 React 应用程序启用 ES6 和更多功能。*
+*注意：如果遇到 React Component Arrow Function Unexpected Token 错误，请确保 React 应用程序可用 JavaScript ES6。通常情况下，当使用 create-react-app 时，应该确认这个选项，否则，如果你自己设置项目，[Babel 将为你的 React 应用程序启用 ES6 和更多功能。（暂缺译文）]()*
 
 ## React Stateless Function Component（React 的无状态函数组件）
 
@@ -198,7 +198,7 @@ Every component we have seen so far can be called Stateless Function Component. 
 
 [React Hooks](https://www.robinwieruch.de/react-hooks/) made it possible to use state (and side-effects) in Function Components. Finally we can create a React Function Component with state! Let's say we moved all logic to our other Function Component and don't pass any props to it:
 
-React 钩子使得在函数组件中使用状态（和副作用）成为可能。最后，我们可以创建一个有状态的 React 函数组件！我们把所有的逻辑都移到了另一个函数组件上，并且没有给它传递任何 props：
+[React 钩子](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-React-Hooks.md) 使得在函数组件中使用状态（和副作用）成为可能。最后，我们可以创建一个有状态的 React 函数组件！我们把所有的逻辑都移到了另一个函数组件上，并且没有给它传递任何 props：
 
 ```js
 import React from 'react';
@@ -240,7 +240,7 @@ export default App;
 
 The useState hook takes an initial state as parameter and returns an array which holds the current state as first item and a function to change the state as second item. We are using [JavaScript array destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) to access both items with a shorthand expression. In addition, the destructuring let's us name the variables ourselves.
 
-useState 钩子将初始状态作为参数，并返回一个数组，其中当前状态是第一项，更改状态的函数是第二项。我们正在使用 [JavaScript 数组解构]() 来访问这两个项与一个缩写表达式。另外，解构还可以让我们自己给变量命名。
+useState 钩子将初始状态作为参数，并返回一个数组，其中当前状态是第一项，更改状态的函数是第二项。我们正在使用 [JavaScript 数组解构](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) 来访问这两个项与一个缩写表达式。另外，解构还可以让我们自己给变量命名。
 
 Let's add an input field to change the state with the `setGreeting()` function:
 
@@ -276,11 +276,11 @@ export default App;
 
 By providing an event handler to the input field, we are able to do something with a callback function when the input field changes its value. As argument of the callback function we receive a [synthetic React event](https://reactjs.org/docs/events.html) which holds the current value of the input field. This value is ultimately used to set the new state for the Function Component with an inline arrow function. We will see later how to extract this function from there.
 
-通过向 input field 提供事件处理程序，我们可以在 input field 更改其值时使用回调函数来完成某些事情。作为回调函数的参数，我们接收一个保存 input field 当前值的 synthetic React 事件。此值最终用于设置带有内联箭头函数的函数组件的新状态。稍后我们将看到如何从那里提取这个函数。
+通过向 input field 提供事件处理程序，我们可以在 input field 更改其值时使用回调函数来完成某些事情。作为回调函数的参数，我们接收一个保存 input field 当前值的 [synthetic React 事件（暂缺译文）]()。此值最终用于设置带有内联箭头函数的函数组件的新状态。稍后我们将看到如何从那里提取这个函数。
 
 *Note: The input field receives the value of the component state too, because you want to control the state (value) of the input field and don't let the native HTML element's internal state take over. Doing it this way, the component has become a [controlled component](https://www.robinwieruch.de/react-controlled-components/).*
 
-*注意：input field 也接收组件状态的值，因为你希望控制输入字段的状态（值），而不让本机 HTML 元素的内部状态接管。这样做，组件就变成了受控组件。*
+*注意：input field 也接收组件状态的值，因为你希望控制输入字段的状态（值），而不让本机 HTML 元素的内部状态接管。这样做，组件就变成了[受控组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-Controlled-Components-in-React.md)。*
 
 As you have seen, React Hooks enable us to use state in React (Arrow) Function Components. Whereas you would have used a setState method to write state in a Class Component, you can use the useState hook to write state in a Function Component.
 
@@ -288,13 +288,13 @@ As you have seen, React Hooks enable us to use state in React (Arrow) Function C
 
 *Note: If you want to use [React's Context](https://www.robinwieruch.de/react-context/) in Function Components, check out [React's Context Hook called useContext](https://www.robinwieruch.de/react-usecontext-hook) for reading from React's Context in a component.*
 
-注意：如果你想在函数组件中使用 [React 的上下文]()，请查看 [React 的上下文钩子 useContext]()，以便从组件中的 React 上下文中读取内容。
+注意：如果你想在函数组件中使用 [React 的上下文（暂缺译文）]()，请查看 [React 的上下文钩子 useContext（暂缺译文）]()，以便从组件中的 React 上下文中读取内容。
 
 ## React Function Component: Event Handler（React 函数组件之：事件处理程序）
 
 In the previous example you have used an *onChange* event handler for the input field. That's appropriate, because you want to be notified every time the internal value of the input field has changed. In the case of other HTML form elements, you have several other [React event handlers](https://reactjs.org/docs/handling-events.html) at your disposal such as onClick, onMouseDown, and onBlur.
 
-在前面的示例中，你已经为 input field 使用了 onChange 事件处理程序。这是恰当的，因为你希望在每次 input field 的内部值发生更改时都得到通知。对于其他 HTML 表单元素，你可以使用其他几个 React 事件处理程序，如 onClick、onMouseDown 和 onBlur。
+在前面的示例中，你已经为 input field 使用了 onChange 事件处理程序。这是恰当的，因为你希望在每次 input field 的内部值发生更改时都得到通知。对于其他 HTML 表单元素，你可以使用其他几个 [React 事件处理程序（暂缺译文）]()，如 onClick、onMouseDown 和 onBlur。
 
 *Note: The onChange event handler is only one of the handlers for HTML form elements. For instance, a button would offer an onClick event handler to react on click events.*
 
@@ -569,7 +569,7 @@ Also note that we are using a callback function within the `setCount` state func
 
 Read more about [how to fetch data with Function Components with React Hooks](https://www.robinwieruch.de/react-hooks-fetch-data/).
 
-阅读更多：[如何使用 React 钩子的函数组件获取数据]()
+阅读更多：[如何使用 React 钩子的函数组件获取数据（暂缺译文）]()
 
 ## React Function Component: Lifecycle（React 函数组件之生命周期）
 
@@ -782,7 +782,7 @@ export default App;
 
 By using the second argument of the [Effect Hook with care](https://reactjs.org/docs/hooks-effect.html), you can decide whether it runs:
 
-[小心使用 Effect Hook]() 的第二个参数，你可以决定它是否运行：
+[小心使用 Effect Hook（暂缺译文）]() 的第二个参数，你可以决定它是否运行：
 
 - every time (no argument)
 
@@ -798,13 +798,13 @@ By using the second argument of the [Effect Hook with care](https://reactjs.org/
 
 *Note: A React Function Component force update can be done by using this [neat trick](https://reactjs.org/docs/hooks-faq.html#is-there-something-like-forceupdate). However, you should be careful when applying this pattern, because maybe you can solve the problem a different way.*
 
-使用这个 [精妙的技巧]() 可以完成一个 React 函数组件的强制更新。但是，在应用此模式时应该小心，毕竟还可以用其他途径解决问题。
+使用这个 [精妙的技巧（暂缺译文）]() 可以完成一个 React 函数组件的强制更新。但是，在应用此模式时应该小心，毕竟还可以用其他途径解决问题。
 
 ## Pure React Function Component（纯 React 函数组件）
 
 React Class Components offered the possibility to decide whether a component has to rerender or not. It was achieved by using the PureComponent or shouldComponentUpdate to [avoid performance bottlenecks in React by preventing rerenders](https://www.robinwieruch.de/react-prevent-rerender-component/). Let's take the following extended example:
 
-React 类组件提供了一种可能性，可以决定组件是否必须重新渲染。它是通过使用 PureComponent 或 shouldComponentUpdate 来避免 React 中的性能瓶颈，从而防止渲染。让我们举一个扩展的例子：
+React 类组件提供了一种可能性，可以决定组件是否必须重新渲染。它是通过使用 PureComponent 或 shouldComponentUpdate 来 [避免 React 中的性能瓶颈（暂缺译文）]()，从而防止渲染。让我们举一个扩展的例子：
 
 ```js
 import React, { useState } from 'react';
@@ -848,7 +848,7 @@ export default App;
 
 In this case, every time you type something in the input field, the App component updates its state, rerenders, and rerenders the Count component as well. React memo -- which is one of  [React's top level APIs](https://reactjs.org/docs/react-api.html) -- can be used for React Function Components to prevent a rerender when the incoming props of this component haven't changed:
 
-在这种情况下，每当你在 input field 中键入一些内容时，App 组件都会更新其状态、重新渲染以及重新渲染 Count 组件。React memo（[React 的顶级 API 之一]()）可用于 React 函数组件，以防止在该组件的传入 props 未更改时重新渲染：
+在这种情况下，每当你在 input field 中键入一些内容时，App 组件都会更新其状态、重新渲染以及重新渲染 Count 组件。React memo（[React 的顶级 API 之一（暂缺译文）]()）可用于 React 函数组件，以防止在该组件的传入 props 未更改时重新渲染：
 
 ```js
 import React, { useState, memo } from 'react';
@@ -898,7 +898,7 @@ Now, the Count component doesn't update anymore when the user types something in
 
 Eventually you will separate components into their own files. Since React Components are functions (or classes), you can use the standard [import](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/import) and [export](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) statements provided by JavaScript. For instance, you can define and export a component in one file:
 
-最终你会将组件各自分离到独立的文件中。因为 React 组件是函数（或类），所以可以使用 JavaScript 提供的标准 [import]() 和 [export]() 语句。例如，你可以在一个文件中定义和导出一个组件：
+最终你会将组件各自分离到独立的文件中。因为 React 组件是函数（或类），所以可以使用 JavaScript 提供的标准 [import（暂缺译文）]() 和 [export（暂缺译文）]() 语句。例如，你可以在一个文件中定义和导出一个组件：
 
 ```js
 // src/components/Headline.js
@@ -1038,7 +1038,7 @@ export default App;
 
 It's not recommended to pass a ref from a Parent Component to a Child Component and that's why the assumption has always been: React Function Components cannot have refs. However, if you need to pass a ref to a Function Component -- because you have to measure the size of a function component's DOM node, for example, or like in this case to focus an input field from the outside -- you can [forward the ref](https://reactjs.org/docs/forwarding-refs.html):
 
-不建议将 ref 从父组件传递给子组件，这就是为什么我们总是假设：React 函数组件不能有 ref。但是，如果你需要将一个 ref 传递给一个函数组件（例如，因为你必须测量函数组件的 DOM 节点的大小，或者像本例中那样从外部聚焦一个 input field），那么你可以 [转发这个 ref]()。
+不建议将 ref 从父组件传递给子组件，这就是为什么我们总是假设：React 函数组件不能有 ref。但是，如果你需要将一个 ref 传递给一个函数组件（例如，因为你必须测量函数组件的 DOM 节点的大小，或者像本例中那样从外部聚焦一个 input field），那么你可以 [转发 ref（暂缺译文）]()。
 
 ```js
 // Does work!
@@ -1082,7 +1082,7 @@ export default App;
 
 There are a few other things you may want to know about React Refs, so check out this article: [How to use Ref in React](https://www.robinwieruch.de/react-ref-attribute-dom-node/) or the [official React documentation](https://reactjs.org/docs/refs-and-the-dom.html).
 
-关于 React Ref，你可能还想了解其他一些事情，所以请阅读：如何在 [React 中使用 Ref]() 或 [官方 React 文档]()。
+关于 React Ref，你可能还想了解其他一些事情，所以请阅读：如何在 [React 中使用 Ref（暂缺译文）]() 或 [官方 React 文档](https://reactjs.org/docs/refs-and-the-dom.html)。
 
 ## React Function Component: PropTypes（React 函数组件之：PropTypes）
 
@@ -1113,7 +1113,7 @@ export default App;
 
 *Note that you have to install the standalone [React prop-types](https://github.com/facebook/prop-types), because it has been removed from the React core library a while ago. If you want to learn more about PropTypes in React, check out the [official documentation](https://reactjs.org/docs/typechecking-with-proptypes.html).*
 
-*请注意，你必须安装独立的 [React prop-types](https://github.com/facebook/prop-types)，因为它已经从 React 核心库中删除了一段时间了。如果你想了解更多关于 React 中 PropTypes 的信息，请查看 [官方文档]()。*
+*请注意，你必须安装独立的 [React prop-types](https://github.com/facebook/prop-types)，因为它已经从 React 核心库中删除了一段时间了。如果你想了解更多关于 React 中 PropTypes 的信息，请查看 [官方文档](https://reactjs.org/docs/typechecking-with-proptypes.html)。*
 
 In addition, previously you have seen the usage of default props for a Function Component. For the sake of completeness, this is another one:
 
@@ -1269,8 +1269,8 @@ const App = () => {
 
 If you are interested in moving from Class Components to Function Components, check out this guide: [A migration path from React Class Components to Function Components with React Hooks](https://www.robinwieruch.de/react-hooks-migration). However, there is no need to panic because you don't have to migrate all your React components now. Maybe it's a better idea to start implementing your future components as Function Components instead.
 
-如果你对从类组件迁移到函数组件感兴趣，请查看以下指南：[使用 React 钩子将 React 类组件迁移到函数组件的路径]()。但是，没有必要盲目，因为你现在不必迁移所有的 React 组件。也许最好开始将未来的组件实现为函数组件。
+如果你对从类组件迁移到函数组件感兴趣，请查看以下指南：[使用 React 钩子将 React 类组件迁移到函数组件的路径（暂缺译文）]()。但是，没有必要盲目，因为你现在不必迁移所有的 React 组件。也许最好开始将未来的组件实现为函数组件。
 
 The article has shown you almost everything you need to know to get started with React Function Components. If you want to dig deeper into testing React Components for instance, check out this in-depth guide: [Testing React Components](https://www.robinwieruch.de/react-testing-tutorial). Anyway, I hope there have been a couple of best practices for using Functional Components in React as well. Let me know if anything is missing!
 
-本文向你展示了开始使用 React 函数组件所需的几乎所有知识。例如，如果你想更深入地研究 testing React 组件，请查看以下深入指南：[Testing React Components]()。无论如何，我希望已经有了一些在 React 中使用函数组件的最佳实践。如果有什么遗漏，请告诉我！
+本文向你展示了开始使用 React 函数组件所需的几乎所有知识。例如，如果你想更深入地研究 testing React 组件，请查看以下深入指南：[Testing React Components（暂缺译文）]()。无论如何，我希望已经有了一些在 React 中使用函数组件的最佳实践。如果有什么遗漏，请告诉我！

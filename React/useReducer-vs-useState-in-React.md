@@ -4,7 +4,7 @@
 
 Since [React Hooks](https://www.robinwieruch.de/react-hooks/) have been released, [function components](https://www.robinwieruch.de/react-function-component/) in React can use state and side-effects. There are two main hooks that are used for [modern state management in React](https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext/): useState and useReducer. This tutorial doesn't explain both React hooks in detail, but explains their different use case scenarios. There are many people who ask me whether to use useState or useReducer; that's why I thought getting together all my thoughts in one article is the best thing to deal with it.
 
-自 [React Hooks]() 发布，React 中的 [函数组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Function-Components.md) 就可以使用状态和副作用。有两个用于 [React 现代状态管理](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-State-Hooks-useReducer-useState-useContext.md) 的重要钩子：useState 和 useReducer。本教程没有详细解释这两个 React 钩子，但是解释了它们不同的应用场景。很多人问我是使用 useState 还是 useReducer；这就是为什么会把我所有的想法集中在一篇文章里，我认为这是解决这个问题的最好办法。
+自 [React Hooks](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-React-Hooks.md) 发布，React 中的 [函数组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Function-Components.md) 就可以使用状态和副作用。有两个用于 [React 现代状态管理](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-State-Hooks-useReducer-useState-useContext.md) 的重要钩子：useState 和 useReducer。本教程没有详细解释这两个 React 钩子，但是解释了它们不同的应用场景。很多人问我是使用 useState 还是 useReducer；这就是为什么会把我所有的想法集中在一篇文章里，我认为这是解决这个问题的最好办法。
 
 ## Table of Contents（目录列表）
 
@@ -242,7 +242,7 @@ A rule of thumb may suggest: Once you spot multiple `setState()` calls in succes
 
 A great side-effect of having all state in one object is the possibility to use the [browser's local storage](https://www.robinwieruch.de/local-storage-react/) for it. That's how you could always cache a slice of your state with local storage and retrieve it as initial state for useReducer whenever you restart your application.
 
-在一个对象中包含所有状态的一个很好的副作用是可以使用 [浏览器的本地存储]()。这就是为什么你总是可以使用本地存储缓存状态的一部分，并在重新启动应用程序时将其作为 useReducer 的初始状态进行检索。
+在一个对象中包含所有状态的一个很好的副作用是可以使用 [浏览器的本地存储（暂缺译文）]()。这就是为什么你总是可以使用本地存储缓存状态的一部分，并在重新启动应用程序时将其作为 useReducer 的初始状态进行检索。
 
 ## Multiple State Transitions operate on one State Object（在一个状态对象上进行多个状态转换操作）
 
@@ -291,7 +291,7 @@ It only makes sense to keep everything in one state object (e.g. list of todo it
 
 Often you will start out with useState but refactor your state management to useReducer, because the state object becomes more complex or the number of state transitions add up over time. However, there are other cases as well where it makes sense to group different properties, that don't belong together on first glance, in one state object. For instance, this [tutorial that showcases how to fetch data with useEffect, useState, and useReducer](https://www.robinwieruch.de/react-hooks-fetch-data/) groups properties that are dependent on each other together in one state object:
 
-通常，你从 useState 开始将状态管理重构为 useReducer 是因为状态对象变得更加复杂，或者状态转换的数量随时间增加。然而，在其他一些情况下，在一个状态对象中对不同的属性进行分组是有意义的，这些属性初看并不属于同一个状态对象。例如，本 [教程演示了如何使用 useEffect、useState 和 useReducer 获取数据]()，并将相互依赖的属性分组在一个状态对象中：
+通常，你从 useState 开始将状态管理重构为 useReducer 是因为状态对象变得更加复杂，或者状态转换的数量随时间增加。然而，在其他一些情况下，在一个状态对象中对不同的属性进行分组是有意义的，这些属性初看并不属于同一个状态对象。例如，本 [教程演示了如何使用 useEffect、useState 和 useReducer 获取数据（暂缺译文）]()，并将相互依赖的属性分组在一个状态对象中：
 
 ```js
 const [state, dispatch] = useReducer(dataFetchReducer, {
@@ -436,7 +436,7 @@ export default App;
 
 However, sometimes you want to [manage state at a top-level but trigger the state changes](https://www.robinwieruch.de/react-global-state-without-redux/) somewhere deep down in your component tree. It's possible to pass both the updater function from useState or the dispatch function from useReducer [via props](https://www.robinwieruch.de/react-pass-props-to-component/) down the component tree, but using [React's context API](https://www.robinwieruch.de/react-context/) may be a valid alternative to avoid the prop drilling (passing props trough each component level). Then having _one_ dispatch function that is used with different action types and payloads may be the better option than using _multiple_ updater functions from useState that need to be passed down individually. The dispatch function can be passed down _once_ with React's useContext hook. A good example how this works can be seen in this [state management tutorial for React using useContext](https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext/).
 
-然而，有时你希望在顶层管理状态，在组件树深处触发状态更改。虽然可以 [通过 props]() 从组件树向下传递 useState 的 updater 函数或 useReducer 的 dispatch 函数，但是使用 [React 的 context API]() 是避免 props 传递的有效方法（通过每个组件层传递 props）。那么，与使用 useState 需要单独传递的 _多个_ updater 函数相比，使用 _一个_ dispatch 函数与不同的 action 类型和关键数据一起使用可能是更好的选择。dispatch 函数可以通过 React 的 useContext 钩子向下传递 _一次_。在 [使用 useContext 进行 React 的状态管理教程]() 中可以看到一个很好的案例。
+然而，有时你希望在顶层管理状态，在组件树深处触发状态更改。虽然可以 [通过 props（暂缺译文）]() 从组件树向下传递 useState 的 updater 函数或 useReducer 的 dispatch 函数，但是使用 [React 的 context API（暂缺译文）]() 是避免 props 传递的有效方法（通过每个组件层传递 props）。那么，与使用 useState 需要单独传递的 _多个_ updater 函数相比，使用 _一个_ dispatch 函数与不同的 action 类型和关键数据一起使用可能是更好的选择。dispatch 函数可以通过 React 的 useContext 钩子向下传递 _一次_。在 [使用 useContext 进行 React 的状态管理教程](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-State-Hooks-useReducer-useState-useContext.md) 中可以看到一个很好的案例。
 
 The decision whether to use useState or useReducer isn't always black and white. There are many shades of grey in between. However, I hope the article gave you a few key understandings on when to use useState or useReducer. Here you can find a [GitHub repository](https://github.com/the-road-to-learn-react/react-hooks-usestate-vs-usereducer) with a few examples. The following facts give you a summarized overview, however they only reflect my opinion on this topic:
 
@@ -504,8 +504,8 @@ The decision whether to use useState or useReducer isn't always black and white.
 
 _Note: Check out when to use [useReducer or Redux](https://www.robinwieruch.de/redux-vs-usereducer) if you are interested in a comparison._
 
-_注意：如果对类似的比较感兴趣，可查看何时使用 [useReducer 或 Redux]()。_
+_注意：如果对类似的比较感兴趣，可查看何时使用 [useReducer 或 Redux（暂缺译文）]()。_
 
 If you want to go through a more comprehensive example where useState and useReducer are used together, check out this extensive walkthrough for [modern state management in React](https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext/). It almost mimics Redux by using [React's useContext Hook](https://www.robinwieruch.de/react-usecontext-hook) for "global" state management where it's possible to pass down the dispatch function once.
 
-如果你想通过一个更全面的例子来了解 useState 和 useReducer 一起使用的情况，请查看 [React 中关于现代状态管理](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-State-Hooks-useReducer-useState-useContext.md) 的详细介绍。它很大程度上模仿了 Redux，使用 [React 的 useContext 钩子]() 来进行「全局」状态管理，这样就可以只传递 dispatch 函数一次即可。
+如果你想通过一个更全面的例子来了解 useState 和 useReducer 一起使用的情况，请查看 [React 中关于现代状态管理](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-State-Hooks-useReducer-useState-useContext.md) 的详细介绍。它很大程度上模仿了 Redux，使用 [React 的 useContext 钩子（暂缺译文）]() 来进行「全局」状态管理，这样就可以只传递 dispatch 函数一次即可。

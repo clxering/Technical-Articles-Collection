@@ -235,4 +235,4 @@ Basically you have learned everything you need to know for reducers. They are us
 
 Also check out this [tutorial if you want to know how to use reducers in React with the useReducer hook](https://www.robinwieruch.de/react-usereducer-hook).
 
-如果你想知道如何在 useReducer 钩子中使用 reduce，也可以看看这篇 [教程]()。
+如果你想知道如何在 useReducer 钩子中使用 reduce，也可以看看这篇 [教程](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/How-to-useReducer-in-React.md)。

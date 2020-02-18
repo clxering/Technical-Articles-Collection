@@ -75,7 +75,7 @@ With Hooks there is no need for this refactoring. Side-effects and state are fin
 
 **Side-effect Logic:** In React class components, side-effects were mostly introduced in lifecycle methods (e.g. componentDidMount, componentDidUpdate, componentWillUnmount). A side-effect could be [fetching data in React](https://www.robinwieruch.de/react-fetching-data/) or [interacting with the Browser API](https://www.robinwieruch.de/react-intersection-observer-api/). Usually these side-effects came with a setup and clean up phase. For instance, if you would miss to remove your listener, you could run into [React performance issues](https://www.robinwieruch.de/react-warning-cant-call-setstate-on-an-unmounted-component/).
 
-**副作用逻辑:** 在 React 类组件中，副作用主要是在生命周期方法中引入的（如 componentDidMount、componentDidUpdate、componentWillUnmount）。副作用可能是 [在 React 中获取数据]() 或 [与浏览器 API 交互]()。通常这些副作用伴随着设置和清理阶段。例如，如果你没有删除监听器，可能会遇到 [React 性能问题]()。
+**副作用逻辑:** 在 React 类组件中，副作用主要是在生命周期方法中引入的（如 componentDidMount、componentDidUpdate、componentWillUnmount）。副作用可能是 [在 React 中获取数据（暂缺译文）]() 或 [与浏览器 API 交互（暂缺译文）]()。通常这些副作用伴随着设置和清理阶段。例如，如果你没有删除监听器，可能会遇到 [React 性能问题（暂缺译文）]()。
 
 ```js
 // side-effects in a React class component
@@ -117,7 +117,7 @@ Now, if you would introduce more than one of these side-effects in a React class
 
 **React's Abstraction Hell:** Abstraction and thus reusability were introduced with [Higher-Order Components](https://www.robinwieruch.de/react-higher-order-components/) and [Render Prop Components](https://www.robinwieruch.de/react-render-props/) in React. There is also [React's Context with its Provider and Consumer Components](https://www.robinwieruch.de/react-context/) that introduce another level of abstraction. All of these advanced patterns in React are using so called wrapping components. The implementation of the following components shouldn't be foreign to developers who are creating larger React applications.
 
-**React 的抽象地狱:** 在 React 中引入了 [高阶组件]() 和 [渲染 Prop 组件]()，从而引入了可重用性。还有 [React 的上下文及其 Provider 和 Consumer 组件]()，它引入了另一层抽象。React 中的所有这些高级模式都使用了所谓的包装组件。对于创建大型 React 应用程序的开发人员来说，以下组件的实现并不陌生。
+**React 的抽象地狱:** 在 React 中引入了 [高阶组件（暂缺译文）]() 和 [渲染 Prop 组件（暂缺译文）]()，从而引入了可重用性。还有 [React 的上下文及其 Provider 和 Consumer 组件（暂缺译文）]()，它引入了另一层抽象。React 中的所有这些高级模式都使用了所谓的包装组件。对于创建大型 React 应用程序的开发人员来说，以下组件的实现并不陌生。
 
 ```js
 import { compose } from "recompose";
@@ -156,11 +156,11 @@ That's what React Hooks are bringing on the table. All side-effects are sitting 
 
 **JavaScript Class Confusion:** JavaScript mixes two worlds pretty well: Object-oriented programming (OOP) and functional programming. React introduces many developers to both worlds. On the one side, React (and Redux) introduced people to functional programming (FP) with function compositions, general programming concepts with functions (e.g. higher-order functions, JavaScript built-in methods like map, reduce, filter) and other terms such as immutability and side-effects. React itself didn't really introduce these things, because they are features of the language or the programming paradigm itself, but they are heavily used in React whereas [every React developer becomes automatically a better JavaScript developer](https://www.robinwieruch.de/javascript-fundamentals-react-requirements/).
 
-**JavaScript 类的困惑：** JavaScript 很好地混合了两个世界，面向对象编程（OOP）和函数式编程。React 向这两个领域引进了许多开发人员。一方面，React（和 Redux）通过函数组合向人们介绍了函数编程（FP），使用函数的一般编程概念（例如，高阶函数，JavaScript 内置方法，如 map、reduce、filter）和其他术语，如不变性和副作用。React 本身并没有真正引入这些东西，因为它们是该语言或编程范式本身的特性，但是它们在 React 中大量使用，而 [每个 React 开发人员都自然而然会成为更好的 JavaScript 开发人员]()。
+**JavaScript 类的困惑：** JavaScript 很好地混合了两个世界，面向对象编程（OOP）和函数式编程。React 向这两个领域引进了许多开发人员。一方面，React（和 Redux）通过函数组合向人们介绍了函数编程（FP），使用函数的一般编程概念（例如，高阶函数，JavaScript 内置方法，如 map、reduce、filter）和其他术语，如不变性和副作用。React 本身并没有真正引入这些东西，因为它们是该语言或编程范式本身的特性，但是它们在 React 中大量使用，而 [每个 React 开发人员都自然而然会成为更好的 JavaScript 开发人员（暂缺译文）]()。
 
 On the other side, React uses JavaScript classes as one way to define React components. A class is only the declaration whereas the actual usage of the component is the instantiation of it. It creates a class instance whereas the `this` object of the class instance is used to interact with class methods (e.g. setState, forceUpdate, other custom class methods). However, classes come with a steeper learning curve for React beginners who are not coming from an OOP background. That's why class bindings, the `this` object and inheritance can be confusing. I have [a few chapters in my React book](https://www.robinwieruch.de/the-road-to-learn-react/) focusing only on this aspect of React which is always the most confusing thing about React for beginners.
 
-另一方面，React 使用 JavaScript 类作为定义 React 组件的一种方式。类只是声明，而组件的实际使用是它的实例化。它创建一个类实例，而类实例的 `this` 对象用于与类方法（例如 setState、forceUpdate、其他自定义类方法）交互。然而，对于那些没有 OOP 背景的 React 初学者来说，课程的学习曲线更陡峭。这就是为什么类绑定、`this` 对象和继承会令人困惑。[在我的 React 书中有几章]() 关注 React 的这一方面，这也是对初学者来说 React 最让人困惑的地方。
+另一方面，React 使用 JavaScript 类作为定义 React 组件的一种方式。类只是声明，而组件的实际使用是它的实例化。它创建一个类实例，而类实例的 `this` 对象用于与类方法（例如 setState、forceUpdate、其他自定义类方法）交互。然而，对于那些没有 OOP 背景的 React 初学者来说，课程的学习曲线更陡峭。这就是为什么类绑定、`this` 对象和继承会令人困惑。[在我的 React 书中有几章（暂缺译文）]() 关注 React 的这一方面，这也是对初学者来说 React 最让人困惑的地方。
 
 ```js
 // I THOUGHT WE ARE USING A CLASS. WHY IS IT EXTENDING FROM SOMETHING?
@@ -262,13 +262,13 @@ In the following, I want to dive into a few popular React Hooks by example to ge
 
 - Read more about [React Class to Function Component Migration](https://www.robinwieruch.de/react-hooks-migration)
 
-阅读更多有关 [React 类组件向函数组件迁移]() 的内容
+阅读更多有关 [React 类组件向函数组件迁移（暂缺译文）]() 的内容
 
 ## React useState Hook
 
 You have seen the useState Hook before in a code snippet for a typical counter example. It is used to manage local state in function components. Let's use the hook in a more elaborate example where we are going to manage an array of items. In another article of mine, you can learn more about [managing arrays as state in React](https://www.robinwieruch.de/react-state-array-add-update-remove/), but this time we are doing it with React hooks. Let's get started:
 
-你已经在一个典型的反例代码片段中看到过 useState 钩子。它用于管理函数组件中的本地状态。让我们在一个更详细的示例中使用这个钩子，在这个示例中我们将管理一个数组。在我的另一篇文章中，你可以了解更多关于 [在 React 中将数组作为状态来管理]() 的内容，但这次我们使用的是 React 钩子。让我们开始：
+你已经在一个典型的反例代码片段中看到过 useState 钩子。它用于管理函数组件中的本地状态。让我们在一个更详细的示例中使用这个钩子，在这个示例中我们将管理一个数组。在我的另一篇文章中，你可以了解更多关于 [在 React 中将数组作为状态来管理（暂缺译文）]() 的内容，但这次我们使用的是 React 钩子。让我们开始：
 
 ```js
 import React, { useState } from "react";
@@ -403,7 +403,7 @@ useState 钩子为你提供了在函数组件中管理状态所需的一切：�
 
 - Read more about [React's useState Hook](https://www.robinwieruch.de/react-usestate-hook)
 
-阅读更多有关 [useState 钩子]() 的内容
+阅读更多有关 [useState 钩子（暂缺译文）]() 的内容
 
 ## React useEffect Hook
 
@@ -439,11 +439,11 @@ export default App;
 
 There is no stopwatch yet. But at least there are is a [conditional rendering](https://www.robinwieruch.de/conditional-rendering-react/) to show either a "Start" or "Stop" button. The state for the boolean flag is managed by the useState hook.
 
-现在还没有秒表。但至少有一个 [条件呈现]() 来显示「Start」或「Stop」按钮。boolean 标志的状态由 useState 钩子管理。
+现在还没有秒表。但至少有一个 [条件渲染（暂缺译文）]() 来显示「Start」或「Stop」按钮。boolean 标志的状态由 useState 钩子管理。
 
 Let's introduce our side-effect with useEffect that registers an interval. The function used for the interval emits a console logging every second to your developer tools of your browser.
 
-让我们介绍一下实现副作用和间隔的 useEffect。用于间隔的函数每秒钟向浏览器的开发工具发出一个控制台日志记录。
+让我们介绍一下实现副作用和 interval 的 useEffect。用于 interval 的函数每秒钟向浏览器的开发工具发出一个控制台日志记录。
 
 ```js
 import React, { useState, useEffect } from "react";
@@ -477,7 +477,7 @@ export default App;
 
 In order to remove the interval when the component unmounts (but also after every other render update), you can return a function in useEffect for anything to be called for the clean up. For instance, there shouldn't be any memory leak left behind when the component isn't there anymore.
 
-为了消除组件卸载时的间隔（以及在每次其他渲染更新之后），你可以在 useEffect 中返回一个函数，以便在清理时调用。例如，当组件不存在时，不应该留下任何内存泄漏隐患。
+为了消除组件卸载时的 interval（以及在每次其他渲染更新之后），你可以在 useEffect 中返回一个函数，以便在清理时调用。例如，当组件不存在时，不应该留下任何内存泄漏隐患。
 
 ```js
 import React, { useState, useEffect } from 'react';
@@ -499,7 +499,7 @@ export default App;
 
 Now, you want to setup the side-effect when mounting the component and the clean up the side-effect when unmounting the component. If you would log how many times the function within the effect is called, you would see that it sets a new interval every time the state of the component changes (e.g. click on "Start"/"Stop" button).
 
-现在，你需要在安装组件时设置副作用，并在卸载组件时清除副作用。如果你要记录调用效果中的函数的次数，那么你将看到每当组件的状态发生变化时，它都会设置一个新的间隔（例如，单击「Start」/「Stop」按钮）。
+现在，你需要在安装组件时设置副作用，并在卸载组件时清除副作用。如果你要记录调用效果中的函数的次数，那么你将看到每当组件的状态发生变化时，它都会设置一个新的 interval（例如，单击「Start」/「Stop」按钮）。
 
 ```js
 import React, { useState, useEffect } from 'react';
@@ -544,7 +544,7 @@ export default App;
 
 However, since the interval is cleaned up after every render too, we need to set the interval in our update cycle too. But we can tell the effect to run only when the `isOn` variable changes. Only when one of the variables in the array changes, the effect will run during the update cycle. If you keep the array empty, the effect will only run on mount and unmount, because there is no variable to be checked for running the side-effect again.
 
-但是，由于间隔也会在每次渲染后清除，所以我们也需要在更新周期中设置间隔。但是，我们可以告诉 effect，只有当 `isOn` 变量改变才运行。只有当数组中的一个变量发生变化时，该 effect 才会在更新周期中运行。如果保持数组为空，则该效果将仅在挂载和卸载时运行，因为不需要检查变量是否再次运行副作用。
+但是，由于 interval 也会在每次渲染后清除，所以我们也需要在更新周期中设置。但是，我们可以告诉 effect，只有当 `isOn` 变量改变才运行。只有当数组中的一个变量发生变化时，该 effect 才会在更新周期中运行。如果保持数组为空，则该效果将仅在挂载和卸载时运行，因为不需要检查变量是否再次运行副作用。
 
 ```js
 import React, { useState, useEffect } from 'react';
@@ -635,7 +635,9 @@ export default App;
 
 There is still one mistake in the code. When the interval is running, it updates the timer every second by increasing it by one. However, it always relies on a stale state for the timer. Only when the `inOn` boolean flag changes the state is fine. In order to receive always the latest state for the timer when the interval is running, you can use a function instead for the state update function which always has the latest state.
 
-代码中还有一个错误。当 interval 正在运行时，它每秒钟通过增加一个计时器来更新计时器。但是，它总是依赖于计时器的陈旧状态。只有当 `inOn` 布尔标志改变状态时才是正确的。为了在间隔运行时始终接收计时器的最新状态，你可以使用一个函数来代替始终具有最新状态的状态更新函数。
+> 译注：原文 `inOn` 笔误，应为 `isOn`
+
+代码中还有一个错误。当 interval 正在运行时，它每秒钟通过增加一个计时器来更新计时器。但是，它总是依赖于计时器的陈旧状态。只有当 `isOn` 布尔标志改变状态时才是正确的。为了在 interval 运行时始终接收计时器的最新状态，你可以使用一个函数来代替始终具有最新状态的状态更新函数。
 
 ```js
 import React, { useState, useEffect } from 'react';
@@ -865,11 +867,11 @@ React 钩子是可重用的，这是它们最大的优点，因为有可能形�
 
 - Read more about [React State with Hooks](https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext)
 
-阅读更多关于 [React 钩子的状态管理]() 的内容
+阅读更多关于 [React 钩子的状态管理](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-State-Hooks-useReducer-useState-useContext.md) 的内容
 
 - Read more about [How to fetch data with React Hooks](https://www.robinwieruch.de/react-hooks-fetch-data)
 
-阅读更多关于 [如何通过 React 钩子获取数据]() 的内容
+阅读更多关于 [如何通过 React 钩子获取数据（缺少译文）]() 的内容
 
 If you want to dive deeper into the state and effect hooks, check out my other React Hook tutorials:
 
@@ -877,11 +879,11 @@ If you want to dive deeper into the state and effect hooks, check out my other R
 
 - [How to useEffect Hook?](https://www.robinwieruch.de/react-usecontext-hook/)
 
-[怎样使用 useEffect 钩子]()
+[怎样使用 useEffect 钩子（缺少译文）]()
 
 - [How to useReducer Hook?](https://www.robinwieruch.de/react-usereducer-hook/)
 
-[怎样使用 useReducer 钩子]()
+[怎样使用 useReducer 钩子](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/How-to-useReducer-in-React.md)
 
 Check out the official [FAQ](https://reactjs.org/docs/hooks-faq.html) and [Rules](https://reactjs.org/docs/hooks-rules.html) for hooks in React's documentation to learn more about their fine-grained behaviour. In addition, you can checkout [all officially available React Hooks](https://reactjs.org/docs/hooks-reference.html) too.
 

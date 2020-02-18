@@ -26,7 +26,7 @@ export default App;
 
 _Note: It doesn't matter for controlled or uncontrolled elements whether the component itself is a [function or class component](https://www.robinwieruch.de/react-component-types/). Uncontrolled elements -- such as text inputs, checkboxes, radio buttons, and entire forms with inputs -- can always be uncontrolled or controlled._
 
-_注意：对于受控或非受控元素，组件本身是函数还是类组件并不重要。不受控的元素，例如文本输入、复选框、单选按钮和带有 input 的整个表单，总是可以不受控或受控。_
+_注意：对于受控或非受控元素，组件本身是 [函数还是类组件（暂缺译文）]() 并不重要。不受控的元素，例如文本输入、复选框、单选按钮和带有 input 的整个表单，总是可以不受控或受控。_
 
 It's an uncontrolled input field, because once you start the application, you can type something into the field and see changes even though we are not giving any instructions in our source code. There is no line written to display the value in the input field and no line written to change the value when we type something into it. After all, that's because we deal with HTML here and it's the native behavior of the input field, because it manages its own internal state.
 
@@ -36,7 +36,7 @@ It's an uncontrolled input field, because once you start the application, you ca
 
 Let's see another case where it isn't clear whether we are dealing with an uncontrolled or controlled component. The next example adds [state management](https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext) with [React Hooks](https://www.robinwieruch.de/react-hooks/) to our function component:
 
-让我们来看另一个例子，在这个例子中，我们不清楚是在处理非受控组件还是受控组件。该例子添加了 [状态管理]() 和 [React 钩子]() 到函数组件中：
+让我们来看另一个例子，在这个例子中，我们不清楚是在处理非受控组件还是受控组件。该例子添加了 [状态管理](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-State-Hooks-useReducer-useState-useContext.md) 和 [React 钩子](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-React-Hooks.md) 到函数组件中：
 
 ```js
 import React, { useState } from "react";
