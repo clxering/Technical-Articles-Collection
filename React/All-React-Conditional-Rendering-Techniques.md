@@ -1,5 +1,5 @@
 
-# All React Conditional Rendering Techniques
+# All React Conditional Rendering Techniques（所有的 React 条件渲染技术）
 
 > 转译自：https://www.robinwieruch.de/conditional-rendering-react
 
@@ -70,13 +70,17 @@ The List renders either nothing, a text or the list of items. The if-else statem
 
 You can make your if-else statement more concise by using a [ternary operation](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
 
-```javascript
+可以使用 [三目运算符](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) 使 if-else 语句更简洁。
+
+```js
 condition ? expr1 : expr2
 ```
 
 For instance, imagine you have a toggle to switch between two modes, edit and view, in your component. The derived condition is a simple boolean. You can use the boolean to decide which element you want to return.
 
-```javascript
+例如，假设在组件中有一个开关，用于切换编辑和查看两种模式。derived 条件是一个简单的布尔值。你可以使用布尔值来决定要返回哪个元素。
+
+```js
 function Item({ item, mode }) {
   const isEditMode = mode === 'EDIT';
 
@@ -93,7 +97,9 @@ function Item({ item, mode }) {
 
 If your blocks in both branches of the ternary operation are getting bigger, you can use parentheses.
 
-```javascript
+如果三目运算符两个分支中的代码块比较多，可以使用括号。
+
+```js
 function Item({ item, mode }) {
   const isEditMode = mode === 'EDIT';
 
@@ -111,11 +117,15 @@ function Item({ item, mode }) {
 
 The ternary operation makes the conditional rendering in React more concise than the if-else statement. It is simple to inline it in your return statement.
 
+三目运算符使得 React 的条件渲染比 if-else 语句更简洁。在返回语句中内联它很简单。
+
 # logical && operator in React
 
 It happens often that you want to render either an element or nothing. For instance, you could have a LoadingIndicator component that returns a loading text or nothing. You can do it in JSX with an if statement or ternary operation.
 
-```javascript
+经常出现的情况是，要么想渲染一个元素，要么什么都不渲染。例如，有一个 LoadingIndicator 组件，它返回一个正在加载的文本或什么也不返回。你可以使用 if 语句或三目运算符在 JSX 中实现。
+
+```js
 function LoadingIndicator({ isLoading }) {
   if (isLoading) {
     return (
@@ -142,9 +152,13 @@ function LoadingIndicator({ isLoading }) {
 
 But there is an alternative way that omits the necessity to return null. The logical `&&` operator helps you to make conditions that would return null more concise.
 
+但是，有一种替代方法可以省略返回 null 这一必要步骤。逻辑 `&&` 运算符有助于使返回 null 的条件更加简洁。
+
 How does it work? In JavaScript a `true && 'Hello World'` always evaluates to 'Hello World'. A `false && 'Hello World'` always evaluates to false.
 
-```javascript
+它是如何工作的？在 JavaScript 中，`true && 'Hello World'` 计算结果总是 'Hello World'。`false && 'Hello World'` 计算结果总是 false。
+
+```js
 const result = true && 'Hello World';
 console.log(result);
 // Hello World
@@ -156,7 +170,9 @@ console.log(result);
 
 In React you can make use of that behaviour. If the condition is true, the expression after the logical && operator will be the output. If the condition is false, React ignores and skips the expression.
 
-```javascript
+在 React 中可以利用这种行为。如果条件为真，则逻辑 && 操作符后面的表达式将输出。如果条件为 false，则 React 将忽略并跳过表达式。
+
+```js
 function LoadingIndicator({ isLoading }) {
   return (
     <div>
@@ -167,6 +183,8 @@ function LoadingIndicator({ isLoading }) {
 ```
 
 That's your way to go when you want to return an element or nothing. The technique is also called short-circuit evaluation. It makes it even more concise than a ternary operation when you would return null for a condition.
+
+当你想要返回一个元素或者什么都不返回时，这就是方法。这种技术也称为短路求值。当需要根据一个条件返回 null 时，它甚至比三目操作符更简洁。
 
 # switch case operator in React
 
