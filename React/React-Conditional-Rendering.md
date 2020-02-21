@@ -22,7 +22,7 @@ React 中的条件渲染并不难。在 React 的语法扩展 JSX 中，可以�
 
 The most basic conditional rendering logic in React is done with a single **if** statement. Imagine you don't want to render something in your [React component](/react-function-component), because it doesn't have the necessary [React props](/react-pass-props-to-component/) available. For instance, a [List component in React](/react-list-component) shouldn't render the list HTML elements in a view if there is no list of items in the first place. You can use a plain JavaScript if statement to return earlier (guard pattern):
 
-React 中最基本的条件渲染逻辑是使用单个 **if** 语句完成的。假设某些内容在没有必要的 [React 属性]() 时就不在 [React 组件]() 中渲染。例如，一个 [React 中的 List 组件]() 如果一开始就没有项目列表的话，就不应该在视图中渲染列表 HTML 元素。你可以使用一个简单的 JavaScript if 语句提前返回（卫语句模式）：
+React 中最基本的条件渲染逻辑是使用单个 **if** 语句完成的。假设某些内容在没有必要的 [React 属性（暂缺译文）]() 时就不在 [React 组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Function-Components.md) 中渲染。例如，一个 [React 中的 List 组件（暂缺译文）]() 如果一开始就没有项目列表的话，就不应该在视图中渲染列表 HTML 元素。你可以使用一个简单的 JavaScript if 语句提前返回（卫语句模式）：
 
 ```js
 const users = [
@@ -68,7 +68,7 @@ Try it yourself by setting `users` to null oder undefined. If the information fr
 
 In this example, we have done the conditional rendering based on props, but the conditional rendering could be based on [state](/react-state) and [hooks](/react-hooks) too. Notice, how we didn't use the if statement inside the JSX yet but only outside before the return statement.
 
-在这个例子中，我们已经完成了基于属性的条件渲染，但是条件渲染也可以基于 [状态]() 和 [钩子]()。注意，我们还没有在 JSX 内部使用 if 语句，而是只在 return 语句之前使用。
+在这个例子中，我们已经完成了基于属性的条件渲染，但是条件渲染也可以基于 [状态（暂缺译文）]() 和 [钩子](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-React-Hooks.md)。注意，我们还没有在 JSX 内部使用 if 语句，而是只在 return 语句之前使用。
 
 ## Conditional Rendering in React: if else
 
@@ -483,7 +483,7 @@ It works, however I would recommend to avoid nested conditional renders, because
 
 [Higher-Order Components (HOCs)](/react-higher-order-components/) are a perfect match for a conditional rendering in React. HOCs can help with multiple use cases, yet one use case could be to alter the look of a component with a conditional rendering. Let's check out a HOC that either shows a element or a component:
 
-[高阶组件（HOCs）]() 是 React 中条件渲染的完美搭档。高阶组件有很多使用场景，其中一个就是使用条件渲染来改变组件的外观。让我们看一个高阶组件，用于显示一个元素或组件：
+[高阶组件（HOCs）（暂缺译文）]() 是 React 中条件渲染的完美搭档。高阶组件有很多使用场景，其中一个就是使用条件渲染来改变组件的外观。让我们看一个高阶组件，用于显示一个元素或组件：
 
 ```js
 // Higher-Order Component
@@ -516,7 +516,7 @@ function App({ list, isLoading }) {
 
 In this example, the List component can focus on rendering the list. It doesn't have to bother with a loading status. A HOC hides away all the noise from your actual component. Ultimately, you could add multiple higher-order components (composition) to hide away more than one conditional rendering edge case. As alternative to HOCs, you could also use [conditional rendering with a render prop](/react-render-props).
 
-在本例中，List 组件可以专注于渲染列表。它不需要关心加载状态。A HOC hides away all the noise from your actual component. 最后，你可以添加多个高阶组件（组合）来隐藏 more than one conditional rendering edge case. 作为高阶组件的替代品，你还可以使用 [渲染属性实现条件渲染]()。
+在本例中，List 组件可以专注于渲染列表。它不需要关心加载状态。A HOC hides away all the noise from your actual component. 最后，你可以添加多个高阶组件（组合）来隐藏 more than one conditional rendering edge case. 作为高阶组件的替代品，你还可以使用 [渲染属性实现条件渲染（暂缺译文）]()。
 
 ## If Else Components in React
 

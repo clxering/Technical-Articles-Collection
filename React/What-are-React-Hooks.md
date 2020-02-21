@@ -439,7 +439,7 @@ export default App;
 
 There is no stopwatch yet. But at least there are is a [conditional rendering](https://www.robinwieruch.de/conditional-rendering-react/) to show either a "Start" or "Stop" button. The state for the boolean flag is managed by the useState hook.
 
-现在还没有秒表。但至少有一个 [条件渲染（暂缺译文）]() 来显示「Start」或「Stop」按钮。boolean 标志的状态由 useState 钩子管理。
+现在还没有秒表。但至少有一个 [条件渲染](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Conditional-Rendering.md#conditional-rendering-in-react-if) 来显示「Start」或「Stop」按钮。boolean 标志的状态由 useState 钩子管理。
 
 Let's introduce our side-effect with useEffect that registers an interval. The function used for the interval emits a console logging every second to your developer tools of your browser.
 
