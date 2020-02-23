@@ -117,7 +117,7 @@ Now, if you would introduce more than one of these side-effects in a React class
 
 **React's Abstraction Hell:** Abstraction and thus reusability were introduced with [Higher-Order Components](https://www.robinwieruch.de/react-higher-order-components/) and [Render Prop Components](https://www.robinwieruch.de/react-render-props/) in React. There is also [React's Context with its Provider and Consumer Components](https://www.robinwieruch.de/react-context/) that introduce another level of abstraction. All of these advanced patterns in React are using so called wrapping components. The implementation of the following components shouldn't be foreign to developers who are creating larger React applications.
 
-**React 的抽象地狱:** 在 React 中引入了 [高阶组件（暂缺译文）]() 和 [渲染 Prop 组件（暂缺译文）]()，从而引入了可重用性。还有 [React 的上下文及其 Provider 和 Consumer 组件（暂缺译文）]()，它引入了另一层抽象。React 中的所有这些高级模式都使用了所谓的包装组件。对于创建大型 React 应用程序的开发人员来说，以下组件的实现并不陌生。
+**React 的抽象地狱:** 在 React 中引入了 [高阶组件（暂缺译文）]() 和 [渲染 Prop 组件（暂缺译文）]()，从而引入了可重用性。还有 [React 的上下文及其 Provider 和 Consumer 组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Context.md)，它引入了另一层抽象。React 中的所有这些高级模式都使用了所谓的包装组件。对于创建大型 React 应用程序的开发人员来说，以下组件的实现并不陌生。
 
 ```js
 import { compose } from "recompose";
@@ -878,6 +878,8 @@ If you want to dive deeper into the state and effect hooks, check out my other R
 如果你想深入了解状态和 effect 挂钩，看看我的其他 React 钩子教程：
 
 - [How to useEffect Hook?](https://www.robinwieruch.de/react-usecontext-hook/)
+
+> 译注：原文链接有误，不应该是 https://www.robinwieruch.de/react-usecontext-hook/
 
 [怎样使用 useEffect 钩子（缺少译文）]()
 
