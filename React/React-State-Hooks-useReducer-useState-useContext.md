@@ -808,7 +808,7 @@ We can take our state management one step further. At the moment, the state is m
 
 Let's dive into [React's Context API and the useContext hook](https://www.robinwieruch.de/react-context/) to mimic more a Redux's philosophy by making state changes available in the whole component tree. Before we can do this, let's refactor our one component into a component tree. First, the App component renders all its child components and passes the necessary state and dispatch functions to them:
 
-让我们深入了解 [React 的 Context API 和 useContext 钩子（暂缺译文）]()，通过在整个组件树中提供状态更改来更多地模仿 Redux 的思想。在此之前，让我们先将一个组件重构为一个组件树。首先，App 组件渲染其所有的子组件，并将必要的状态和 dispatch 函数传递给它们：
+让我们深入了解 [React 的上下文 API 和 useContext 钩子](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Context.md)，通过在整个组件树中提供状态更改来更多地模仿 Redux 的思想。在此之前，让我们先将一个组件重构为一个组件树。首先，App 组件渲染其所有的子组件，并将必要的状态和 dispatch 函数传递给它们：
 
 ```js
 const App = () => {
@@ -1087,7 +1087,7 @@ The application works again, but we are able to dispatch changes for our todo li
 
 - Read more about [React's useContext Hook](https://www.robinwieruch.de/react-usecontext-hook)
 
-阅读更多内容：[React 的 useContext 钩子（暂缺译文）]()
+阅读更多内容：[React 的 useContext 钩子](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/How-to-useContext-in-React.md)
 
 - Read more about [implementing Redux with React Hooks](https://www.robinwieruch.de/redux-with-react-hooks)
 

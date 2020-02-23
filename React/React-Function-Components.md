@@ -288,7 +288,7 @@ As you have seen, React Hooks enable us to use state in React (Arrow) Function C
 
 *Note: If you want to use [React's Context](https://www.robinwieruch.de/react-context/) in Function Components, check out [React's Context Hook called useContext](https://www.robinwieruch.de/react-usecontext-hook) for reading from React's Context in a component.*
 
-注意：如果你想在函数组件中使用 [React 的上下文（暂缺译文）]()，请查看 [React 的上下文钩子 useContext（暂缺译文）]()，以便从组件中的 React 上下文中读取内容。
+注意：如果你想在函数组件中使用 [React 的上下文](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Context.md)，请查看 [React 的上下文钩子 useContext](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/How-to-useContext-in-React.md)，以便从组件中的 React 上下文中读取内容。
 
 ## React Function Component: Event Handler（React 函数组件之：事件处理程序）
 
