@@ -7,7 +7,7 @@ React Context is a powerful feature. If your React application grows in size bey
 
 React Context 是一个强大的特性。如果你的 React 应用程序的大小超过了一定规模，那么尝试一下也没什么错。许多像 Redux 这样的第三方库都在使用它，所以为什么不学习一下呢？
 
-Especially if your component hierarchy grows in vertical size, it becomes tedious [passing props several React components down](/react-pass-props-to-component/) -- from a parent component to a deeply nested child component. Most often all the React components in between are not interested in these props and just pass the props to the next child component until it reaches the desired child component.
+Especially if your component hierarchy grows in vertical size, it becomes tedious [passing props several React components down](https://www.robinwieruch.de/react-pass-props-to-component/) -- from a parent component to a deeply nested child component. Most often all the React components in between are not interested in these props and just pass the props to the next child component until it reaches the desired child component.
 
 特别是当组件层次结构垂直增长时，从父组件 [为多个 React 组件向下传递属性（暂缺译文）]() 变得非常繁琐，特别是深度嵌套的子组件。大多数情况下，中间的 React 组件对这些属性不感兴趣，只是将属性传递给下一个子组件，直到它到达所需的子组件。
 
@@ -160,9 +160,9 @@ const ThemeContext = React.createContext(null);
 export default ThemeContext;
 ```
 
-Second, component A would have to provide the context with the given Provider component. In this case, its `value` is given to it right away, but it can be anything from component state (e.g. [fetched data](/react-fetching-data)) to props. If the value comes from a modifiable [React State](/react-state), the value passed to the Provider component can be changed too.
+Second, component A would have to provide the context with the given Provider component. In this case, its `value` is given to it right away, but it can be anything from component state (e.g. [fetched data](https://www.robinwieruch.de/react-fetching-data)) to props. If the value comes from a modifiable [React State](https://www.robinwieruch.de/react-state), the value passed to the Provider component can be changed too.
 
-第二，组件 A 必须通过 Provider 组件提供上下文。在这种情况下，它的 `值` 是直接传给它的，可以是任何东西，不管是组件状态（例如 [使用 fetch 获取数据]()）还是属性。如果值来自可修改的 [React 状态]()，则传递给 Provider 组件的值也可以更改。
+第二，组件 A 必须通过 Provider 组件提供上下文。在这种情况下，它的 `值` 是直接传给它的，可以是任何东西，不管是组件状态（例如 [使用 fetch 获取数据（暂缺译文）]()）还是属性。如果值来自可修改的 [React 状态（暂缺译文）]()，则传递给 Provider 组件的值也可以更改。
 
 ```js
 // src/ComponentA.js
@@ -202,9 +202,9 @@ const C = () => (
 );
 ```
 
-The component can derive its style by consuming the context. The Consumer component makes the passed context available by using a [render prop](/react-render-props). As you can imagine, following this way every component that needs to be styled according to the theme could get the necessary information from React's Context by using the ThemeContext's Consumer component now. You only have to use the Provider component which passes the value once somewhere above them.
+The component can derive its style by consuming the context. The Consumer component makes the passed context available by using a [render prop](https://www.robinwieruch.de/react-render-props). As you can imagine, following this way every component that needs to be styled according to the theme could get the necessary information from React's Context by using the ThemeContext's Consumer component now. You only have to use the Provider component which passes the value once somewhere above them.
 
-组件可以通过使用上下文派生其样式。Consumer 组件通过 [属性渲染]() 使传递的上下文可用。可以想象，按照这种方式，需要根据主题进行样式化的每个组件现在都可以通过使用 ThemeContext 的 Consumer 组件从 React 的上下文中获得必要的信息。你只需使用 Provider 组件，该组件将值传递一次到需要的地方。
+组件可以通过使用上下文派生其样式。Consumer 组件通过 [属性渲染（暂缺译文）]() 使传递的上下文可用。可以想象，按照这种方式，需要根据主题进行样式化的每个组件现在都可以通过使用 ThemeContext 的 Consumer 组件从 React 的上下文中获得必要的信息。你只需使用 Provider 组件，该组件将值传递一次到需要的地方。
 
 # React Context: When
 
@@ -216,9 +216,9 @@ When should you use React Context? Generally speaking there are two use cases wh
 
 当你的 React 组件层次结构垂直增长时，你希望能够将属性传递给子组件，而不需要在中间插入组件。在整个 React 上下文教程中，我们一直使用这个用例作为示例。
 
-* When you want to have [advanced state management in React with React Hooks](/react-state-usereducer-usestate-usecontext/) for passing state and state updater functions via React Context through your React application. Doing it via React Context allows you to create a shared and global state.
+* When you want to have [advanced state management in React with React Hooks](https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext/) for passing state and state updater functions via React Context through your React application. Doing it via React Context allows you to create a shared and global state.
 
-当你希望使用 [React 中的 React hook 进行高级状态管理]() ，想通过 React 上下文让应用程序传递状态和状态更新函数时。通过 React 上下文可以创建共享的全局状态。
+当你希望使用 [React 中的 React hook 进行高级状态管理（暂缺译文）]() ，想通过 React 上下文让应用程序传递状态和状态更新函数时。通过 React 上下文可以创建共享的全局状态。
 
 A running application which uses React's Context can be found in this [GitHub repository](https://github.com/the-road-to-learn-react/react-context-example). After all, React Context is a great way to pass props to deeply nested React components, because it doesn't bother the components in between.
 
@@ -228,4 +228,4 @@ A running application which uses React's Context can be found in this [GitHub re
 
 This tutorial is part 1 of 2 in this series.
 
-> Part 2: React's useContext Hook
+> Part 2: [React's useContext Hook](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/How-to-useContext-in-React.md)

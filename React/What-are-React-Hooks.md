@@ -4,7 +4,7 @@
 
 React Hooks were introduced at [React Conf October 2018](https://www.youtube.com/watch?v=dpw9EHDh2bM) as a way to use state and side-effects in React function components. Whereas function components have been called functional stateless components (FSC) before, they are finally able to use state with React Hooks. Therefore, many people refer to them as function components now.
 
-React 钩子在 [React Conf October 2018](https://www.youtube.com/watch?v=dpw9EHDh2bM) 发布，作为在 React 函数组件中使用状态和副作用的一种方式。虽然函数组件以前被称为函数无状态组件（FSC），但是它们最终能够与 React 钩子结合使用状态。因此，现在许多人将它们称为函数组件。
+React 钩子在 [React Conf October 2018](https://www.youtube.com/watch?v=dpw9EHDh2bM) 发布，作为在 React 函数组件中使用状态和副作用的一种方式。虽然函数组件以前被称为函数无状态组件（FSC），但是它们最终能够与 React 钩子结合使用状态。Therefore, many people refer to them as function components now.
 
 In this walkthrough, I want to explain the motivation behind hooks, what will change in React, why we shouldn't panic, and how React hooks can be used in function components by showcasing common React Hooks such as the state and effect hooks by example. This tutorial is only an introduction to React Hooks. At the end of this tutorial, you will find many more tutorials to learn about React Hooks in depth.
 
@@ -117,7 +117,7 @@ Now, if you would introduce more than one of these side-effects in a React class
 
 **React's Abstraction Hell:** Abstraction and thus reusability were introduced with [Higher-Order Components](https://www.robinwieruch.de/react-higher-order-components/) and [Render Prop Components](https://www.robinwieruch.de/react-render-props/) in React. There is also [React's Context with its Provider and Consumer Components](https://www.robinwieruch.de/react-context/) that introduce another level of abstraction. All of these advanced patterns in React are using so called wrapping components. The implementation of the following components shouldn't be foreign to developers who are creating larger React applications.
 
-**React 的抽象地狱:** 在 React 中引入了 [高阶组件（暂缺译文）]() 和 [渲染 Prop 组件（暂缺译文）]()，从而引入了可重用性。还有 [React 的上下文及其 Provider 和 Consumer 组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Context.md)，它引入了另一层抽象。React 中的所有这些高级模式都使用了所谓的包装组件。对于创建大型 React 应用程序的开发人员来说，以下组件的实现并不陌生。
+**React 的抽象地狱:** 在 React 中引入了 [高阶组件（暂缺译文）]() 和 [属性渲染（暂缺译文）]()，从而引入了可重用性。还有 [React 的上下文及其 Provider 和 Consumer 组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Context.md)，它引入了另一层抽象。React 中的所有这些高级模式都使用了所谓的包装组件。对于创建大型 React 应用程序的开发人员来说，以下组件的实现并不陌生。
 
 ```js
 import { compose } from "recompose";

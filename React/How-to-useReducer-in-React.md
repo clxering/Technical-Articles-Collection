@@ -1,16 +1,16 @@
-# How to useReducer in React?（在 React 中如何使用 useReducer）
+# How to useReducer in React?
 
 > 转译自：https://www.robinwieruch.de/react-usereducer-hook
 
 Since [React Hooks](https://www.robinwieruch.de/react-hooks/) have been released, [function components](https://www.robinwieruch.de/react-function-component/) can use state and side-effects. There are two hooks that are used for modern state management in React: useState and useReducer. This tutorial goes step by step through a useReducer example in React for getting you started with this React Hook for state management.
 
-自 [React Hooks](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-React-Hooks.md) 发布以来，[函数组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Function-Components.md) 可以使用状态和副作用。React 中有两个用于现代状态管理的 hook：useState 和 useReducer。本教程将逐步介绍 React 中的 useReducer 示例，帮助你初步使用 React Hook 用于状态管理。
+自 [React Hooks](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-React-Hooks.md) 发布以来，[函数组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Function-Components.md) 可以使用状态和副作用。React 中有两个用于现代状态管理的 hook：useState 和 useReducer。本教程将逐步介绍 React 中的 useReducer 示例，帮助你使用 React Hook 用于状态管理。
 
-## Reducer in React（React 的 Reducer 实现）
+## Reducer in React
 
 If you haven't heard about reducers as concept or as implementation in JavaScript, you should read more about them over here: [Reducers in JavaScript](https://www.robinwieruch.de/javascript-reducer/). This tutorial builds up on this knowledge, so be prepared what's coming. The following function is a reducer function for managing state transitions for a list of items:
 
-如果你还没有听说过 JavaScript 中的 reduce 概念或实现，那么你应该在这里阅读更多关于它们的内容：[Reducers in JavaScript（暂缺译文）]()。本教程建立在这些知识的基础上，所以请做好准备。下面的函数是一个用于管理 item 列表状态转换的 reducer 函数：
+如果你不了解 JavaScript 中 reducer 的概念或实现，那么你应该在这里阅读更多关于它们的内容：[Reducers in JavaScript（暂缺译文）]()。本教程建立在这些知识的基础上，所以请做好准备。下面的函数是一个用于管理 item 列表状态转换的 reducer 函数：
 
 ```js
 const todoReducer = (state, action) => {
@@ -45,7 +45,7 @@ The state which is managed in this reducer is an array of items:
 
 该 reducer 中管理的状态是一个 item 数组：
 
-```javascript
+```js
 const todos = [
   {
     id: "a",
@@ -62,7 +62,7 @@ const todos = [
 
 In code, the reducer function could be used the following way with an initial state and action:
 
-在代码中，可以通过以下方式使用 reducer 函数，并带有初始状态和 action：
+在代码中，可以通过以下带有初始状态和 action 的方式使用 reducer 函数：
 
 ```js
 const todos = [
@@ -107,15 +107,13 @@ console.log(newTodos);
 
 So far, everything demonstrated here is not related to React. If you have any difficulties to understand the reducer concept, please revisit the referenced tutorial from the beginning for Reducers in JavaScript. Now, let's dive into React's useReducer hook to integrate reducers in React step by step.
 
-到目前为止，这里所演示的一切都与 React 无关。如果你在理解 reducer 概念上有任何困难，请重新阅读在 JavaScript 中从一开始引用的 reducer 教程。现在，让我们深入到 React 的 useReducer 钩子中，一步一步地将 reducer 集成到 React 中。
+到目前为止，这里所演示的一切都与 React 无关。如果你在理解 reducer 概念上有任何困难，请重新阅读在一开始提到的教程： JavaScript 中的 reducer。现在，让我们深入到 React 的 useReducer 钩子中，一步一步地将 reducer 集成到 React 中。
 
-## React's useReducer Hook（React 的 useReducer 钩子）
+## React's useReducer Hook
 
 The useReducer hook is used for complex state and state transitions. It takes a reducer function and an initial state as input and returns the current state and a dispatch function as output with [array destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment):
 
-useReducer 钩子用于复杂的状态和状态转换。它以一个 reducer 函数和一个初始状态作为输入，返回当前状态和一个 dispatch 函数作为输出，并伴随着 [array destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)：
-
-> 译注：有关解构赋值还可参考 [Use Default Function Parameters and Destructuring](https://github.com/clxering/Technical-Articles-Collection/blob/master/JavaScript/5-Tips-to-Write-Better-Conditionals-in-JavaScript.md#3use-default-function-parameters-and-destructuring%E4%BD%BF%E7%94%A8%E9%BB%98%E8%AE%A4%E7%9A%84%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E5%92%8C%E8%A7%A3%E6%9E%84)
+useReducer 钩子用于复杂的状态和状态转换。它以一个 reducer 函数和一个初始状态作为输入，用 [数组解构](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) 的方式返回当前状态和一个 dispatch 函数作为输出：
 
 ```js
 const initialTodos = [

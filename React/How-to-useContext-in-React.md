@@ -4,13 +4,13 @@
 
 This tutorial is part 2 of 2 in this series.
 
-> Part 1: React Context
+> Part 1: [React Context](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Context.md)
 
 ---
 
-[React's Function Components](/react-function-component) come with [React Hooks](/react-hooks) these days. Not only can [React Hooks be used for State in React](/react-state) but also for using React's Context in a more convenient way. This tutorial shows you how to use React's useContext Hook. Before, make sure to read the previous tutorial for getting an introduction to [React's Context](/react-context/):
+[React's Function Components](https://www.robinwieruch.de/react-function-component) come with [React Hooks](https://www.robinwieruch.de/react-hooks) these days. Not only can [React Hooks be used for State in React](https://www.robinwieruch.de/react-state) but also for using React's Context in a more convenient way. This tutorial shows you how to use React's useContext Hook. Before, make sure to read the previous tutorial for getting an introduction to [React's Context](https://www.robinwieruch.de/react-context/):
 
-[React 的函数组件]() 这些天随着 [React 钩子]() 一起发布。[React 钩子不仅可以用于状态管理]()，还可以更方便地应用于 React 上下文。本教程展示如何使用 React 的 useContext 钩子。在此之前，请务必阅读前面的教程以获得对 [React's Context]() 的认知：
+[React 的函数组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Function-Components.md) 这些天随着 [React 钩子](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-React-Hooks.md) 一起发布。[React 钩子不仅可以用于状态管理（暂缺译文）]()，还可以更方便地应用于 React 上下文。本教程展示如何使用 React 的 useContext 钩子。在此之前，请务必阅读前面的教程以获得对 [React's Context](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Context.md) 的认知：
 
 - Why React Context?
 - What is React Context?
@@ -75,9 +75,9 @@ That's the most basic approach of using React's Context API with a single top-le
 
 这是使用 React 上下文 API 的最基本方法，其中包含一个顶级 Provider 组件和位于某个位置的子组件包含的 Consumer 组件。虽然可以有更多的子组件使用 Provider 组件，但是它们是使用 Provider 的组件的子组件。
 
-Now comes the crucial part where we shift towards React's useContext Hook. As you can see, the Consumer component coming from React's Context is by default a [render prop component](/react-render-props). In a world where we can use React Hooks, a render prop component isn't always the best choice. Let's see the previous example with React's useContext Hook instead:
+Now comes the crucial part where we shift towards React's useContext Hook. As you can see, the Consumer component coming from React's Context is by default a [render prop component](https://www.robinwieruch.de/react-render-props). In a world where we can use React Hooks, a render prop component isn't always the best choice. Let's see the previous example with React's useContext Hook instead:
 
-现在是我们转向 React 的 useContext 钩子的关键阶段。如你所见，来自 React 上下文的 Consumer 组件默认为 [属性渲染组件]()。在我们可以使用 React 钩子的世界里，属性渲染组件并不总是最佳选择。让我们看看之前的例子，用 React 的 useContext 钩子：
+现在是我们转向 React 的 useContext 钩子的关键阶段。如你所见，来自 React 上下文的 Consumer 组件默认为 [属性渲染（暂缺译文）]()。在我们可以使用 React 钩子的世界里，属性渲染并不总是最佳选择。让我们看看之前的例子，用 React 的 useContext 钩子：
 
 ```js
 // src/ComponentC.js
@@ -94,4 +94,4 @@ const C = () => {
 
 React's useContext just uses the `Context` object -- which you have created before -- to retrieve the most recent value from it. Using the React Hooks instead of the Consumer component, makes the code more readable, less verbose, and doesn't introduce a kinda artificial component -- the Consumer component -- in between.
 
-React 的 useContext 只使用 `Context` 对象（之前创建的对象）来检索最近的值。使用 React 钩子而不是 Consumer 组件，可以提高代码的可读性，减少代码的冗余，并且不会引入一种人为的组件（Consumer 组件）。
+React 的 useContext 只使用 `Context` 对象（之前创建的对象）来检索距离最近的上下文值。使用 React 钩子而不是 Consumer 组件，可以提高代码的可读性，减少代码的冗余，并且不会引入一种人为的组件（Consumer 组件）。
