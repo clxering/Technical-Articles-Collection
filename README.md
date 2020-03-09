@@ -9,6 +9,8 @@
 - https://www.ibm.com
 - https://www.robinwieruch.de
 - https://www.samanthaming.com
+- https://developer.mozilla.org
+- https://spring.io
 
 ## 目录（Contents）
 
@@ -22,6 +24,7 @@
 - [3 things every java developer should stop doing（每个 Java 开发者都应该停止的三件事）](Java/3-things-every-java-developer-should-stop-doing.md)
 - [Java 8 中的 Streams API 详解](Java/Java-8-中的-Streams-API-详解.md)
 - [Guidelines for using volatile variables（volatile 变量使用指南）](Java/volatile-变量使用指南.md)
+- [Enabling Cross Origin Requests for a RESTful Web Service](Java/Enabling-Cross-Origin-Requests-for-a-RESTful-Web-Service.md)
 
 ### JavaScript
 
@@ -66,5 +69,9 @@
 - [Styling Placeholder Text with CSS](CSS/Styling-Placeholder-Text-with-CSS.md)
 - [CSS only-child](CSS/CSS-only-child.md)
 - [HTML `<kbd>` Tag](CSS/HTML-kbd-Tag.md)
+
+### General
+- [Reason: CORS header 'Access-Control-Allow-Origin' missing](General/Reason-CORS-header-Access-Control-Allow-Origin-missing.md)
+- [Cross-Origin Resource Sharing (CORS)](General/Cross-Origin-Resource-Sharing.md)
 
 <!-- 注意：文件名必须用连字符，否则 markdown 不识别文件链接。 -->
