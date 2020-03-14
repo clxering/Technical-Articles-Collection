@@ -101,7 +101,7 @@ In return, this clutters every component in between which has to pass down these
 
 **What are use cases for React Context?** For instance, imagine your React application has a theme for a color set. There are various components in your application which need to know about the theme to style themselves. Thus, at your top-level component, you can make the theme accessible for all the React child components below. That's where React's Context comes into play.
 
-什么是 React 上下文的使用场景？例如，假设 React 应用程序有一个颜色设置的主题。应用程序中有很多组件需要知道这个主题来设置自己的风格。因此，在顶级组件中，可以使下面的 React 子组件能够访问该主题。这就是 React 的上下文发挥作用的地方。
+**React 上下文的使用场景有哪些？** 例如，假设 React 应用程序有一个颜色设置的主题。应用程序中有很多组件需要知道这个主题来设置自己的风格。因此，在顶级组件中，可以使下面的 React 子组件能够访问该主题。这就是 React 的上下文发挥作用的地方。
 
 ```js
           +----------------+
@@ -218,7 +218,7 @@ When should you use React Context? Generally speaking there are two use cases wh
 
 * When you want to have [advanced state management in React with React Hooks](https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext/) for passing state and state updater functions via React Context through your React application. Doing it via React Context allows you to create a shared and global state.
 
-当你希望使用 [React 中的 React hook 进行高级状态管理（暂缺译文）]() ，想通过 React 上下文让应用程序传递状态和状态更新函数时。通过 React 上下文可以创建共享的全局状态。
+当你希望使用 [React 中的 React hook 进行高级状态管理](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-State-Hooks-useReducer-useState-useContext.md) ，想通过 React 上下文让应用程序传递状态和状态更新函数时。通过 React 上下文可以创建共享的全局状态。
 
 A running application which uses React's Context can be found in this [GitHub repository](https://github.com/the-road-to-learn-react/react-context-example). After all, React Context is a great way to pass props to deeply nested React components, because it doesn't bother the components in between.
 
