@@ -11,6 +11,7 @@
 - https://www.samanthaming.com
 - https://developer.mozilla.org
 - https://spring.io
+- https://dmitripavlutin.com
 
 ## 目录（Contents）
 
@@ -46,6 +47,7 @@
 - [5 Ways to Convert a Value to String in JavaScript](JavaScript/5-Ways-to-Convert-a-Value-to-String-in-JavaScript.md)
 - [Passing Arrays as Function Arguments](JavaScript/Passing-Arrays-as-Function-Arguments.md)
 - [Quick Debug using || with console.log](JavaScript/Quick-Debug-using-II-with-console.log.md)
+- [5-Best-Practices-to-Write-Quality-Arrow-Functions（编写高质量箭头函数的五个最佳实践）](JavaScript/5-Best-Practices-to-Write-Quality-Arrow-Functions.md)
 
 ### React
 
@@ -72,6 +74,6 @@
 
 ### General
 - [Reason: CORS header 'Access-Control-Allow-Origin' missing](General/Reason-CORS-header-Access-Control-Allow-Origin-missing.md)
-- [Cross-Origin Resource Sharing (CORS)](General/Cross-Origin-Resource-Sharing.md)
+- [Cross-Origin Resource Sharing (CORS)（跨域资源共享）](General/Cross-Origin-Resource-Sharing.md)
 
 <!-- 注意：文件名必须用连字符，否则 markdown 不识别文件链接。 -->

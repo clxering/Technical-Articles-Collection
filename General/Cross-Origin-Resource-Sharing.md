@@ -1,5 +1,7 @@
 # Cross-Origin Resource Sharing (CORS)
 
+**跨域资源共享**
+
 > 转译自：https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#Preflighted_requests
 
 Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional HTTP headers to tell browsers to give a web application running at one origin, access to selected resources from a different origin. A web application executes a cross-origin HTTP request when it requests a resource that has a different origin (domain, protocol, or port) from its own.
