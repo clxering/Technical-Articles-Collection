@@ -1,18 +1,28 @@
 # Enabling Cross Origin Requests for a RESTful Web Service
 
+**为 RESTful Web 服务启用跨域请求**
+
 > 转译自：https://spring.io/guides/gs/rest-service-cors/
 
 This guide walks you through the process of creating a “Hello, World” RESTful web service with Spring that includes headers for Cross-Origin Resource Sharing (CORS) in the response. You can find more information about Spring CORS support in this blog post.
 
+本指南指导你使用 Spring 创建「Hello, World」RESTful Web 服务，包括响应跨域资源共享（CORS）头。你可以在这篇博客文章中找到更多关于 Spring 支持 CORS 的信息。
+
 ## What You Will Build
+
+**你将创建什么项目**
 
 You will build a service that accepts HTTP GET requests at http://localhost:8080/greeting and responds with a JSON representation of a greeting, as the following listing shows:
 
-```
+你将建立一个服务器端，它能够接受一个 HTTP GET 请求 http://localhost:8080/greeting，并且响应一个 JSON 格式的数据，如下所示：
+
+```java
 {"id":1,"content":"Hello, World!"}
 ```
 
 You can customize the greeting with an optional name parameter in the query string, as the following listing shows:
+
+你可以在这个查询中为这个问候语定义一个可选的 name 参数，如下所示：
 
 ```
 http://localhost:8080/greeting?name=User
@@ -20,53 +30,77 @@ http://localhost:8080/greeting?name=User
 
 The name parameter value overrides the default value of World and is reflected in the response, as the following listing shows:
 
-```
+name 参数值将覆盖默认值「World」并体现在响应中，如下所示：
+
+```java
 {"id":1,"content":"Hello, User!"}
 ```
 
 This service differs slightly from the one described in Building a RESTful Web Service, in that it uses Spring Framework CORS support to add the relevant CORS response headers.
 
+这个服务与其他构建 RESTful Web Service 中描述的服务略有不同，因为它使用 Spring Framework CORS 支持来添加相关的 CORS 响应头。
+
 ## What You Need
 
-    About 15 minutes
+**需要如下环境**
 
-    A favorite text editor or IDE
-
-    JDK 1.8 or later
-
-    Gradle 4+ or Maven 3.2+
-
-    You can also import the code straight into your IDE:
-
-        Spring Tool Suite (STS)
-
-        IntelliJ IDEA
+- About 15 minutes
+- A favorite text editor or IDE
+- JDK 1.8 or later
+- Gradle 4+ or Maven 3.2+
+- You can also import the code straight into your IDE:
+  - Spring Tool Suite (STS)
+  - IntelliJ IDEA
 
 ## How to complete this guide
 
+**如何完成这个指南**
+
 Like most Spring Getting Started guides, you can start from scratch and complete each step or you can bypass basic setup steps that are already familiar to you. Either way, you end up with working code.
 
-To start from scratch, move on to Starting with Spring Initializr.
+就像大多数 Spring 入门指南一样，你可以从头开始并完成每个步骤，也可以跳过您已经熟悉的基本设置步骤。无论哪种方式，您最终得到的都是能够工作的代码。
 
-To skip the basics, do the following:
+To **start from scratch**, move on to Starting with Spring Initializr.
 
-- Download and unzip the source repository for this guide, or clone it using Git: git clone https://github.com/spring-guides/gs-rest-service-cors.git
+要从头开始，请继续从 Spring Initializr 开始。
+
+To **skip the basics**, do the following:
+
+要跳过这些基本步骤，请执行以下步骤:
+
+- Download and unzip the source repository for this guide, or clone it using Git: `git clone https://github.com/spring-guides/gs-rest-service-cors.git`
+
+下载并解压本指南的源码存储库，或者使用 Git 克隆它：`git clone https://github.com/spring-guides/gs-rest-service-cors.git`
 
 - cd into gs-rest-service-cors/initial
 
+进入 `gs-rest-service-cors/initial` 目录
+
 - Jump ahead to Create a Resource Representation Class.
 
-**When you finish**, you can check your results against the code in gs-rest-service-cors/complete.
+跳到 Create a Resource Representation Class 前面。
+
+**When you finish**, you can check your results against the code in `gs-rest-service-cors/complete`.
+
+完成后，可以根据 `gs-rest-service-cors/complete` 目录中的代码检查结果。
 
 ## Starting with Spring Initializr
 
+**从 Spring Initializr 开始**
+
 For all Spring applications, you should start with the Spring Initializr. The Initializr offers a fast way to pull in all the dependencies you need for an application and does a lot of the setup for you. This example needs only the Spring Web dependency. The following image shows the Initializr set up for this sample project:
 
-（图片略）
+对于所有 Spring 应用程序，应该从 Spring Initializr 开始。Initializr 提供了一种快捷方法来获取应用程序所需的所有依赖项，并做了大量的设置工作。这个例子只需要 Spring Web 依赖项。下图显示了为这个示例项目设置的 Initializr：
+
+（原文该处为 Spring Initializr 页面图片，略）
 
 > The preceding image shows the Initializr with Maven chosen as the build tool. You can also use Gradle. It also shows values of com.example and rest-service-cors as the Group and Artifact, respectively. You will use those values throughout the rest of this sample.
 
+前面的图片显示了项目以 Maven 作为 Initializr 的构建工具。你也可以使用 Gradle。它还显示了 com.example 的值。将 rest-service-cors 分别作为 Group 和 Artifact 的值。在本示例的其余部分中会使用这些值。
+
 The following listing shows the pom.xml file that is created when you choose Maven:
+
+当选择 Maven 作为构建工具时，生成的 pom.xml 文件如下所示：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -122,7 +156,9 @@ The following listing shows the pom.xml file that is created when you choose Mav
 
 The following listing shows the build.gradle file that is created when you choose Gradle:
 
-```
+当选择 Gradle 作为构建工具时，生成的 build.gradle 文件如下所示：
+
+```groovy
 plugins {
 	id 'org.springframework.boot' version '2.2.0.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
@@ -151,11 +187,17 @@ test {
 
 ## Adding the httpclient Dependency
 
+**增加 httpclient 依赖**
+
 The tests (in complete/src/test/java/com/example/restservicecors/GreetingIntegrationTests.java) require the Apache httpclient library.
+
+单元测试（路径为 `complete/src/test/java/com/example/restservicecors/GreetingIntegrationTests.java`）需要 Apache httpclient 库。
 
 To add the Apache httpclient library to Maven, add the following dependency:
 
-```
+在 Maven 增加 Apache httpclient 库的依赖：
+
+```xml
 <dependency>
   <groupId>org.apache.httpcomponents</groupId>
   <artifactId>httpclient</artifactId>
@@ -165,7 +207,9 @@ To add the Apache httpclient library to Maven, add the following dependency:
 
 The following listing shows the finished pom.xml file:
 
-```
+最终的 pom.xml 文件如下所示：
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -224,13 +268,17 @@ The following listing shows the finished pom.xml file:
 
 To add the Apache httpclient library to Gradle, add the following dependency:
 
-```
+在 Gradle 增加 Apache httpclient 库的依赖：
+
+```groovy
 testImplementation 'org.apache.httpcomponents:httpclient'
 ```
 
 The following listing shows the finished build.gradle file:
 
-```
+最终的 build.gradle 文件如下所示：
+
+```groovy
 plugins {
 	id 'org.springframework.boot' version '2.2.0.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
@@ -260,13 +308,21 @@ test {
 
 ## Create a Resource Representation Class
 
+**创建资源表示类**
+
 Now that you have set up the project and build system, you can create your web service.
+
+现在已经建立了项目和构建系统，可以创建 web 服务了。
 
 Begin the process by thinking about service interactions.
 
+在这个过程中考虑服务交互。
+
 The service will handle GET requests to /greeting, optionally with a name parameter in the query string. The GET request should return a 200 OK response with JSON in the body to represent a greeting. It should resemble the following listing:
 
-```
+该服务将处理 `/greeting` 的 GET 请求，也可以在查询字符串中使用 name 参数。GET 请求应该返回一个包含 JSON 的 `200 OK` 响应来表示问候语。它应该与如下所示类似：
+
+```json
 {
     "id": 1,
     "content": "Hello, World!"
@@ -275,9 +331,13 @@ The service will handle GET requests to /greeting, optionally with a name parame
 
 The id field is a unique identifier for the greeting, and content is the textual representation of the greeting.
 
-To model the greeting representation, create a resource representation class. Provide a plain old Java object with fields, constructors, and accessors for the id and content data, as the following listing (from src/main/java/com/example/restservicecors/Greeting.java) shows:
+id 字段是问候语的唯一标识符，而内容是问候语的文本表示。
 
-```
+To model the greeting representation, create a resource representation class. Provide a plain old Java object with fields, constructors, and accessors for the id and content data, as the following listing (from `src/main/java/com/example/restservicecors/Greeting.java`) shows:
+
+要对问候语表示进行建模，请创建一个资源表示类。为 id 和内容数据提供一个普通的旧 Java 对象，包含字段、构造函数和访问器，如下所示（来自 `src/main/ Java /com/example/restservicecors/Greeting.java`）：
+
+```java
 package com.example.restservicecors;
 
 public class Greeting {
@@ -307,9 +367,15 @@ public class Greeting {
 
 > Spring uses the Jackson JSON library to automatically marshal instances of type Greeting into JSON.
 
+Spring 使用 Jackson JSON 库自动将 Greeting 类型的实例封装到 JSON 中。
+
 ## Create a Resource Controller
 
-In Spring’s approach to building RESTful web services, HTTP requests are handled by a controller. These components are easily identified by the @Controller annotation, and the GreetingController shown in the following listing (from src/main/java/com/example/restservicecors/GreetingController.java) handles GET requests for /greeting by returning a new instance of the Greeting class:
+**创建资源控制器**
+
+In Spring’s approach to building RESTful web services, HTTP requests are handled by a controller. These components are easily identified by the @Controller annotation, and the GreetingController shown in the following listing (from `src/main/java/com/example/restservicecors/GreetingController.java`) handles GET requests for /greeting by returning a new instance of the Greeting class:
+
+在 Spring 构建 RESTful web 服务的方式中，HTTP 请求由控制器处理。这些组件很容易通过 `@Controller` 注解定义，下面清单中显示的 GreetingController（来自 `src/main/java/com/example/restservicecors/GreetingController.java`）通过返回 Greeting 类的一个新实例来处理 GET 请求 `/greeting`：
 
 ```java
 package com.example.restservicecors;
@@ -338,13 +404,23 @@ public class GreetingController {
 
 This controller is concise and simple, but there is plenty going on under the hood. We break it down step by step.
 
+这个控制器简洁而简单，但在引擎盖下有很多东西。我们一步一步地分析它。
+
 The @RequestMapping annotation ensures that HTTP requests to /greeting are mapped to the greeting() method.
 
-> The preceding example uses the @GetMapping annotation, which acts as a shortcut for @RequestMapping(method = RequestMethod.GET).
+`@RequestMapping` 注解确保对 `/greeting` 的 HTTP 请求映射到 `greeting()` 方法。
 
-@RequestParam binds the value of the name query string parameter into the name parameter of the greeting() method. This query string parameter is not required. If it is absent in the request, the defaultValue of World is used.
+> The preceding example uses the @GetMapping annotation, which acts as a shortcut for `@RequestMapping(method = RequestMethod.GET)`.
+
+注意：前面的示例使用的 `@GetMapping` 注解是 `@RequestMapping(method = RequestMethod.GET)` 的简写。
+
+`@RequestParam` binds the value of the name query string parameter into the name parameter of the greeting() method. This query string parameter is not required. If it is absent in the request, the defaultValue of World is used.
+
+`@RequestParam` 将包含 name 参数的查询字符串值绑定到 `greeting()` 方法的名称参数中。此查询字符串参数不是必需的。如果它在请求中不存在，则使用「World」默认值。
 
 The implementation of the method body creates and returns a new Greeting object, with the value of the id attribute based on the next value from the counter and the value of the content based on the query parameter or the default value. It also formats the given name by using the greeting template.
+
+方法体的实现创建并返回一个新的 Greeting 对象，其中 id 属性的值基于计数器的下一个值，内容的值基于查询参数或默认值。它还通过使用问候语模板来格式化给定的名称。
 
 A key difference between a traditional MVC controller and the RESTful web service controller shown earlier is the way that the HTTP response body is created. Rather than relying on a view technology to perform server-side rendering of the greeting data to HTML, this RESTful web service controller populates and returns a Greeting object. The object data is written directly to the HTTP response as JSON.
 
@@ -542,10 +618,10 @@ Now you can test that the CORS headers are in place and allow a Javascript clien
 First, create a simple Javascript file named hello.js (from complete/public/hello.js) with the following content:
 
 ```js
-$(document).ready(function() {
+$(document).ready(function () {
   $.ajax({
-    url: "http://localhost:8080/greeting"
-  }).then(function(data, status, jqxhr) {
+    url: "http://localhost:8080/greeting",
+  }).then(function (data, status, jqxhr) {
     $(".greeting-id").append(data.id);
     $(".greeting-content").append(data.content);
     console.log(jqxhr);

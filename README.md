@@ -73,7 +73,6 @@
 - [HTML `<kbd>` Tag](CSS/HTML-kbd-Tag.md)
 
 ### General
-- [Reason: CORS header 'Access-Control-Allow-Origin' missing](General/Reason-CORS-header-Access-Control-Allow-Origin-missing.md)
 - [Cross-Origin Resource Sharing (CORS)（跨域资源共享）](General/Cross-Origin-Resource-Sharing.md)
 
 <!-- 注意：文件名必须用连字符，否则 markdown 不识别文件链接。 -->
