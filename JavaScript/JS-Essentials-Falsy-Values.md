@@ -87,7 +87,7 @@ const and = [] && "hi"; // "hi"
 
 ## Community Examples
 
-### Using Falsy Values for Unit Testing
+## Using Falsy Values for Unit Testing
 
 Jason A: Sometimes when unit testing I use an array of falsy values and loop over them to see if my fallback works correctly, sorta like this:
 

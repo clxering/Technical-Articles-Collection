@@ -1,4 +1,6 @@
-# Guidelines for using volatile variables（volatile 变量使用指南）
+# Guidelines for using volatile variables
+
+**volatile 变量使用指南**
 
 > 原文：https://www.ibm.com/developerworks/java/library/j-jtp06197/index.html
 
@@ -12,7 +14,9 @@ Locks offer two primary features: mutual exclusion and visibility. Mutual exclus
 
 锁提供了两种主要特性：互斥和可见性。互斥一次只允许一个线程持有某个特定的锁，因此可使用该特性实现对共享数据的协调访问协议，一次就只有一个线程能够使用该共享数据。可见性要更加复杂一些，它必须确保释放锁之前对共享数据做出的更改对于随后获得该锁的另一个线程是可见的：如果没有同步机制提供的这种可见性保证，线程看到的共享变量可能是修改前的值或不一致的值，这将引发许多严重问题。
 
-## Volatile variables（Volatile 变量）
+## Volatile variables
+
+**Volatile 变量**
 
 Volatile variables share the visibility features of synchronized, but none of the atomicity features. This means that threads will automatically see the most up-to-date value for volatile variables. They can be used to provide thread safety, but only in a very restricted set of cases: those that do not impose constraints between multiple variables or between a variable's current value and its future values. So volatile alone is not strong enough to implement a counter, a mutex, or any class that has invariants that relate multiple variables (such as "start <=end").
 
@@ -22,7 +26,9 @@ You might prefer to use volatile variables instead of locks for one of two princ
 
 出于简易性或可伸缩性的考虑，你可能倾向于使用 volatile 变量而不是锁。当使用 volatile 变量而非锁时，某些习惯用法（idiom）更加易于编码和阅读。此外，volatile 变量不会像锁那样造成线程阻塞，因此也很少造成可伸缩性问题。在某些情况下，如果读操作远远大于写操作，volatile 变量还可以提供优于锁的性能优势。
 
-## Conditions for correct use of volatile（正确使用 volatile 变量的条件）
+## Conditions for correct use of volatile
+
+**正确使用 volatile 变量的条件**
 
 You can use volatile variables instead of locks only under a restricted set of circumstances. Both of the following criteria must be met for volatile variables to provide the desired thread-safety:
 
@@ -53,21 +59,21 @@ Listing 1. Non-thread-safe number range class
 清单 1. 非线程安全的数值范围类
 
 ```java
-@NotThreadSafe 
+@NotThreadSafe
 public class NumberRange {
     private int lower, upper;
- 
+
     public int getLower() { return lower; }
     public int getUpper() { return upper; }
- 
-    public void setLower(int value) { 
-        if (value > upper) 
+
+    public void setLower(int value) {
+        if (value > upper)
             throw new IllegalArgumentException(...);
         lower = value;
     }
- 
-    public void setUpper(int value) { 
-        if (value < lower) 
+
+    public void setUpper(int value) {
+        if (value < lower)
             throw new IllegalArgumentException(...);
         upper = value;
     }
@@ -78,7 +84,9 @@ Because the state variables of the range are constrained in this manner, making 
 
 这种方式限制了范围的状态变量，因此将 lower 和 upper 字段定义为 volatile 类型不能够充分实现类的线程安全；从而仍然需要使用同步。否则，如果凑巧两个线程在同一时间使用不一致的值执行 setLower 和 setUpper 的话，则会使范围处于不一致的状态。例如，如果初始状态是 (0, 5)，同一时间内，线程 A 调用 setLower(4) 并且线程 B 调用 setUpper(3)，显然这两个操作交叉存入的值是不符合条件的，那么两个线程都会通过用于保护不变式的检查，使得最后的范围值是 (4, 3)：一个无效值。至于针对范围的其他操作，我们需要使 setLower() 和 setUpper() 操作原子化：而将字段定义为 volatile 类型是无法实现这一目的的。
 
-## Performance considerations（性能考虑）
+## Performance considerations
+
+**性能考虑**
 
 The primary motivation for using volatile variables is simplicity: In some situations, using a volatile variable is just simpler than using the corresponding locking. A secondary motivation for using volatile variables is performance: In some situations, volatile variables may be a better-performing synchronization mechanism than locking.
 
@@ -92,13 +100,17 @@ Unlike locking, volatile operations will never block, so volatiles offer some sc
 
 volatile 操作不会像锁一样造成阻塞，因此，在能够安全使用 volatile 的情况下，volatile 可以提供一些优于锁的可伸缩特性。如果读操作的次数要远远超过写操作，与锁相比，volatile 变量通常能够减少同步的性能开销。
 
-## Patterns for using volatile correctly（正确使用 volatile 的模式）
+## Patterns for using volatile correctly
+
+**正确使用 volatile 的模式**
 
 Many concurrency experts tend to guide users away from using volatile variables at all, because they are harder to use correctly than locks. However, some well-defined patterns exist, which, if you follow them carefully, can be used safely in a wide variety of situations. Always keep in mind the rules about the limits of where volatile can be used -- only use volatile for state that is truly independent of everything else in your program -- and this should keep you from trying to extend these patterns into dangerous territory.
 
 很多并发性专家事实上往往引导用户远离 volatile 变量，因为使用它们要比使用锁更加容易出错。然而，如果谨慎地遵循一些良好定义的模式，就能够在很多场合内安全地使用 volatile 变量。要始终牢记使用 volatile 的限制：只有在状态真正独立于程序内其他内容时才能使用 volatile，这条规则能够避免将这些模式扩展到不安全的用例。
 
-### Pattern #1: status flags（模式 #1：状态标志）
+## Pattern #1: status flags
+
+**模式 #1：状态标志**
 
 Perhaps the canonical use of volatile variables is simple boolean status flags, indicating that an important one-time life-cycle event has happened, such as initialization has completed or shutdown has been requested.
 
@@ -116,11 +128,11 @@ Listing 2. Using a volatile variable as a status flag
 volatile boolean shutdownRequested;
 
 ……
- 
+
 public void shutdown() { shutdownRequested = true; }
- 
-public void doWork() { 
-    while (!shutdownRequested) { 
+
+public void doWork() {
+    while (!shutdownRequested) {
         // do stuff
     }
 }
@@ -134,7 +146,9 @@ One common characteristic of status flags of this type is that there is typicall
 
 这种类型的状态标记的一个公共特性是：通常只有一种状态转换；shutdownRequested 标志从 false 转换为 true，然后程序停止。这种模式可以扩展到来回转换的状态标志，但是只有在转换周期不被察觉的情况下才能扩展（从 false 到 true，再转换到 false）。此外，还需要某些原子状态转换机制，例如原子变量。
 
-### Pattern #2: one-time safe publication（模式 #2：一次性安全发布）
+## Pattern #2: one-time safe publication
+
+**模式 #2：一次性安全发布**
 
 The visibility failures that are possible in the absence of synchronization can get even trickier to reason about when writing to object references instead of primitive values. In the absence of synchronization, it is possible to see an up-to-date value for an object reference that was written by another thread and still see stale values for that object's state. (This hazard is the root of the problem with the infamous double-checked-locking idiom, where an object reference is read without synchronization, and the risk is that you could see an up-to-date reference but still observe a partially constructed object through that reference.)
 
@@ -151,7 +165,7 @@ Listing 3. Using a volatile variable for safe one-time publication
 ```java
 public class BackgroundFloobleLoader {
     public volatile Flooble theFlooble;
- 
+
     public void initInBackground() {
         // do lots of stuff
         theFlooble = new Flooble();  // this is the only write to theFlooble
@@ -160,10 +174,10 @@ public class BackgroundFloobleLoader {
 
 public class SomeOtherClass {
     public void doWork() {
-        while (true) { 
+        while (true) {
             // do some stuff...
             // use the Flooble, but only if it is ready
-            if (floobleLoader.theFlooble != null) 
+            if (floobleLoader.theFlooble != null)
                 doSomething(floobleLoader.theFlooble);
         }
     }
@@ -178,7 +192,9 @@ A key requirement for this pattern is that the object being published must eithe
 
 该模式的一个必要条件是：被发布的对象必须是线程安全的，或者是有效的不可变对象（有效不可变意味着对象的状态在发布之后永远不会被修改）。volatile 类型的引用可以确保对象的发布形式的可见性，但是如果对象的状态在发布后将发生更改，那么就需要额外的同步。
 
-### Pattern #3: independent observations（模式 #3：独立观察）
+## Pattern #3: independent observations
+
+**模式 #3：独立观察**
 
 Another simple pattern for safely using volatile is when observations are periodically "published" for consumption within the program. For example, say there is an environmental sensor that senses the current temperature. A background thread might read this sensor every few seconds and update a volatile variable containing the current temperature. Then, other threads can read this variable knowing that they will always see the most up-to-date value.
 
@@ -195,7 +211,7 @@ Listing 4. Using a volatile variable for multiple publications of independent ob
 ```java
 public class UserManager {
     public volatile String lastUser;
- 
+
     public boolean authenticate(String user, String password) {
         boolean valid = passwordIsValid(user, password);
         if (valid) {
@@ -212,7 +228,9 @@ This pattern is an extension of the previous one; a value is being published for
 
 该模式是前面模式的扩展；将某个值发布以在程序内的其他地方使用，但是与一次性事件的发布不同，这是一系列独立事件。这个模式要求被发布的值是有效不可变的 —— 即值的状态在发布后不会更改。使用该值的代码需要清楚该值可能随时发生变化。
 
-### Pattern #4: the "volatile bean" pattern（模式 #4：「volatile bean」 模式）
+## Pattern #4: the "volatile bean" pattern
+
+**模式 #4：「volatile bean」 模式**
 
 The volatile bean pattern is applicable in frameworks that use JavaBeans as "glorified structs." In the volatile bean pattern, a JavaBean is used as a container for a group of independent properties with getters and/or setters. The rationale for the volatile bean pattern is that many frameworks provide containers for mutable data holders (for instance, HttpSession), but the objects placed in those containers must be thread safe.
 
@@ -232,26 +250,28 @@ public class Person {
     private volatile String firstName;
     private volatile String lastName;
     private volatile int age;
- 
+
     public String getFirstName() { return firstName; }
     public String getLastName() { return lastName; }
     public int getAge() { return age; }
- 
-    public void setFirstName(String firstName) { 
+
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
- 
-    public void setLastName(String lastName) { 
+
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
- 
-    public void setAge(int age) { 
+
+    public void setAge(int age) {
         this.age = age;
     }
 }
 ```
 
-## Advanced patterns for volatile（volatile 的高级模式）
+## Advanced patterns for volatile
+
+**volatile 的高级模式**
 
 The patterns in the previous section cover most of the basic cases where the use of volatile is sensible and straightforward. This section looks at a more advanced pattern where volatile might offer a performance or scalability benefit.
 
@@ -261,7 +281,9 @@ The more advanced patterns for using volatile can be extremely fragile. It is cr
 
 volatile 应用的的高级模式非常脆弱。因此，必须对假设的条件仔细证明，并且这些模式被严格地封装了起来，因为即使非常小的更改也会损坏你的代码！同样，使用更高级的 volatile 用例的原因是它能够提升性能，确保在开始应用高级模式之前，真正确定需要实现这种性能获益。需要对这些模式进行权衡，放弃可读性或可维护性来换取可能的性能收益：如果你不需要提升性能（或者不能够通过一个严格的测试程序证明你需要它），那么这很可能是一次糟糕的交易，因为你很可能会得不偿失，换来的东西要比放弃的东西价值更低。
 
-### Pattern #5: The cheap read-write lock trick（模式 #5：开销较低的读－写锁策略）
+## Pattern #5: The cheap read-write lock trick
+
+**模式 #5：开销较低的读－写锁策略**
 
 By now, it should be well-known that volatile is not strong enough to implement a counter. Because ++x is really shorthand for three operations (read, add, store), with some unlucky timing it is possible for updates to be lost if multiple threads tried to increment a volatile counter at once.
 
@@ -281,9 +303,9 @@ public class CheesyCounter {
     // Employs the cheap read-write lock trick
     // All mutative operations MUST be done with the 'this' lock held
     @GuardedBy("this") private volatile int value;
- 
+
     public int getValue() { return value; }
- 
+
     public synchronized int increment() {
         return value++;
     }
@@ -294,8 +316,10 @@ The reason this technique is called the "cheap read-write lock" is that you are 
 
 之所以将这种技术称之为「开销较低的读－写锁」 是因为你使用了不同的同步机制进行读写操作。因为本例中的写操作违反了使用 volatile 的第一个条件，因此不能使用 volatile 安全地实现计数器，你必须使用锁。然而，你可以在读操作中使用 volatile 确保当前值的可见性，因此可以使用锁进行所有变化的操作，使用 volatile 进行只读操作。其中，锁一次只允许一个线程访问值，volatile 允许多个线程执行读操作，因此当使用 volatile 保证读代码路径时，要比使用锁执行全部代码路径获得更高的共享度，就像读写操作一样。然而，要随时牢记这种模式的弱点：如果超越了该模式的最基本应用，结合这两个竞争的同步机制将变得非常困难。
 
-## Summary（结束语）
+## Summary
 
-Volatile variables are a simpler -- but weaker -- form of synchronization than locking, which in some cases offers better performance or scalability than intrinsic locking. If you follow the conditions for using volatile safely -- that the variable is truly independent of both other variables and its own prior values -- you can sometimes simplify code by using volatile instead of synchronized. However, code using volatile is often more fragile than code using locking. The patterns offered here cover the most common cases where volatile is a sensible alternative to synchronized. Following these patterns -- taking care not to push them beyond their limits -- should help you safely cover the majority of cases where volatile variables are a win. 
+**结束语**
 
-与锁相比，Volatile 变量是一种非常简单但同时又非常脆弱的同步机制，它在某些情况下将提供优于锁的性能和伸缩性。如果严格遵循 volatile 的使用条件，即变量真正独立于其他变量和自己以前的值，在某些情况下可以使用 volatile 代替 synchronized 来简化代码。然而，使用 volatile 的代码往往比使用锁的代码更加容易出错。本文介绍的模式涵盖了可以使用 volatile 代替 synchronized 的最常见的一些用例。遵循这些模式（注意使用时不要超过各自的限制）可以帮助你安全地实现大多数用例，使用 volatile 变量获得更佳性能。 
+Volatile variables are a simpler -- but weaker -- form of synchronization than locking, which in some cases offers better performance or scalability than intrinsic locking. If you follow the conditions for using volatile safely -- that the variable is truly independent of both other variables and its own prior values -- you can sometimes simplify code by using volatile instead of synchronized. However, code using volatile is often more fragile than code using locking. The patterns offered here cover the most common cases where volatile is a sensible alternative to synchronized. Following these patterns -- taking care not to push them beyond their limits -- should help you safely cover the majority of cases where volatile variables are a win.
+
+与锁相比，Volatile 变量是一种非常简单但同时又非常脆弱的同步机制，它在某些情况下将提供优于锁的性能和伸缩性。如果严格遵循 volatile 的使用条件，即变量真正独立于其他变量和自己以前的值，在某些情况下可以使用 volatile 代替 synchronized 来简化代码。然而，使用 volatile 的代码往往比使用锁的代码更加容易出错。本文介绍的模式涵盖了可以使用 volatile 代替 synchronized 的最常见的一些用例。遵循这些模式（注意使用时不要超过各自的限制）可以帮助你安全地实现大多数用例，使用 volatile 变量获得更佳性能。

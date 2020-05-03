@@ -1,4 +1,6 @@
-# What are React Hooks?（React 钩子是什么？）
+# What are React Hooks?
+
+**React 钩子是什么？**
 
 > 转译自：https://www.robinwieruch.de/react-hooks
 

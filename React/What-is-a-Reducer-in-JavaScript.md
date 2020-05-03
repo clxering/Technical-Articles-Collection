@@ -1,4 +1,6 @@
-# What is a Reducer in JavaScript?（JavaScript 中的 Reducer 是什么？）
+# What is a Reducer in JavaScript?
+
+**JavaScript 中的 Reducer 是什么？**
 
 > 转译自：https://www.robinwieruch.de/javascript-reducer
 

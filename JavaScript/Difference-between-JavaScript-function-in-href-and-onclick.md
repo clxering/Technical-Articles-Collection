@@ -1,4 +1,6 @@
-# Difference between JavaScript function in href and onclick（JavaScript 函数在 href 和 onclick 中的区别）
+# Difference between JavaScript function in href and onclick
+
+**JavaScript 函数在 href 和 onclick 中的区别**
 
 > 转译自：https://www.codespeedy.com/difference-between-javascript-function-in-href-and-onclick/
 

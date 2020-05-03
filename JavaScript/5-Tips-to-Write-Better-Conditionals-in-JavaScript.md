@@ -1,4 +1,6 @@
-# 5 Tips to Write Better Conditionals in JavaScript（优化 JavaScript 条件语句的 5 个技巧）
+# 5 Tips to Write Better Conditionals in JavaScript
+
+**优化 JavaScript 条件语句的 5 个技巧**
 
 > 转译自：https://scotch.io/tutorials/5-tips-to-write-better-conditionals-in-javascript
 
@@ -6,7 +8,9 @@ When working with JavaScript, we deal a lot with conditionals, here are the 5 ti
 
 在使用 JavaScript 时，我们会处理很多条件语句，这里有 5 个技巧可以帮助您编写更好、更简洁的条件语句。
 
-## 1、Use Array.includes for Multiple Criteria（对多个条件使用 Array.includes）
+## 1、Use Array.includes for Multiple Criteria
+
+**对多个条件使用 Array.includes**
 
 Let's take a look at the example below:
 
@@ -15,8 +19,8 @@ Let's take a look at the example below:
 ```js
 // condition
 function test(fruit) {
-  if (fruit == 'apple' || fruit == 'strawberry') {
-    console.log('red');
+  if (fruit == "apple" || fruit == "strawberry") {
+    console.log("red");
   }
 }
 ```
@@ -32,10 +36,10 @@ We can rewrite the conditional above by using Array.includes
 ```js
 function test(fruit) {
   // extract conditions to array
-  const redFruits = ['apple', 'strawberry', 'cherry', 'cranberries'];
+  const redFruits = ["apple", "strawberry", "cherry", "cranberries"];
 
   if (redFruits.includes(fruit)) {
-    console.log('red');
+    console.log("red");
   }
 }
 ```
@@ -44,7 +48,9 @@ We extract the red fruits (conditions) to an array. By doing this, the code look
 
 我们将红色水果（条件）提取到一个数组中。这样做之后，代码看起来更整洁。
 
-## 2、Less Nesting, Return Early（更少的嵌套，尽早返回）
+## 2、Less Nesting, Return Early
+
+**更少的嵌套，尽早返回**
 
 Let's expand the previous example to include two more conditions:
 
@@ -60,28 +66,28 @@ Let's expand the previous example to include two more conditions:
 
 ```js
 function test(fruit, quantity) {
-  const redFruits = ['apple', 'strawberry', 'cherry', 'cranberries'];
+  const redFruits = ["apple", "strawberry", "cherry", "cranberries"];
 
   // condition 1: fruit must has value
   if (fruit) {
     // condition 2: must be red
     if (redFruits.includes(fruit)) {
-      console.log('red');
+      console.log("red");
 
       // condition 3: must be big quantity
       if (quantity > 10) {
-        console.log('big quantity');
+        console.log("big quantity");
       }
     }
   } else {
-    throw new Error('No fruit!');
+    throw new Error("No fruit!");
   }
 }
 
 // test results
 test(null); // error: No fruits
-test('apple'); // print: red
-test('apple', 20); // print: red, big quantity
+test("apple"); // print: red
+test("apple", 20); // print: red, big quantity
 ```
 
 Look at the code above, we have:
@@ -101,21 +107,21 @@ A general rule I personally follow is **return early when invalid conditions** f
 我个人遵循的一般规则是，**当发现无效条件时，提前返回。**
 
 ```js
-/_ return early when invalid conditions found _/
+/_ return early when invalid conditions found _/;
 
 function test(fruit, quantity) {
-  const redFruits = ['apple', 'strawberry', 'cherry', 'cranberries'];
+  const redFruits = ["apple", "strawberry", "cherry", "cranberries"];
 
   // condition 1: throw error early
-  if (!fruit) throw new Error('No fruit!');
+  if (!fruit) throw new Error("No fruit!");
 
   // condition 2: must be red
   if (redFruits.includes(fruit)) {
-    console.log('red');
+    console.log("red");
 
     // condition 3: must be big quantity
     if (quantity > 10) {
-      console.log('big quantity');
+      console.log("big quantity");
     }
   }
 }
@@ -130,19 +136,19 @@ We can further reduce the nesting if, by inverting the conditions & return early
 通过反转条件和提早返回，我们可以进一步减少嵌套。看看下面的条件 2，我们是怎么做的：
 
 ```js
-/_ return early when invalid conditions found _/
+/_ return early when invalid conditions found _/;
 
 function test(fruit, quantity) {
-  const redFruits = ['apple', 'strawberry', 'cherry', 'cranberries'];
+  const redFruits = ["apple", "strawberry", "cherry", "cranberries"];
 
-  if (!fruit) throw new Error('No fruit!'); // condition 1: throw error early
+  if (!fruit) throw new Error("No fruit!"); // condition 1: throw error early
   if (!redFruits.includes(fruit)) return; // condition 2: stop when fruit is not red
 
-  console.log('red');
+  console.log("red");
 
   // condition 3: must be big quantity
   if (quantity > 10) {
-    console.log('big quantity');
+    console.log("big quantity");
   }
 }
 ```
@@ -179,7 +185,9 @@ Tim Oxley 的文章，避免 Else，尽早返回
 
 StackOverflow 基于 if/else 编码风格的讨论
 
-## 3、Use Default Function Parameters and Destructuring（使用默认的函数参数和解构）
+## 3、Use Default Function Parameters and Destructuring
+
+**使用默认的函数参数和解构**
 
 I guess the code below might look familiar to you, we always need to check for null / undefined value and assign default value when working with JavaScript:
 
@@ -194,8 +202,8 @@ function test(fruit, quantity) {
 }
 
 //test results
-test('banana'); // We have 1 banana!
-test('apple', 2); // We have 2 apple!
+test("banana"); // We have 1 banana!
+test("apple", 2); // We have 2 apple!
 ```
 
 In fact, we can eliminate the variable `q` by assigning default function parameters.
@@ -203,14 +211,15 @@ In fact, we can eliminate the variable `q` by assigning default function paramet
 事实上，我们可以通过指定默认的函数参数来消除变量 `q`。
 
 ```js
-function test(fruit, quantity = 1) { // if quantity not provided, default to one
+function test(fruit, quantity = 1) {
+  // if quantity not provided, default to one
   if (!fruit) return;
   console.log(`We have ${quantity} ${fruit}!`);
 }
 
 //test results
-test('banana'); // We have 1 banana!
-test('apple', 2); // We have 2 apple!
+test("banana"); // We have 1 banana!
+test("apple", 2); // We have 2 apple!
 ```
 
 Much easier & intuitive isn't it? Please note that each parameter can has it own [default function parameter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters). For example, we can assign default value to `fruit` too: `function test(fruit = 'unknown', quantity = 1)`.
@@ -224,17 +233,17 @@ What if our `fruit` is an object? Can we assign default parameter?
 ```js
 function test(fruit) {
   // printing fruit name if value provided
-  if (fruit && fruit.name)  {
-    console.log (fruit.name);
+  if (fruit && fruit.name) {
+    console.log(fruit.name);
   } else {
-    console.log('unknown');
+    console.log("unknown");
   }
 }
 
 //test results
 test(undefined); // unknown
-test({ }); // unknown
-test({ name: 'apple', color: 'red' }); // apple
+test({}); // unknown
+test({ name: "apple", color: "red" }); // apple
 ```
 
 Look at the example above, we want to print the fruit name if it's available or we will print unknown. We can avoid the conditional fruit && fruit.name checking with default function parameter & destructing.
@@ -244,14 +253,14 @@ Look at the example above, we want to print the fruit name if it's available or 
 ```js
 // destructing - get name property only
 // assign default empty object {}
-function test({name} = {}) {
-  console.log (name || 'unknown');
+function test({ name } = {}) {
+  console.log(name || "unknown");
 }
 
 //test results
 test(undefined); // unknown
-test({ }); // unknown
-test({ name: 'apple', color: 'red' }); // apple
+test({}); // unknown
+test({ name: "apple", color: "red" }); // apple
 ```
 
 Since we only need property `name` from fruit, we can destructure the parameter using `{name}`, then we can use `name` as variable in our code instead of `fruit.name`.
@@ -260,7 +269,7 @@ Since we only need property `name` from fruit, we can destructure the parameter 
 
 We also assign empty object `{}` as default value. If we do not do so, you will get error when executing the line `test(undefined)` - Cannot destructure property name of `undefined` or `null`. because there is no `name` property in undefined.
 
-我们还将空对象 `{}` 指定为默认值。如果我们不这样做，当执行 `test(undefined)`，不能解构 `undefined` 或 `null` 的属性名时，您将会得到错误。因为在 undefined中没有 `name` 属性。
+我们还将空对象 `{}` 指定为默认值。如果我们不这样做，当执行 `test(undefined)`，不能解构 `undefined` 或 `null` 的属性名时，您将会得到错误。因为在 undefined 中没有 `name` 属性。
 
 If you don't mind using 3rd party libraries, there are a few ways to cut down null checking:
 
@@ -294,7 +303,9 @@ You may run the demo code [here](https://jsbin.com/bopovajiye/edit?js,console). 
 
 您可以在 [这里](https://jsbin.com/bopovajiye/edit?js,console) 运行演示代码。此外，如果你喜欢函数式编程（FP），你可以选择使用 Lodash fp, 即 Lodash 的函数式版本（方法改为 `get` 或 `getOr`）。
 
-## 4、Favor Map / Object Literal than Switch Statement（选择 Map 或对象字面量，而不是 Switch 语句）
+## 4、Favor Map / Object Literal than Switch Statement
+
+**选择 Map 或对象字面量，而不是 Switch 语句**
 
 Let's look at the example below, we want to print fruits based on color:
 
@@ -304,12 +315,12 @@ Let's look at the example below, we want to print fruits based on color:
 function test(color) {
   // use switch case to find fruits in color
   switch (color) {
-    case 'red':
-      return ['apple', 'strawberry'];
-    case 'yellow':
-      return ['banana', 'pineapple'];
-    case 'purple':
-      return ['grape', 'plum'];
+    case "red":
+      return ["apple", "strawberry"];
+    case "yellow":
+      return ["banana", "pineapple"];
+    case "purple":
+      return ["grape", "plum"];
     default:
       return [];
   }
@@ -317,7 +328,7 @@ function test(color) {
 
 //test results
 test(null); // []
-test('yellow'); // ['banana', 'pineapple']
+test("yellow"); // ['banana', 'pineapple']
 ```
 
 The above code seems nothing wrong, but I find it quite verbose. The same result can be achieve with object literal with cleaner syntax:
@@ -326,11 +337,11 @@ The above code seems nothing wrong, but I find it quite verbose. The same result
 
 ```js
 // use object literal to find fruits in color
-  const fruitColor = {
-    red: ['apple', 'strawberry'],
-    yellow: ['banana', 'pineapple'],
-    purple: ['grape', 'plum']
-  };
+const fruitColor = {
+  red: ["apple", "strawberry"],
+  yellow: ["banana", "pineapple"],
+  purple: ["grape", "plum"],
+};
 
 function test(color) {
   return fruitColor[color] || [];
@@ -343,10 +354,10 @@ Alternatively, you may use Map to achieve the same result:
 
 ```js
 // use Map to find fruits in color
-  const fruitColor = new Map()
-    .set('red', ['apple', 'strawberry'])
-    .set('yellow', ['banana', 'pineapple'])
-    .set('purple', ['grape', 'plum']);
+const fruitColor = new Map()
+  .set("red", ["apple", "strawberry"])
+  .set("yellow", ["banana", "pineapple"])
+  .set("purple", ["grape", "plum"]);
 
 function test(color) {
   return fruitColor.get(color) || [];
@@ -365,7 +376,9 @@ Todd Motto has an article that dig deeper on switch statement vs object literal,
 
 Todd Motto 有一篇文章深入讨论 switch 语句与对象字面量，你可以在 [这里](https://toddmotto.com/deprecating-the-switch-statement-for-object-literals/) 阅读。
 
-## TL;DR; Refactor the syntax（重构的语法）
+## TL;DR; Refactor the syntax
+
+**重构的语法**
 
 For the example above, we can actually refactor our code to achieve the same result with `Array.filter`.
 
@@ -373,18 +386,18 @@ For the example above, we can actually refactor our code to achieve the same res
 
 ```js
 const fruits = [
-   { name: 'apple', color: 'red' },
-   { name: 'strawberry', color: 'red' },
-   { name: 'banana', color: 'yellow' },
-   { name: 'pineapple', color: 'yellow' },
-   { name: 'grape', color: 'purple' },
-   { name: 'plum', color: 'purple' }
+  { name: "apple", color: "red" },
+  { name: "strawberry", color: "red" },
+  { name: "banana", color: "yellow" },
+  { name: "pineapple", color: "yellow" },
+  { name: "grape", color: "purple" },
+  { name: "plum", color: "purple" },
 ];
 
 function test(color) {
- // use Array filter to find fruits in color
+  // use Array filter to find fruits in color
 
- return fruits.filter(f => f.color == color);
+  return fruits.filter((f) => f.color == color);
 }
 ```
 
@@ -392,7 +405,9 @@ There's always more than 1 way to achieve the same result. We have shown 4 with 
 
 总有不止一种方法可以达到同样的效果。我们展示了 4 个相同效果的例子。编码是有趣的！
 
-## 5、Use Array.every & Array.some for All / Partial Criteria（所有或部分使用 Array.every & Array.some 的条件）
+## 5、Use Array.every & Array.some for All / Partial Criteria
+
+**所有或部分使用 Array.every & Array.some 的条件**
 
 This last tip is more about utilizing new (but not so new) Javascript Array function to reduce the lines of code. Look at the code below, we want to check if all fruits are in red color:
 
@@ -400,10 +415,10 @@ This last tip is more about utilizing new (but not so new) Javascript Array func
 
 ```js
 const fruits = [
-    { name: 'apple', color: 'red' },
-    { name: 'banana', color: 'yellow' },
-    { name: 'grape', color: 'purple' }
-  ];
+  { name: "apple", color: "red" },
+  { name: "banana", color: "yellow" },
+  { name: "grape", color: "purple" },
+];
 
 function test() {
   let isAllRed = true;
@@ -411,7 +426,7 @@ function test() {
   // condition: all fruits must be red
   for (let f of fruits) {
     if (!isAllRed) break;
-    isAllRed = (f.color == 'red');
+    isAllRed = f.color == "red";
   }
 
   console.log(isAllRed); // false
@@ -424,14 +439,14 @@ The code is so long! We can reduce the number of lines with `Array.every`:
 
 ```js
 const fruits = [
-    { name: 'apple', color: 'red' },
-    { name: 'banana', color: 'yellow' },
-    { name: 'grape', color: 'purple' }
-  ];
+  { name: "apple", color: "red" },
+  { name: "banana", color: "yellow" },
+  { name: "grape", color: "purple" },
+];
 
 function test() {
   // condition: short way, all fruits must be red
-  const isAllRed = fruits.every(f => f.color == 'red');
+  const isAllRed = fruits.every((f) => f.color == "red");
 
   console.log(isAllRed); // false
 }
@@ -443,14 +458,14 @@ Much cleaner now right? In a similar way, if we want to test if any of the fruit
 
 ```js
 const fruits = [
-    { name: 'apple', color: 'red' },
-    { name: 'banana', color: 'yellow' },
-    { name: 'grape', color: 'purple' }
+  { name: "apple", color: "red" },
+  { name: "banana", color: "yellow" },
+  { name: "grape", color: "purple" },
 ];
 
 function test() {
   // condition: if any fruit is red
-  const isAnyRed = fruits.some(f => f.color == 'red');
+  const isAnyRed = fruits.some((f) => f.color == "red");
 
   console.log(isAnyRed); // true
 }

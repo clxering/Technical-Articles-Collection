@@ -47,7 +47,7 @@ isPerson ? "👻" : "🙂";
 
 ## Community Examples
 
-### false vs falsy value
+## false vs falsy value
 
 Note the 2 statements are slightly different:
 
@@ -61,7 +61,7 @@ if(!isPerson)
 
 Thanks: @RanqueBenoit
 
-### Good Variable Names
+## Good Variable Names
 
 @jsawbrey: I find the "is" naming convention also very helpful. I make them all the time. "isThisThing". In TypeScript, that naming convention helps a lot when making type guards.
 
@@ -69,7 +69,7 @@ Thanks: @RanqueBenoit
 
 Thanks: @jsawbrey
 
-### Good Variable Name: On vs Handle
+## Good Variable Name: On vs Handle
 
 On the note of good variable names. Here's another cool example. This is an excerpt from Adam's medium article, [Use React to make a photo follow the mouse](https://medium.com/@agm1984/use-react-to-make-a-photo-follow-the-mouse-aka-transform-perspective-or-tilt-7c38f1b3a623).
 

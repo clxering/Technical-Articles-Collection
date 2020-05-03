@@ -79,7 +79,7 @@ missingNumbers.flat();
 
 Since support is not great. Here are some alternative solutions.
 
-### ES6 Solution
+## ES6 Solution
 
 Here is a ES6 solution. This only work for one level nested array.
 
@@ -90,7 +90,7 @@ const flattened = [].concat(...oneLevelDeep);
 // [1, 2, 3,]
 ```
 
-### Older Browser Solution
+## Older Browser Solution
 
 Here's one for older browser and pre ES6. Again, this only works for one level nested array.
 
@@ -101,7 +101,7 @@ const flattened = [].concat.apply([], oneLevelDeep);
 // [1, 2, 3,]
 ```
 
-### Recursion
+## Recursion
 
 For arrays with deeper nesting, you can use recursion. Here's the solution from [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat#Alternative):
 

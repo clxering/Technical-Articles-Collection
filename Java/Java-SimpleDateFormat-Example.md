@@ -1,4 +1,6 @@
-# Java SimpleDateFormat Example（Java SimpleDateFormat 使用案例）
+# Java SimpleDateFormat Example
+
+**Java SimpleDateFormat 使用案例**
 
 > 转译自：https://examples.javacodegeeks.com/java-simpledateformat-example/
 
@@ -12,33 +14,42 @@ You can make this conversion using the constructors provided by `java.text.Simpl
 
 译注：将 pattern 及其复数形式均译作「模板字符串」
 
-## 1、SimpleDateFormat constructors（SimpleDateFormat 类的构造方法）
+## 1、SimpleDateFormat constructors
+
+**SimpleDateFormat 类的构造方法**
+
 There are four constructors that you can use so as to create a `java.text.SimpleDateFormat`.
 
 创建 `java.text.SimpleDateFormat` 对象可以使用四种构造方法。
 
-### 1.1、SimpleDateFormat()
+## 1.1、SimpleDateFormat()
 
 The simplest constructor which creates a `java.text.SimpleDateFormat` with a default pattern of date and a default locale.
 
 这个默认构造方法生成的 `java.text.SimpleDateFormat` 对象具有默认模板字符串和默认地区设置。
 
-### 1.2、SimpleDateFormat(String pattern)
+## 1.2、SimpleDateFormat(String pattern)
+
 The constructor which creates a `java.text.SimpleDateFormat` with a given pattern and a default locale.
 
 这个构造方法生成的 `java.text.SimpleDateFormat` 对象具有指定模板字符串和默认地区设置。
 
-### 1.3、SimpleDateFormat(String pattern, DateFormatSymbols formatSymbols)
+## 1.3、SimpleDateFormat(String pattern, DateFormatSymbols formatSymbols)
+
 Constructs a `java.text.SimpleDateFormat` with the given pattern and specific date format symbols. DateFormatSymbols is a class for encapsulating（封装） localizable date-time formatting data, such as the names of the months, the names of the days of the week, and the time zone data.
 
 构造一个具有指定模板字符串和具体的日期格式符的 `java.text.SimpleDateFormat` 对象。DateFormatSymbols 类封装了本地化的 date-time 格式数据，例如月份的名称、星期的名称和时区数据。
 
-### 1.4、SimpleDateFormat(String pattern, Locale locale)
+## 1.4、SimpleDateFormat(String pattern, Locale locale)
+
 Constructs a `java.text.SimpleDateFormat` with the given pattern and a specific locale.
 
 构造一个具有指定模板字符串和具体地区设置的 `java.text.SimpleDateFormat` 对象。
 
-## 2、Example of SimpleDateFormat（SimpleDateFormat 类的例子）
+## 2、Example of SimpleDateFormat
+
+**SimpleDateFormat 类的例子**
+
 Create a java class named SimpleDateFormatExample.java with the following code:
 
 创建一个名为 `SimpleDateFormatExample.java` 的文件，内容如下：
@@ -89,6 +100,7 @@ public class TestModule {
 }
 
 ```
+
 Let’s explain the different formats of SimpleDateFormat class in the above code. Firstly, we create a Date object which is initialized with the current date and time. Then, we create different date formatters with different patterns, such as:
 
 让我们来解释上述代码中 SimpleDateFormat 类的不同格式。首先，我们创建了一个初始化为当前日期和时间的 Date 对象。然后，我们用不同的模板字符串创建了不同的日期格式器，例如：
@@ -97,7 +109,7 @@ The default pattern, which shows the date in the form of month/day/year and the 
 
 默认模板字符串展示日期的格式为 `month/day/year`，时间使用 12 小时制表示。
 
-yyyy/MM/dd, which shows the date in the form of year/month/day. As we can observe（观察）, the pattern for the year has 4 letters, which means that the full form of the year will be used (e.g. 2018). Otherwise（否则） a short or abbreviated（缩写） form is used if available. 
+yyyy/MM/dd, which shows the date in the form of year/month/day. As we can observe（观察）, the pattern for the year has 4 letters, which means that the full form of the year will be used (e.g. 2018). Otherwise（否则） a short or abbreviated（缩写） form is used if available.
 
 `yyyy/MM/dd` 将日期展示为 `year/month/day`，正如我们所观察到的，年份在该模板字符串下有 4 个字符，这意味着将使用一年的完整形式（例如 2018 年）。否则，可以使用简写或缩写的格式。
 
@@ -158,6 +170,7 @@ For a detailed explanation of the different existing patterns you can visit the 
 If we run the above code, we will have the following results:
 
 如果我们运行上述代码，我们将得到以下结果:
+
 ```
 Default pattern: 18-8-4 上午11:17
 2018/08/04

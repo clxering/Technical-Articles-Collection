@@ -45,7 +45,7 @@ const undefinedValue = undefined;
 const nullValue = null;
 ```
 
-### Concat Empty String
+## Concat Empty String
 
 ```js
 string + ""; // 'hello'
@@ -62,7 +62,7 @@ symbolValue + ""; // ❌ TypeError
 
 From here, you can see that this method will throw an `TypeError` if the value is a `Symbol`. Otherwise, everything looks pretty good.
 
-### Template String
+## Template String
 
 ```js
 `${string}`; // 'hello'
@@ -81,7 +81,7 @@ The result of using **Template String** is essentially the same as **Concat Empt
 
 This is the TypeError if you're curious: `TypeError: Cannot convert a Symbol value to a string`
 
-### JSON.stringify()
+## JSON.stringify()
 
 ```js
 // ⚠️
@@ -106,7 +106,7 @@ You can read more about this in Kyle Simpson, "You Don't Know JS series":
 
 Yes, you may have noticed in my code notes, I frequently quote Kyle's books. I honestly have learned a lot of it. Not coming from a computer science background, there is a lot of fundamentals concept I'm lacking. And his book has made me realize the importance of understanding the fundamentals. For those, who want to be a serious programmer, the way to level up is really TRULY understand the fundamentals. Without it, it's very hard to level up. You end up guessing the problem. But if you know the fundamentals, you will understand the "why" of something. And knowing the "why" will help you better execute the "how". Anyhoo, highly recommend this series for those trying to becoming a senior programmer!
 
-### toString()
+## toString()
 
 ```js
 string.toString(); // 'hello'
@@ -123,7 +123,7 @@ nullValue.toString(); // ❌ TypeError
 
 So the battle really comes down to `toString()` and `String()` when you want to convert a value to a **string**. This one does a pretty good job. Except it will throw an error for `undefined` and `null`. So definitely be mindful of this
 
-### String()
+## String()
 
 ```js
 String(string); // 'hello'

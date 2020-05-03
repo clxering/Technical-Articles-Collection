@@ -47,7 +47,7 @@ const backToArray = [...uniqueSet];
 // ['🐑', 1, 2, 3]
 ```
 
-### Convert `Set` to an Array using `Array.from`
+## Convert `Set` to an Array using `Array.from`
 
 Alternatively, you can also use `Array.from` to convert a `Set` into an array:
 
@@ -63,7 +63,7 @@ Array.from(new Set(array));
 
 In order to understand this option, let's go through what these two methods are doing: `indexOf` and `filter`
 
-### indexOf
+## indexOf
 
 The `indexOf` method returns the first index it finds of the provided element from our array.
 
@@ -76,7 +76,7 @@ array.indexOf(2); // 2
 array.indexOf(3); // 5
 ```
 
-### filter
+## filter
 
 The `filter()` method creates a new array of elements that pass the conditional we provide. In other words, if the element passes and returns `true`, it will be included in the filtered array. And any element that fails or return `false`, it will be NOT be in the filtered array.
 
@@ -112,7 +112,7 @@ Below is the output from the console.log showed above. The duplicates are where 
 |  🐑  |   4   |    0    |   false   |
 |  3   |   5   |    5    |   true    |
 
-### Retrieve the duplicate values
+## Retrieve the duplicate values
 
 We can also use the filter method to retrieve the duplicate values from the array. We can do this by simply adjusting our condition like so:
 

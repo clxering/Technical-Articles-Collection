@@ -93,7 +93,7 @@ console.log(cloneFood);
 // { beef: '🥩', bacon: '🥓' }
 ```
 
-### Lodash DeepClone vs JSON
+## Lodash DeepClone vs JSON
 
 Here's a comment from the community. Yes, it was for my previous post, [How to Deep Clone an Array](https://www.samanthaming.com/tidbits/50-how-to-deep-clone-an-array). But the idea still applies to objects.
 
@@ -170,7 +170,7 @@ console.log(nestedObject);
 
 A shallow copy means the first level is copied, deeper levels are referenced.
 
-### Deep Copy
+## Deep Copy
 
 Let's take the same example but applying a deep copy using "JSON"
 
@@ -194,7 +194,7 @@ Unfortunately, I can't write a test for spread because it's not officially in th
 
 ## Community Input
 
-### Object.assign vs Spread
+## Object.assign vs Spread
 
 [@d9el](https://dev.to/adameier/comment/d9el): It's important to note that Object.assign is a function which modifies and returns the target object. In Samantha's example using the following,
 
@@ -257,13 +257,13 @@ console.log(food);
 
 Thanks: @d9el
 
-### Deep Clone using External Libraries
+## Deep Clone using External Libraries
 
 - @lesjeuxdebebel: Personally I use jquery with `$.extend()`; function
 - @edlinkiii: underscore.js ~~ `_.clone()`
 - @Percy_Burton: The only way I've known to do this is with the Lodash library, cloneDeep method.
 
-### More Ways using JavaScript
+## More Ways using JavaScript
 
 @hariharan_d3v: `Object.fromEntries(Object.entries(food))` [shallow] clones the object.
 

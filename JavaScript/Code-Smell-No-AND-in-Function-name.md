@@ -53,7 +53,7 @@ function egg() {}
 
 Another great thing with sticking with this rule is maintainability. When you just start out, sure it may seem a lot easier just to put everything together. But I guarantee you that over time, as you add more functionality or make changes, one singular function that does everything becomes very messy to maintain.
 
-### Explained in Non-Dev Terms
+## Explained in Non-Dev Terms
 
 Let's explain this with another non-dev term explanation. Let's say you're a big Lego builder and you bought yourself a brand new Lego set. You're super excited you open the new set and dump all the pieces into a container. Unfortunately, you have a final exam the next week so you have no time to build it yet. A few weeks later, your rich aunt buys a few more Lego sets. I mentioned your aunt is rich because we all know Lego sets are ridiculously expensive 😂. Again you open the new set and dump them in the same container, thinking that it's no big deal. Not to be outdone by your rich aunt, your rich grandma also wants to win your love, so she buys more Lego sets for you. Again, you didn't think it'd be a big deal, you open everything and dump them all in the same container. Okay, a few weeks have passed and now you're ready to build your Lego sets. Guess what happened? You're now knocking your head against the wall. Because all the pieces are mixed into one single container and you don't know which is which. However, if you had kept all the Lego sets in its own container, you wouldn't have this problem 💩
 

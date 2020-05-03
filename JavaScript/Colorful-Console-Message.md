@@ -13,11 +13,11 @@ Or use it like Facebook to tell people to stay away. Next time you visit their s
 console.log("%cHello", "color: green; background: yellow: font-size: 30px");
 ```
 
-### What is %c
+## What is %c
 
 **%c**: Applies CSS style rules to the output string as specified by the second parameter
 
-### Multiple Console Message Styles
+## Multiple Console Message Styles
 
 To add multiple style, you just pre-pend the message with `%c`. The text before the directive will not be affected. Only the text after the directive will be styled using the CSS declarations in the parameter.
 
@@ -29,7 +29,7 @@ console.log(
 );
 ```
 
-### Applying style to other `console` messages
+## Applying style to other `console` messages
 
 There are 5 console types of console messages:
 
@@ -49,7 +49,7 @@ console.warn("%cconsole.warn", "color: green;");
 console.error("%cconsole.error", "color: green;");
 ```
 
-### Passing the console CSS style as an Array
+## Passing the console CSS style as an Array
 
 As you get more styles, the string can be quite long. Here's a nifty trick you can do to clean things up. You can pass the styles as an array. And then you can use the `join()` method to turn the array style elements into a string.
 
@@ -70,7 +70,7 @@ console.log("%cHello There", styles);
 
 To learn more about `join()`, you can read my [Web Basics series](https://www.samanthaming.com/web-basics/how-to-reverse-a-string-in-js) or check out the official [MDN docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join).
 
-### Refactoring console message with `%s`
+## Refactoring console message with `%s`
 
 Beside cleaning up the console message by passing the styles as an array. We can also clean up the message using the `%s` specifier.
 
@@ -85,7 +85,7 @@ console.log("%c%s", styles, message);
 
 ## Community Suggestions
 
-### Console Font Color in `node.js`
+## Console Font Color in `node.js`
 
 If you're running node.js application, you can use the color reference of text to style your messages.
 
@@ -98,7 +98,7 @@ console.log("\x1b[33m%s\x1b[0m", "yellow"); // Yellow
 
 Thanks @danieldeepak7
 
-### Community Feedback
+## Community Feedback
 
 - @thecodegoddess: I love this especially for projects that have a ton of logging from third party apps. My logs will get buried. I even added a snippet to my IDE so I can easily stick this in. My go to CSS debugging color? Deeppink.
 

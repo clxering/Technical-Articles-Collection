@@ -32,7 +32,7 @@ typeof array; // 'object'
 
 Alright, let's try this method on other values and see what we get 👩‍🔬
 
-### These are all arrays, and will return `true`
+## These are all arrays, and will return `true`
 
 ```js
 // Empty Array
@@ -45,7 +45,7 @@ Array.isArray(['📓']); // true
 Array.isArray(new Array('📓')); // true
 ```
 
-### These are NOT arrays and will return `false`
+## These are NOT arrays and will return `false`
 
 ```js
 // Object
@@ -86,13 +86,13 @@ const books = ['📕', '📙', '📗'];
 books instanceof Array; // true
 ```
 
-### But...
+## But...
 
 The problem is it doesn't work with multiple context (e.g. frames or windows). Because each frame has different scopes with its own execution environment. Thus, it has a different global object and different constructors. So if you try to test an array against that frame's context, it will NOT return `true`, it will return incorrectly as `false`.
 
 🤯 What are you talking about??? 👈 If this is floating in your mind. Don't worry, I was too. To understand this, you need to understand JavaScript's execution context. Here's a great video explaining it, [An Introduction to Functions, Execution Context and the Call Stack](https://youtu.be/exrc_rLj5iw). This is a bit more of an advanced topic, so if you're just a beginner, feel free to skip through it. And when you get a bit more comfortable with JavaScript, then definitely return to this topic. In the meantime, let me try to explain this "multiple context" in non-dev terms.
 
-### Explanation in **non-dev** terms
+## Explanation in **non-dev** terms
 
 You can think of frames like different planets. Every planet has its own system, with different gravity pull and composition. So `instanceof` only works on our planet, Earth. If you bring it to Mars, it won't work. However, with `Array.isArray()` it will work on any planet. It's universal. That's why you should use `Array.isArray()`.
 

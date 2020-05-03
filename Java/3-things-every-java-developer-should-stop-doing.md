@@ -1,4 +1,6 @@
-## 3 Things Every Java Developer Should Stop Doing（每个 Java 开发者都应该停止的三件事）
+# 3 Things Every Java Developer Should Stop Doing
+
+**每个 Java 开发者都应该停止的三件事**
 
 > 转译自：https://dzone.com/articles/3-things-every-java-developer-should-stop-doing
 
@@ -10,7 +12,10 @@ From returning null values to overusing getters and setters, there are idioms th
 
 作为 Java 开发人员，我们会使用一些习惯用法，典型的例子，如：返回 null 值、滥用 getter 和 setter，即使在没有依据的情况下也是如此。虽然在某些情况下，使用它们可能是适当的，但通常是我们为使系统正常工作而形成的习惯或权宜之计。在本文中，我们将介绍 Java 开发（包括新手和高级开发人员）中常见的三种情况，并探究它们是如何给我们带来麻烦的。应该指出的是，文中总结的规则并不是无论何时都应该始终遵守的硬性要求。有时候，可能有一个很好的理由来使用这些模式解决问题，但是总的来说，还是应该减少这些用法。首先，我们将从 Null 这个关键字开始，它也是 Java 中使用最频繁、但也是最具两面性特性的关键字之一。
 
-### 1. Returning Null（返回 Null）
+## 1. Returning Null
+
+**返回 Null**
+
 Null has been the best friend and worst enemy of developers for decades and null in Java is no different. In high-performance applications, null can be a solid means of reducing the number of objects and signaling that a method does not have a value to return. In contrast to throwing an exception, which has to capture the entire stack trace when it is created, null serves as a quick and low-overhead way to signal clients that no value can be obtained.
 
 null 一直是开发者最好的朋友，也是最大的敌人，这在 Java 中也不例外。在高性能应用中，使用 null 是一种减少对象数量的可靠方法，它表明方法没有要返回的值。与抛出异常（创建异常时必须捕获整个堆栈跟踪）不同，使用 null 是一种快速且低开销的方法，用于通知客户机不能获取任何值。
@@ -23,7 +28,10 @@ Barring any performance reasons, each of these cases has a much better solution 
 
 除非有任何性能方面的原因，否则以上每一种情况都有更好的解决方案，它们不使用 null，并且强制开发人员处理出现 null 的情况。更重要的是，这些方法的客户端不会为该方法是否会在某些边缘情况下返回 null 而伤脑筋。在每种情况下，我们将设计一种不返回 null 值的简洁方法。
 
-#### No Elements（集合中没有元素的情况）
+## No Elements
+
+**集合中没有元素的情况**
+
 When returning lists or other collections, it can be common to see a null collection returned in order to signal that elements for that collection could not be found. For example, we could create a service that manages users in a database that resembles the following (some method and class definitions have been left out for brevity):
 
 在返回列表或其他集合时，通常会看到返回空集合，以表明无法找到该集合的元素。例如，我们可以创建一个服务来管理数据库中的用户，该服务类似于以下内容（为了简洁起见，省略了一些方法和类定义）：
@@ -103,7 +111,10 @@ Doing so not only reduces the special-case handling that clients must perform, b
 
 这样做不仅减少了客户端必须执行的特殊情况处理，而且还减少了接口中的不一致性（例如，我们有时返回一个 list 对象，而不是其他对象）。
 
-#### Optional Value（可选值）
+## Optional Value
+
+**可选值**
+
 Many times, null values are returned when we wish to inform a client that an optional value is not present, but no error has occurred. For example, getting a parameter from a web address. In some cases, the parameter may be present, but in other cases, it may not. The lack of this parameter does not necessarily denote an error, but rather, it denotes that the user did not want the functionality that is included when the parameter is provided (such as sorting). We can handle this by returning null if no parameter is present or the value of the parameter if one is supplied (some methods have been removed for brevity):
 
 很多时候，我们希望在没有发生错误时通知客户端不存在可选值，此时返回 null。例如，从 web 地址获取参数。在某些情况下，参数可能存在，但在其他情况下，它可能不存在。缺少此参数并不一定表示错误，而是表示用户不希望提供该参数时包含的功能（例如排序）。如果没有参数，则返回 null；如果提供了参数，则返回参数值（为了简洁起见，删除了一些方法）：
@@ -197,7 +208,10 @@ In either case, using an Optional object, rather than returning null, explicitly
 
 如果返回值是可选的，则通过返回一个 Optional 来确保客户端处理这种情况，该可选的值在找到值时包含一个值，在找不到值时为空
 
-### Special-Case Value（特殊情况值）
+## Special-Case Value
+
+**特殊情况值**
+
 The last common use case is that of a special case, where a normal value cannot be obtained and a client should handle a corner case different than the others. For example, suppose we have a command factory from which clients periodically request commands to complete. If no command is ready to be completed, the client should wait 1 second before asking again. We can accomplish this by returning a null command, which clients must handle, as illustrated in the example below (some methods are not shown for brevity):
 
 最后一个常见用例是特殊用例，在这种情况下无法获得正常值，客户端应该处理与其他用例不同的极端情况。例如，假设我们有一个命令工厂，客户端定期从命令工厂请求命令。如果没有命令可以获得，客户端应该等待 1 秒钟再请求。我们可以通过返回一个空命令来实现这一点，客户端必须处理这个空命令，如下面的例子所示（为了简洁起见，没有显示一些方法）：
@@ -304,7 +318,10 @@ Using a combination of null-objects and default values, we can devise the follow
 
 如果可能，使用「空对象」处理使用 null 关键字的情况，或者允许客户端提供默认值
 
-### 2. Defaulting to Functional Programming（默认使用函数式编程）
+## 2. Defaulting to Functional Programming
+
+**默认使用函数式编程**
+
 Since streams and lambdas were introduced in Java Development Kit (JDK) 8, there has been a push to migrate towards functional programming, and rightly so. Before lambdas and streams, performing simple functional tasks were cumbersome and resulted in severely unreadable code. For example, filtering a collection in the traditional style resulted in code that resembled the following:
 
 自从在 JDK 8 中引入了 stream 和 lambda 表达式之后，就出现了向函数式编程迁移的趋势，这理当如此。在 lambda 表达式和 stream 出现之前，执行简单的功能任务是非常麻烦的，并且会导致代码可读性的严重下降。例如，以下代码用传统方式过滤一个集合：
@@ -411,7 +428,10 @@ Although it may be tempting to use the flashiest, most up-to-date features of Ja
 
 尽管在每个可能的场景中使用 Java 最炫、最新的特性可能很让人向往，但这并不总是最好的方法。有时候，老式的功能效果反而最好。
 
-### 3. Creating Indiscriminate Getters and Setters（滥用 getter 和 setter）
+## 3. Creating Indiscriminate Getters and Setters
+
+**滥用 getter 和 setter**
+
 One of the first things that novice programmers are taught is to encapsulate the data associated with a class in private fields and expose them through public methods. In practice, this results in creating getters to access the private data of a class and setters to modify the private data of a class:
 
 新手程序员学到的第一件事是将与类相关的数据封装在私有字段中，并通过公共方法公开它们。在实际使用时，通过创建 getter 来访问类的私有数据，创建 setter 来修改类的私有数据：
@@ -647,7 +667,10 @@ Immutability also brings with it some very important advantages, such as the abi
 
 不变性还带来了一些非常重要的优点，例如类能够在多线程上下文中轻松使用（即两个线程可以共享对象，而不用担心一个线程会在另一个线程访问该状态时更改该对象的状态）。总的来说，在很多实际情况下我们可以创建不可变的类，要比我们意识到的要多很多，只是我们习惯了添加了 getter 或 setter。
 
-### Conclusion（结论）
+## Conclusion
+
+**结论**
+
 Many of the applications we create end up working, but in a large number of them, we introduce sneaky problems that tend to creep up at the worst possible times. In some of those cases, we do things out of convenience, or even out of habit, and pay little mind to whether these idioms are practical (or safe) in the context we use them. In this article, we delved into three of the most common of these practices, such null return values, affinity for functional programming, and careless getters and setters, along with some pragmatic alternatives. While the rules in this article should not be taken as absolute, they do provide some insight into the uncommon dangers of common practices and may help in fending off laborious errors in the future.
 
 我们创建的许多应用程序最终都能正常工作，但是在大量应用程序中，我们无意引入的一些问题可能只会在最极端的情况下出现。在某些情况下，我们做事情是出于方便，甚至是出于习惯，而很少注意这些习惯在我们使用的上下文中是否实用（或安全）。在本文中，我们深入研究了在实际应用中最常见的三种问题，如：空返回值、函数式编程的魅力、粗心的 getter 和 setter，以及一些实用的替代方法。虽然本文中的规则不是绝对的，但是它们确实为一些在实际应用中遇到的罕见问题提供了见解，并且在将来可能会有助于避免产生一些需要费力解决的错误。

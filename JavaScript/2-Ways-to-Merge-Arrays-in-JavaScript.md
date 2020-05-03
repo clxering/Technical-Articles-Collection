@@ -37,7 +37,7 @@ console.log(trucks); // ['🚚', '🚛'];
 
 As you can see, this way of writing it doesn't manipulate or change the existing array.
 
-### Which one should I pick?
+## Which one should I pick?
 
 Let's list out both versions, so you can see it in comparison.
 
@@ -59,7 +59,7 @@ I prefer using `spread`, because I find it more concise and easier to write. BUT
 
 Spread is fantastic when you know beforehand that you're dealing with arrays. But what happens when the source is something else, like a string. And you want to add that string to the array. Let's walk through an example.
 
-### Example: Dealing with an arbitrary argument
+## Example: Dealing with an arbitrary argument
 
 Let's say this is the outcome we want:
 
@@ -67,7 +67,7 @@ Let's say this is the outcome we want:
 [1, 2, 3, "random"];
 ```
 
-#### A. Using Spread
+## A. Using Spread
 
 And if we follow the pattern we've been using and used the spread operator. Here's what happens:
 
@@ -85,7 +85,7 @@ combineArray(isArray, notArray);
 
 ☝️ If we spread our string, it will split the word into separate letters. So it doesn't achieve the result we want.
 
-#### B. Using Concat
+## B. Using Concat
 
 BUT, if we follow the concat pattern that we've been doing. Here's what happens:
 
@@ -105,7 +105,7 @@ combineArray(isArray, notArray);
 
 I know some of you are like, duh! I'll just write some conditional to make sure what I'm passing is an array and execute accordingly. Sure that'd work too. Or just write less code and use `concat` and be done with 😂
 
-#### Verdict
+## Verdict
 
 So here's the quick rule. If you know you're dealing with arrays, use `spread`. But if you might be dealing with the possibility with a non-array, then use `concat` to merge an array 👍
 

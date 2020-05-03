@@ -31,7 +31,7 @@ We have several ways of writing our arrow functions. This is because arrow funct
 
 With normal functions, if you want to return something, you have to use the `return` keyword. Arrow functions also have that. When you use the `return` keyword, it's called an **explicit return**. However, arrow functions up their game and allow something called **implied return** where the `return` keyword can be skipped. Let's look at some examples 🤓:
 
-### Example A: Normal Function
+## Example A: Normal Function
 
 ```js
 const sayHi = function(name) {
@@ -39,7 +39,7 @@ const sayHi = function(name) {
 }
 ```
 
-### Example B: Arrow Function with Explicit Return
+## Example B: Arrow Function with Explicit Return
 
 ```js
 // Multi-line
@@ -51,7 +51,7 @@ const sayHi = (name) => {
 const sayHi = (name) => { return name }
 ```
 
-### Example C: Arrow Function with Implicit Return
+## Example C: Arrow Function with Implicit Return
 
 ```js
 // Single-line
@@ -76,7 +76,7 @@ There's actually a name for this. When you use curly braces like in Example b, i
 
 With a normal function, we always had to use parentheses. However, with Arrow Functions, parentheses are optional if there is ONLY one parameter.
 
-### Parentheses are optional for a SINGLE parameter
+## Parentheses are optional for a SINGLE parameter
 
 ```js
 // Normal Function
@@ -89,7 +89,7 @@ const numbers = (one) => {}
 const numbers = one => {}
 ```
 
-### Parentheses are required for MULTIPLE parameters
+## Parentheses are required for MULTIPLE parameters
 
 ```js
 // Normal Function

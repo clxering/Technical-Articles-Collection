@@ -15,7 +15,7 @@ This tutorial gives you a walkthrough of using React Context for a simple use ca
 
 本教程为你提供了一个简单用例使用 React 上下文的演练。
 
-# React Context: Why
+## React Context: Why
 
 Do you remember the last time when you had to pass props several components down your component tree? In React, quite often you are confronted with this problem which is called "prop drilling":
 
@@ -144,7 +144,7 @@ In return, this clutters every component in between which has to pass down these
 
 **谁提供/消费 React 上下文？** React 组件 A（顶级组件）提供上下文，React 组件 C（子组件之一）使用上下文。介于两者之间的 D 和 E。因为组件 D 和 E 不关心信息，所以它们不消耗上下文。只有 C 组件使用它。如果组件 A 下面的任何其他组件想要访问上下文，也可以使用它。
 
-# React Context: How
+## React Context: How
 
 First, you have to create the React Context itself which gives you access to a Provider and Consumer component. When you create the context with React by using `createContext`, you can pass it an initial value. The initial value can be null too.
 
@@ -206,7 +206,7 @@ The component can derive its style by consuming the context. The Consumer compon
 
 组件可以通过使用上下文派生其样式。Consumer 组件通过 [属性渲染（暂缺译文）]() 使传递的上下文可用。可以想象，按照这种方式，需要根据主题进行样式化的每个组件现在都可以通过使用 ThemeContext 的 Consumer 组件从 React 的上下文中获得必要的信息。你只需使用 Provider 组件，该组件将值传递一次到需要的地方。
 
-# React Context: When
+## React Context: When
 
 When should you use React Context? Generally speaking there are two use cases when to use it:
 

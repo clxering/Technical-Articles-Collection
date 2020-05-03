@@ -64,7 +64,7 @@ List<Integer> transactionsIds = transactions.parallelStream().
 
 ## 2 总览
 
-### 2-1 什么是流
+## 2-1 什么是流
 Stream 不是集合元素，它不是数据结构，并不保存数据，它与算法和计算有关，更像一个高级版本的 Iterator。原始版本的 Iterator，用户只能显式地一个一个遍历元素并对其执行某些操作；使用 Stream，用户只要给出需要对其包含的元素执行什么操作，比如：「过滤掉长度大于 10 的字符串」、「获取每个字符串的首字母」等，Stream 会隐式地在内部进行遍历，做出相应的数据转换。
 
 Stream 的处理过程是单向、不可往复的，数据只能遍历一次，遍历过一次后即用尽了，就好比流水从面前流过，一去不复返。Stream 的另外一大特点是，数据源本身可以是无限的。
@@ -77,7 +77,7 @@ Stream 的处理过程是单向、不可往复的，数据只能遍历一次，�
 - 7.0 中的 Fork/Join 框架
 - 8.0 中的 Lambda
 
-### 2-2 流的构成
+## 2-2 流的构成
 当我们使用一个流的时候，通常包括三个基本步骤：
 
 - 获取一个数据源（source）
@@ -86,27 +86,27 @@ Stream 的处理过程是单向、不可往复的，数据只能遍历一次，�
 
 每次转换，原有 Stream 对象不改变，返回一个新的 Stream 对象（可以有多次转换），这就允许对其操作可以像链条一样排列，变成一个管道。
 
-### 2-3 生成 Stream
+## 2-3 生成 Stream
 有多种方式生成 Stream 源
 
-#### 从 Collection 和数组
+## 从 Collection 和数组
 - Collection.stream()
 - Collection.parallelStream()
 - Arrays.stream(T array)
 - Stream.of()
 
 
-#### 从 BufferedReader
+## 从 BufferedReader
 - java.io.BufferedReader.lines()
 
-#### 静态工厂
+## 静态工厂
 - java.util.stream.IntStream.range()
 - java.nio.file.Files.walk()
 
-#### 自己构建
+## 自己构建
 - java.util.Spliterator
 
-#### 其它
+## 其它
 - Random.ints()
 - BitSet.stream()
 - Pattern.splitAsStream(java.lang.CharSequence)
@@ -115,19 +115,19 @@ Stream 的处理过程是单向、不可往复的，数据只能遍历一次，�
 ## 3 流的操作
 当把一个数据结构包装成 Stream 后，就要开始对里面的元素进行各类操作了，流的操作类型分为以下几种：
 
-### 3-1 Intermediate
+## 3-1 Intermediate
 一个流可以后面跟随零个或多个 intermediate 操作。其目的主要是打开流，做出某种程度的数据映射/过滤，然后返回一个新的流，交给下一个操作使用。这类操作都是惰性化的（lazy），就是说，仅仅调用到这类方法，并没有真正开始流的遍历。常见的操作如下：
 
 **map (mapToInt, flatMap 等)、 filter、 distinct、 sorted、 peek、 limit、 skip、 parallel、 sequential、 unordered**
 
-### 3-2 Terminal
+## 3-2 Terminal
 一个流只能有一个 terminal 操作，当这个操作执行后，流就被使用「光」了，无法再被操作。所以这必定是流的最后一个操作。Terminal 操作的执行，才会真正开始流的遍历，并且会生成一个结果，或者一个 side effect。常见的操作如下：
 
 **forEach、 forEachOrdered、 toArray、 reduce、 collect、 min、 max、 count、 anyMatch、 allMatch、 noneMatch、 findFirst、 findAny、 iterator**
 
 在对于一个 Stream 进行多次转换操作 (Intermediate 操作)，每次都对 Stream 的每个元素进行转换，而且是执行多次，这样时间复杂度就是 N（转换次数）个 for 循环里把所有操作都做掉的总和吗？其实不是这样的，转换操作都是 lazy 的，多个转换操作只会在 Terminal 操作的时候融合起来，一次循环完成。我们可以这样简单的理解，Stream 里有个操作函数的集合，每次转换操作就是把转换函数放入这个集合中，在 Terminal 操作的时候循环 Stream 对应的集合，然后对每个元素执行所有的函数。
 
-### 3-3 short-circuiting
+## 3-3 short-circuiting
 还有一种操作被称为 short-circuiting（短路）。用以指：
 - 对于一个 intermediate 操作，如果它接受的是一个无限大（infinite/unbounded）的 Stream，但返回一个有限的新 Stream。
 - 对于一个 terminal 操作，如果它接受的是一个无限大的 Stream，但能在有限的时间计算出结果。
@@ -139,7 +139,7 @@ Stream 的处理过程是单向、不可往复的，数据只能遍历一次，�
 ## 4 流的使用详解
 简单说，对 Stream 的使用就是实现一个 filter-map-reduce 过程，产生一个最终结果，或者导致一个副作用（side effect）。
 
-### 4-1 构造与转换
+## 4-1 构造与转换
 下面提供最常见的几种构造 Stream 的样例。
 
 案例：构造流的几种常见方法
@@ -178,9 +178,9 @@ String str = stream.collect(Collectors.joining()).toString();
 ```
 注：一个 Stream 只可以使用一次，上面的代码为了简洁而重复使用了数次。
 
-### 4-2 典型用法及案例
+## 4-2 典型用法及案例
 
-#### map、flatMap
+## map、flatMap
 我们先来看 map。如果你熟悉 scala 这类函数式语言，对这个方法应该很了解，它的作用就是把 input Stream 的每一个元素，映射成 output Stream 的另外一个元素。
 
 案例：这段代码把所有的单词转换为大写。
@@ -212,7 +212,7 @@ Stream<Integer> outputStream = inputStream
     .flatMap((childList) -> childList.stream());
 ```
 
-#### filter
+## filter
 filter 对原始 Stream 进行某项测试，通过测试的元素被留下来生成一个新 Stream。
 
 案例：留下偶数，经过条件「被 2 整除」的 filter，剩下的数字为 {2, 4, 6}。
@@ -231,7 +231,7 @@ List<String> output = reader.lines()
     .collect(Collectors.toList());
 ```
 
-#### forEach、peek
+## forEach、peek
 forEach 方法接收一个 Lambda 表达式，然后在 Stream 的每一个元素上执行该表达式。
 
 案例：打印姓名（forEach 和 pre-java 8 的对比）
@@ -276,7 +276,7 @@ Stream.of("one", "two", "three", "four")
 
 forEach 不能修改自己包含的本地变量值，也不能用 break/return 之类的关键字提前结束循环。
 
-#### findFirst
+## findFirst
 这是一个 termimal 兼 short-circuiting 操作，它总是返回 Stream 的第一个元素，或者空。这里比较重点的是它的返回值类型：Optional。这也是一个模仿 Scala 语言中的概念，作为一个容器，它可能含有某值，或者不包含。使用它的目的是尽可能避免 NullPointerException。
 
 案例：Optional 的两个用例
@@ -310,7 +310,7 @@ public static int getLength(String text) {
 
 Stream 中的 findAny、max/min、reduce 等方法等返回 Optional 值。还有例如 IntStream.average() 返回 OptionalDouble 等等。
 
-#### reduce
+## reduce
 这个方法的主要作用是把 Stream 元素组合起来。它提供一个起始值（种子），然后依照运算规则（BinaryOperator），和前面 Stream 的第一个、第二个、第 n 个元素组合。从这个意义上说，字符串拼接、数值的 sum、min、max、average 都是特殊的 reduce。例如 Stream 的 sum 就相当于 `Integer sum = integers.reduce(0, (a, b) -> a+b);` 或 `Integer sum = integers.reduce(0, Integer::sum);`。也有没有起始值的情况，这时会把 Stream 的前面两个元素组合起来，返回的是 Optional。
 
 案例：reduce 的使用
@@ -331,7 +331,7 @@ concat = Stream.of("a", "B", "c", "D", "e", "F").
 
 上面代码例如第一个示例的 reduce()，第一个参数（空白字符）即为起始值，第二个参数（String::concat）为 BinaryOperator。这类有起始值的 reduce() 都返回具体的对象。而对于第四个示例没有起始值的 reduce()，由于可能没有足够的元素，返回的是 Optional，请留意这个区别。
 
-#### limit、skip
+## limit、skip
 limit 返回 Stream 的前面 n 个元素；skip 则是扔掉前 n 个元素（它是由一个叫 subStream 的方法改名而来）。
 
 案例：limit 和 skip 对运行次数的影响
@@ -436,7 +436,7 @@ public void testLimitAndSkip() {
 
 最后有一点需要注意的是，对一个 parallel 的 Steam 管道来说，如果其元素是有序的，那么 limit 操作的成本会比较大，因为它的返回对象必须是前 n 个也有一样次序的元素。取而代之的策略是取消元素间的次序，或者不要用 parallel Stream。
 
-#### sorted
+## sorted
 对 Stream 的排序通过 sorted 进行，它比数组的排序更强之处在于你可以首先对 Stream 进行各类 map、filter、limit、skip 甚至 distinct 来减少元素数量后，再排序，这能帮助程序明显缩短执行时间。
 
 案例：排序前使用 limit 和 skip 优化
@@ -481,7 +481,7 @@ public void testLimitAndSkip() {
 
 当然，这种优化是有 business logic 上的局限性的：即不要求排序后再取值。
 
-#### min、max、distinct
+## min、max、distinct
 min 和 max 的功能也可以通过对 Stream 元素先排序，再 findFirst 来实现，但前者的性能会更好，为 O(n)，而 sorted 的成本是 O(n log n)。同时它们作为特殊的 reduce 方法被独立出来也是因为求最大最小值是很常见的操作。
 
 案例：找出最长一行的长度
@@ -508,7 +508,7 @@ br.close();
 System.out.println(words);
 ```
 
-#### sum
+## sum
 案例：通过 stream() 获取当前小物件的 source，filter 和 mapToInt 是 intermediate 操作，进行数据筛选和转换，最后一个 sum() 为 terminal 操作，对符合条件的全部小物件作重量求和。
 
 ```
@@ -518,7 +518,7 @@ int sum = widgets.stream()
     .sum();
 ```
 
-#### Match
+## Match
 Stream 有三个 match 方法，从语义上说：
 - allMatch：Stream 中全部元素符合传入的 predicate，返回 true
 - anyMatch：Stream 中只要有一个元素符合传入的 predicate，返回 true
@@ -572,8 +572,8 @@ All are adult? false
 Any child? true
 ```
 
-### 4-3 进阶：自己生成流
-#### Stream.generate
+## 4-3 进阶：自己生成流
+## Stream.generate
 通过实现 Supplier 接口，你可以自己来控制流的生成。这种情形通常用于随机数、常量的 Stream，或者需要前后元素间维持着某种状态信息的 Stream。把 Supplier 实例传递给 Stream.generate() 生成的 Stream，默认是串行（相对 parallel 而言）但无序的（相对 ordered 而言）。由于它是无限的，在管道中，必须利用 limit 之类的操作限制 Stream 大小。
 
 案例：生成 10 个随机整数
@@ -623,7 +623,7 @@ StormTestUser9, 4
 StormTestUser10, 76
 ```
 
-#### Stream.iterate
+## Stream.iterate
 iterate 跟 reduce 操作很像，接受一个种子值，和一个 UnaryOperator（例如 f）。然后种子值成为 Stream 的第一个元素，f(seed) 为第二个，f(f(seed)) 第三个，以此类推。
 
 案例：生成一个等差数列
@@ -638,10 +638,10 @@ Stream.iterate(0, n -> n + 3).limit(10). forEach(x -> System.out.print(x + " "))
 
 与 Stream.generate 相仿，在 iterate 时候管道必须有 limit 这样的操作来限制 Stream 大小。
 
-### 4-4 进阶：用 Collectors 来进行 reduction 操作
+## 4-4 进阶：用 Collectors 来进行 reduction 操作
 java.util.stream.Collectors 类的主要作用就是辅助进行各类有用的 reduction 操作，例如转变输出为 Collection，把 Stream 元素进行归组。
 
-#### groupingBy 和 partitioningBy
+## groupingBy 和 partitioningBy
 案例：按照年龄归组
 ```
 Map<Integer, List<Person>> personGroups = Stream.generate(new PersonSupplier())

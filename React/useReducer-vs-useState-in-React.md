@@ -1,4 +1,6 @@
-# useReducer vs useState in React（useReducer 与 useState 在 React 中的对比）
+# useReducer vs useState in React
+
+**useReducer 与 useState 在 React 中的对比**
 
 > 转译自：https://www.robinwieruch.de/react-usereducer-vs-usestate#when-to-use-usestate-or-usereducer
 
@@ -6,7 +8,9 @@ Since [React Hooks](https://www.robinwieruch.de/react-hooks/) have been released
 
 自 [React Hooks](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-React-Hooks.md) 发布，React 中的 [函数组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Function-Components.md) 就可以使用状态和副作用。有两个用于 [React 现代状态管理](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-State-Hooks-useReducer-useState-useContext.md) 的重要钩子：useState 和 useReducer。本教程没有详细解释这两个 React 钩子，但是解释了它们不同的应用场景。很多人问我是使用 useState 还是 useReducer；这就是为什么会把我所有的想法集中在一篇文章里，我认为这是解决这个问题的最好办法。
 
-## Table of Contents（目录列表）
+## Table of Contents
+
+**目录列表**
 
 - [When to use useState or useReducer?（何时使用 useState 或 useReducer）](#when-to-use-usestate-or-usereducer%E4%BD%95%E6%97%B6%E4%BD%BF%E7%94%A8-usestate-%E6%88%96-usereducer)
 - [Simple vs. Complex State with Hooks（钩子的简单与复杂状态）](#simple-vs-complex-state-with-hooks%E9%92%A9%E5%AD%90%E7%9A%84%E7%AE%80%E5%8D%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E7%8A%B6%E6%80%81)
@@ -15,7 +19,9 @@ Since [React Hooks](https://www.robinwieruch.de/react-hooks/) have been released
 - [Logic for State Changes（状态更改的逻辑）](#logic-for-state-changes%E7%8A%B6%E6%80%81%E6%9B%B4%E6%94%B9%E7%9A%84%E9%80%BB%E8%BE%91)
 - [Trigger of the State Change（触发状态改变）](#trigger-of-the-state-change%E8%A7%A6%E5%8F%91%E7%8A%B6%E6%80%81%E6%94%B9%E5%8F%98)
 
-## When to use useState or useReducer?（何时使用 useState 或 useReducer）
+## When to use useState or useReducer?
+
+**何时使用 useState 或 useReducer**
 
 Everyone starting out with React Hooks gets to know pretty soon the useState hook. It's there to update state in React function components by offering to set the initial state and returning the actual state and an updater function:
 
@@ -28,11 +34,11 @@ const Counter = () => {
   const [count, setCount] = useState(0);
 
   const handleIncrease = () => {
-    setCount(count => count + 1);
+    setCount((count) => count + 1);
   };
 
   const handleDecrease = () => {
-    setCount(count => count - 1);
+    setCount((count) => count - 1);
   };
 
   return (
@@ -108,7 +114,9 @@ Even though both components use different React Hooks for the state management, 
 
 尽管这两个组件使用不同的 React 钩子进行状态管理，但它们解决的是相同的业务案例。那么何时使用这些状态管理解决方案呢？让我们开始吧。
 
-## Simple vs. Complex State with Hooks（钩子的简单与复杂状态）
+## Simple vs. Complex State with Hooks
+
+**钩子的简单与复杂状态**
 
 The previous reducer example already encapsulated the `count` property into a state object. We could have done it simpler by using the count as the actual state. Refactoring the code to not having a state object, but only the count integer as JavaScript primitive, we can already see that the use case doesn't have a complex state to manage:
 
@@ -179,7 +187,9 @@ The rule of thumb suggests, for instance, once you spot `const [state, setState]
 
 经验法则表明，假设在你的代码中发现了 `const [state, setState] = useState({ firstname: 'Robin', lastname: 'Wieruch' })`，最好使用 useReducer 而不是 useState。
 
-## Simple vs. Complex State Transitions with Hooks（使用钩子实现简单状态转换到复杂状态）
+## Simple vs. Complex State Transitions with Hooks
+
+**使用钩子实现简单状态转换到复杂状态**
 
 We didn't use by chance two different action types (`INCREASE` and `DECREASE`) for our previous state transitions. What could we have done differently? By using the optional payload that can be used within every dispatched action object, we could say from the outside by how much we want to increase or decrease the count; moving the state transition towards being more implicit:
 
@@ -244,7 +254,9 @@ A great side-effect of having all state in one object is the possibility to use 
 
 在一个对象中包含所有状态的一个很好的副作用是可以使用 [浏览器的本地存储（暂缺译文）]()。这就是为什么你总是可以使用本地存储缓存状态的一部分，并在重新启动应用程序时将其作为 useReducer 的初始状态进行检索。
 
-## Multiple State Transitions operate on one State Object（在一个状态对象上进行多个状态转换操作）
+## Multiple State Transitions operate on one State Object
+
+**在一个状态对象上进行多个状态转换操作**
 
 Once your application grows in size, you will most likely deal with more complex state and state transitions. That's what we went through in the last two sections of this tutorial. However, one thing to notice is that the state object didn't just grew in complexity, but also in size of operations that are performed on this object.
 
@@ -258,7 +270,7 @@ Take for instance the following reducer that operates on one state object with m
 const todoReducer = (state, action) => {
   switch (action.type) {
     case "DO_TODO":
-      return state.map(todo => {
+      return state.map((todo) => {
         if (todo.id === action.id) {
           return { ...todo, complete: true };
         } else {
@@ -266,7 +278,7 @@ const todoReducer = (state, action) => {
         }
       });
     case "UNDO_TODO":
-      return state.map(todo => {
+      return state.map((todo) => {
         if (todo.id === action.id) {
           return { ...todo, complete: false };
         } else {
@@ -277,7 +289,7 @@ const todoReducer = (state, action) => {
       return state.concat({
         task: action.task,
         id: action.id,
-        complete: false
+        complete: false,
       });
     default:
       throw new Error();
@@ -297,7 +309,7 @@ Often you will start out with useState but refactor your state management to use
 const [state, dispatch] = useReducer(dataFetchReducer, {
   isLoading: false,
   isError: false,
-  data: initialData
+  data: initialData,
 });
 ```
 
@@ -312,20 +324,20 @@ const dataFetchReducer = (state, action) => {
       return {
         ...state,
         isLoading: true,
-        isError: false
+        isError: false,
       };
     case "FETCH_SUCCESS":
       return {
         ...state,
         isLoading: false,
         isError: false,
-        data: action.payload
+        data: action.payload,
       };
     case "FETCH_FAILURE":
       return {
         ...state,
         isLoading: false,
-        isError: true
+        isError: true,
       };
     default:
       throw new Error();
@@ -341,7 +353,9 @@ A great side-effect of having all state transitions neatly in one reducer functi
 
 将所有状态转换整齐地放在一个 reducer 函数中有一个很大的副作用，那就是 **可以导出用于单元测试的 reducer** 。如果只需要使用一个函数 `(state, action) => newState` 来测试所有状态转换，那么推断一个具有多个状态转换的状态对象会更简单。你可以通过提供所有可用的 action 类型和各种匹配的关键数据来测试所有状态转换。
 
-## Logic for State Changes（状态更改的逻辑）
+## Logic for State Changes
+
+**状态更改的逻辑**
 
 There is a difference of _where the logic for state transitions is placed when using useState or useReducer_. As we have seen for the previous useReducer examples, the logic for the state transitions happens within the reducer function. The action only comes with the minimum information to perform the transition based on the current state: `(state, action) => newState`. This comes especially handy if you rely on the current state to update your state.
 
@@ -351,7 +365,7 @@ There is a difference of _where the logic for state transitions is placed when u
 const todoReducer = (state, action) => {
   switch (action.type) {
     case "DO_TODO":
-      return state.map(todo => {
+      return state.map((todo) => {
         if (todo.id === action.id) {
           return { ...todo, complete: true };
         } else {
@@ -359,7 +373,7 @@ const todoReducer = (state, action) => {
         }
       });
     case "UNDO_TODO":
-      return state.map(todo => {
+      return state.map((todo) => {
         if (todo.id === action.id) {
           return { ...todo, complete: false };
         } else {
@@ -370,7 +384,7 @@ const todoReducer = (state, action) => {
       return state.concat({
         task: action.task,
         id: action.id,
-        complete: false
+        complete: false,
       });
     default:
       throw new Error();
@@ -387,14 +401,14 @@ import uuid from "uuid/v4";
 
 // Somewhere in your React components ...
 
-const handleSubmit = event => {
+const handleSubmit = (event) => {
   dispatch({ type: "ADD_TODO", task, id: uuid() });
 };
 
 const handleChange = () => {
   dispatch({
     type: todo.complete ? "UNDO_TODO" : "DO_TODO",
-    id: todo.id
+    id: todo.id,
   });
 };
 ```
@@ -403,7 +417,9 @@ Now imagine you would perform the same state transitions but with useState inste
 
 现在，假设你将执行相同的状态转换，但是使用 useState。在所有业务逻辑所在的位置上，不存在类似于 reducer 这样的预定义实体。没有明确的分离（只要你不将逻辑提取到单独的函数中）并且所有与状态相关的逻辑最终都将在处理程序中调用状态更新器函数。随着时间的推移，将状态逻辑从视图逻辑中分离出来变得越来越困难，组件也变得越来越复杂。reducer 为改变状态的逻辑提供了完美的场所。
 
-## Trigger of the State Change（触发状态改变）
+## Trigger of the State Change
+
+**触发状态改变**
 
 The vertical component tree in React becomes deeper once you grow your application. If the state is simple and belongs co-located (state + state trigger) to a component (e.g. [search input field which is made a controlled component](https://www.robinwieruch.de/react-controlled-components/)), using useState may be the perfect fit. The state is encapsulated within this one component:
 
@@ -415,7 +431,7 @@ import React, { useState } from "react";
 const App = () => {
   const [value, setValue] = useState("Hello React");
 
-  const handleChange = event => setValue(event.target.value);
+  const handleChange = (event) => setValue(event.target.value);
 
   return (
     <div>

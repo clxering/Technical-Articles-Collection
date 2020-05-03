@@ -149,7 +149,7 @@ test {
 }
 ```
 
-### Adding the httpclient Dependency
+## Adding the httpclient Dependency
 
 The tests (in complete/src/test/java/com/example/restservicecors/GreetingIntegrationTests.java) require the Apache httpclient library.
 
@@ -360,7 +360,7 @@ You can enable cross-origin resource sharing (CORS) from either in individual co
 
 - Global CORS configuration
 
-### Controller Method CORS Configuration
+## Controller Method CORS Configuration
 
 So that the RESTful web service will include CORS access control headers in its response, you have to add a @CrossOrigin annotation to the handler method, as the following listing (from src/main/java/com/example/restservicecors/GreetingController.java) shows:
 
@@ -391,7 +391,7 @@ In this example, we allow only http://localhost:9000 to send cross-origin reques
 
 > You can also add the @CrossOrigin annotation at the controller class level as well, to enable CORS on all handler methods of this class.
 
-### Global CORS configuration
+## Global CORS configuration
 
 In addition (or as an alternative) to fine-grained annotation-based configuration, you can define some global CORS configuration as well. This is similar to using a Filter but can be declared within Spring MVC and combined with fine-grained @CrossOrigin configuration. By default, all origins and GET, HEAD, and POST methods are allowed.
 
@@ -499,7 +499,7 @@ public class RestServiceCorsApplication {
 
 The main() method uses Spring Boot’s SpringApplication.run() method to launch an application. Did you notice that there was not a single line of XML? There is no web.xml file, either. This web application is 100% pure Java and you did not have to deal with configuring any plumbing or infrastructure.
 
-### Build an executable JAR
+## Build an executable JAR
 
 You can run the application from the command line with Gradle or Maven. You can also build a single executable JAR file that contains all the necessary dependencies, classes, and resources and run that. Building an executable jar so makes it easy to ship, version, and deploy the service as an application throughout the development lifecycle, across different environments, and so forth.
 

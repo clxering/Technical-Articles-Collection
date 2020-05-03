@@ -1,4 +1,6 @@
-# React State Hooks: useReducer, useState, useContext（React 状态钩子：useReducer、useState、useContext）
+# React State Hooks: useReducer, useState, useContext
+
+**React 状态钩子：useReducer、useState、useContext**
 
 > 转译自：https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext
 
@@ -6,35 +8,39 @@ If you haven't used state management excessively in [React Function Components](
 
 如果你还没有在 [React 函数组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Function-Components.md) 中过多地使用状态管理，本教程可以帮助你更好地理解如何将 [React 钩子](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-React-Hooks.md)（如 useState、useReducer 和 useContext）组合起来，在 React 应用程序中进行状态管理。在本教程中，我们要用钩子模拟复杂的状态管理库，比如全局管理状态的 [Redux（暂无译文）]()。让我们深入研究一个逐步实现的应用程序。
 
-## Table of Contents（目录列表）
+## Table of Contents
+
+**目录列表**
 
 - [React useState: simple State（React useState：简单状态）](#react-usestate-simple-statereact-usestate%E7%AE%80%E5%8D%95%E7%8A%B6%E6%80%81)
 - [React useReducer: complex State（React useReducer：复杂状态）](#react-usereducer-complex-statereact-usereducer%E5%A4%8D%E6%9D%82%E7%8A%B6%E6%80%81)
 - [React useContext: global State（React useContext：全局状态）](#react-usecontext-global-statereact-usecontext%E5%85%A8%E5%B1%80%E7%8A%B6%E6%80%81)
 
-## React useState: simple State（React useState：简单状态）
+## React useState: simple State
+
+**React useState：简单状态**
 
 We start with a list of items -- in our scenario a list of todo items -- which are rendered in our function component with a [JavaScript Map Method for Arrays](https://www.robinwieruch.de/javascript-map-array/). Each todo item rendered as list item receives a [key attribute](https://www.robinwieruch.de/react-list-key) to notify React about its place in the [rendered list](https://www.robinwieruch.de/react-list-component):
 
-我们从一个项目列表开始（在我们的场景中是一个待办事项列表），它在我们的函数组件中使用一个基于 [数组的 JavaScript map方法（暂无译文）]() 渲染。作为列表项渲染的每个待办事项将接收一个 [key 属性（暂无译文）]() 来告知 React 其在 [渲染列表（暂无译文）]() 中的位置：
+我们从一个项目列表开始（在我们的场景中是一个待办事项列表），它在我们的函数组件中使用一个基于 [数组的 JavaScript map 方法（暂无译文）]() 渲染。作为列表项渲染的每个待办事项将接收一个 [key 属性（暂无译文）]() 来告知 React 其在 [渲染列表（暂无译文）]() 中的位置：
 
 ```js
-import React from 'react';
+import React from "react";
 
 const initialTodos = [
   {
-    id: 'a',
-    task: 'Learn React',
+    id: "a",
+    task: "Learn React",
     complete: true,
   },
   {
-    id: 'b',
-    task: 'Learn Firebase',
+    id: "b",
+    task: "Learn Firebase",
     complete: true,
   },
   {
-    id: 'c',
-    task: 'Learn GraphQL',
+    id: "c",
+    task: "Learn GraphQL",
     complete: false,
   },
 ];
@@ -42,7 +48,7 @@ const initialTodos = [
 const App = () => (
   <div>
     <ul>
-      {initialTodos.map(todo => (
+      {initialTodos.map((todo) => (
         <li key={todo.id}>
           <label>{todo.task}</label>
         </li>
@@ -92,16 +98,16 @@ We also had to give our Function Arrow Component a body with an explicit return 
 
 ```js
 const App = () => {
-  const [task, setTask] = useState('');
+  const [task, setTask] = useState("");
 
-  const handleChangeInput = event => {
+  const handleChangeInput = (event) => {
     setTask(event.target.value);
   };
 
   return (
     <div>
       <ul>
-        {initialTodos.map(todo => (
+        {initialTodos.map((todo) => (
           <li key={todo.id}>
             <label>{todo.task}</label>
           </li>
@@ -124,18 +130,18 @@ To continue, let's implement a submit button to add the new todo item to the lis
 
 ```js
 const App = () => {
-  const [task, setTask] = useState('');
+  const [task, setTask] = useState("");
 
-  const handleChangeInput = event => {
+  const handleChangeInput = (event) => {
     setTask(event.target.value);
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     if (task) {
       // add new todo item
     }
 
-    setTask('');
+    setTask("");
 
     event.preventDefault();
   };
@@ -143,7 +149,7 @@ const App = () => {
   return (
     <div>
       <ul>
-        {initialTodos.map(todo => (
+        {initialTodos.map((todo) => (
           <li key={todo.id}>
             <label>{todo.task}</label>
           </li>
@@ -151,11 +157,7 @@ const App = () => {
       </ul>
 
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={task}
-          onChange={handleChangeInput}
-        />
+        <input type="text" value={task} onChange={handleChangeInput} />
         <button type="submit">Add Todo</button>
       </form>
     </div>
@@ -428,21 +430,23 @@ That's it. The new todo items are immediately set as state for the list of todo 
 
 用复选框选中（和取消选中）待办事项
 
-### Exercises:
+## Exercises:
 
 - Read more about [React's useState Hook](https://www.robinwieruch.de/react-usestate-hook)
 
 阅读更多：[React 的 useState 钩子]()
 
-## React useReducer: complex State（React useReducer：复杂状态）
+## React useReducer: complex State
+
+**React useReducer：复杂状态**
 
 The useState hook is great to manage simple state. However, once you run into more complex state objects or state transitions -- which you want to keep maintainable and predictable --, the [useReducer hook](https://www.robinwieruch.de/react-usereducer-hook/) is a great candidate to manage them. [Here you can find a comparison of when to use the useState or useReducer hook.](https://www.robinwieruch.de/react-usereducer-vs-usestate/) Let's continue implementing our application with the useReducer hook by going through a simpler example first. In our next scenario, we want to add buttons to filter our list of todos for three cases:
 
 useState 钩子是强大的简单状态管理利器。然而，一旦遇到更复杂的状态对象或状态转换（希望保持可维护性和可预测性），[useReducer 钩子（暂缺译文）]() 是管理它们的最佳选项。在 [这里你可以找到何时使用 useState 或 useReducer 钩子的比较](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/How-to-useReducer-in-React.md)。让我们通过一个更简单的示例来继续使用 useReducer 钩子实现我们的应用程序。在我们的下一个场景中，我们想添加三个按钮来过滤我们的待办事项列表：
 
-* show all todo items（显示所有待办事项）
-* show only complete todo items（仅显示已完成待办事项）
-* show only incomplete todo items（仅显示未完成待办事项）
+- show all todo items（显示所有待办事项）
+- show only complete todo items（仅显示已完成待办事项）
+- show only incomplete todo items（仅显示未完成待办事项）
 
 Let's see how we can implement these with three buttons:
 
@@ -493,12 +497,12 @@ We will care later about these. Next, let's see how we can map the three cases i
 ```js
 const filterReducer = (state, action) => {
   switch (action.type) {
-    case 'SHOW_ALL':
-      return 'ALL';
-    case 'SHOW_COMPLETE':
-      return 'COMPLETE';
-    case 'SHOW_INCOMPLETE':
-      return 'INCOMPLETE';
+    case "SHOW_ALL":
+      return "ALL";
+    case "SHOW_COMPLETE":
+      return "COMPLETE";
+    case "SHOW_INCOMPLETE":
+      return "INCOMPLETE";
     default:
       throw new Error();
   }
@@ -628,9 +632,9 @@ The whole source code can be seen [here](https://github.com/the-road-to-learn-re
 
 完整的源代码可以可以到 [这里](https://github.com/the-road-to-learn-react/react-with-redux-philosophy/blob/08d4b7130613eef209687f5f4c270c86716f1f09/src/App.js) 查看，所有的变化所有的修改可以到 [这里](https://github.com/the-road-to-learn-react/react-with-redux-philosophy/commit/08d4b7130613eef209687f5f4c270c86716f1f09) 查看。
 
-*Note: The shown use case -- also every other use case with [useReducer -- can be implemented with useState](https://www.robinwieruch.de/javascript-reducer/) as well. However, even though this one is a simpler example for the sake of learning about it, it shows clearly how much its helps for the reasoning for the state transitions by just reading the reducer function.*
+_Note: The shown use case -- also every other use case with [useReducer -- can be implemented with useState](https://www.robinwieruch.de/javascript-reducer/) as well. However, even though this one is a simpler example for the sake of learning about it, it shows clearly how much its helps for the reasoning for the state transitions by just reading the reducer function._
 
-*注意：展示的用例（以及 useReducer 的所有其他用例）[也可以用 useState 实现（暂缺译文）]()。然而，尽管是为了学习目设计的简单的示例，但是通过阅读 reducer 函数，对了解状态转换的逻辑会有很大帮助。*
+_注意：展示的用例（以及 useReducer 的所有其他用例）[也可以用 useState 实现（暂缺译文）]()。然而，尽管是为了学习目设计的简单的示例，但是通过阅读 reducer 函数，对了解状态转换的逻辑会有很大帮助。_
 
 The useReducer hook is great for predictable state transitions as we have seen in the previous example. Next, we are going to see how it is a good fit for complex state objects too. Therefore, we will start to manage our todo items in a reducer hook and manipulate it with the following transitions:
 
@@ -647,23 +651,23 @@ reducer 应该像下面这个样子：
 ```js
 const todoReducer = (state, action) => {
   switch (action.type) {
-    case 'DO_TODO':
-      return state.map(todo => {
+    case "DO_TODO":
+      return state.map((todo) => {
         if (todo.id === action.id) {
           return { ...todo, complete: true };
         } else {
           return todo;
         }
       });
-    case 'UNDO_TODO':
-      return state.map(todo => {
+    case "UNDO_TODO":
+      return state.map((todo) => {
         if (todo.id === action.id) {
           return { ...todo, complete: false };
         } else {
           return todo;
         }
       });
-    case 'ADD_TODO':
+    case "ADD_TODO":
       return state.concat({
         task: action.task,
         id: action.id,
@@ -794,13 +798,15 @@ You have seen how useState and useReducer can be used for simple and complex sta
 
 你已经看到了如何将 useState 和 useReducer 用于简单和复杂的状态管理，而 useReducer 为你提供了清晰的状态转换（从而提高了可预测性）和更好的管理复杂对象的方法。
 
-### Exercises:
+## Exercises:
 
 - Read more about [React's useReducer Hook](https://www.robinwieruch.de/react-usereducer-hook)
 
 阅读更多：[React 的 useReducer 钩子](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/How-to-useReducer-in-React.md)
 
-## React useContext: global State（React useContext：全局状态）
+## React useContext: global State
+
+**React useContext：全局状态**
 
 We can take our state management one step further. At the moment, the state is managed co-located to the component. That's because we only have one component after all. What if we would have a deep component tree? How could we dispatch state changes from anywhere?
 
@@ -812,19 +818,19 @@ Let's dive into [React's Context API and the useContext hook](https://www.robinw
 
 ```js
 const App = () => {
-  const [filter, dispatchFilter] = useReducer(filterReducer, 'ALL');
+  const [filter, dispatchFilter] = useReducer(filterReducer, "ALL");
   const [todos, dispatchTodos] = useReducer(todoReducer, initialTodos);
 
-  const filteredTodos = todos.filter(todo => {
-    if (filter === 'ALL') {
+  const filteredTodos = todos.filter((todo) => {
+    if (filter === "ALL") {
       return true;
     }
 
-    if (filter === 'COMPLETE' && todo.complete) {
+    if (filter === "COMPLETE" && todo.complete) {
       return true;
     }
 
-    if (filter === 'INCOMPLETE' && !todo.complete) {
+    if (filter === "INCOMPLETE" && !todo.complete) {
       return true;
     }
 
@@ -848,15 +854,15 @@ Second, the Filter component with its buttons and handlers which are using the d
 ```js
 const Filter = ({ dispatch }) => {
   const handleShowAll = () => {
-    dispatch({ type: 'SHOW_ALL' });
+    dispatch({ type: "SHOW_ALL" });
   };
 
   const handleShowComplete = () => {
-    dispatch({ type: 'SHOW_COMPLETE' });
+    dispatch({ type: "SHOW_COMPLETE" });
   };
 
   const handleShowIncomplete = () => {
-    dispatch({ type: 'SHOW_INCOMPLETE' });
+    dispatch({ type: "SHOW_INCOMPLETE" });
   };
 
   return (
@@ -882,7 +888,7 @@ Third, the TodoList and TodoItem components. Since the individual TodoItem compo
 ```js
 const TodoList = ({ dispatch, todos }) => (
   <ul>
-    {todos.map(todo => (
+    {todos.map((todo) => (
       <TodoItem key={todo.id} dispatch={dispatch} todo={todo} />
     ))}
   </ul>
@@ -891,7 +897,7 @@ const TodoList = ({ dispatch, todos }) => (
 const TodoItem = ({ dispatch, todo }) => {
   const handleChange = () =>
     dispatch({
-      type: todo.complete ? 'UNDO_TODO' : 'DO_TODO',
+      type: todo.complete ? "UNDO_TODO" : "DO_TODO",
       id: todo.id,
     });
 
@@ -916,19 +922,19 @@ Last, the AddTodo component which uses is own local state to manage the value of
 
 ```js
 const AddTodo = ({ dispatch }) => {
-  const [task, setTask] = useState('');
+  const [task, setTask] = useState("");
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     if (task) {
-      dispatch({ type: 'ADD_TODO', task, id: uuid() });
+      dispatch({ type: "ADD_TODO", task, id: uuid() });
     }
 
-    setTask('');
+    setTask("");
 
     event.preventDefault();
   };
 
-  const handleChange = event => setTask(event.target.value);
+  const handleChange = (event) => setTask(event.target.value);
 
   return (
     <form onSubmit={handleSubmit}>
@@ -1049,7 +1055,7 @@ Also the TodoItem component makes use of it and the dispatch function doesn't ne
 ```js
 const TodoList = ({ todos }) => (
   <ul>
-    {todos.map(todo => (
+    {todos.map((todo) => (
       <TodoItem key={todo.id} todo={todo} />
     ))}
   </ul>
@@ -1060,7 +1066,7 @@ const TodoItem = ({ todo }) => {
 
   const handleChange = () =>
     dispatch({
-      type: todo.complete ? 'UNDO_TODO' : 'DO_TODO',
+      type: todo.complete ? "UNDO_TODO" : "DO_TODO",
       id: todo.id,
     });
 
@@ -1083,7 +1089,7 @@ The application works again, but we are able to dispatch changes for our todo li
 
 应用程序再次运行，我们能够从任何地方 dispatch 待办事项列表的更改。如果你想继续使用这个应用程序，也可以尝试为过滤器 reducer 传递 dispatch 函数。此外，你还可以通过向下传递 React 的状态，它来自整合了 Context API 的 useReducer。你自己试试吧。完整的源代码可以可以到 [这里](https://github.com/the-road-to-learn-react/react-with-redux-philosophy/blob/95806796700fc2ca5cd204dd2f4542ad6f08e7ee/src/App.js) 查看，所有的变化所有的修改可以到 [这里](https://github.com/the-road-to-learn-react/react-with-redux-philosophy/commit/95806796700fc2ca5cd204dd2f4542ad6f08e7ee) 查看。
 
-### Exercises:
+## Exercises:
 
 - Read more about [React's useContext Hook](https://www.robinwieruch.de/react-usecontext-hook)
 

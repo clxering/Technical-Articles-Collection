@@ -46,7 +46,7 @@ To learn more about the `||` operator, check out my previous post [here](https:/
 
 ## Community Input
 
-### Using the Comma operator
+## Using the Comma operator
 
 @phenax5: You can also use the comma operator. Separate two expressions with a comma and it will execute the first one and then the second and return with the second one.
 
@@ -70,7 +70,7 @@ a => (
 )
 ```
 
-### Using `||` with TypeScript
+## Using `||` with TypeScript
 
 If you're working with TypeScript and depends on how you set it up. Using this debugging technique might give you an error and prevent your code from compiling. In that case, you can suppress the error using `ts-ignore`.
 

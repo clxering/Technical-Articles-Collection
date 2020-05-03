@@ -21,7 +21,7 @@ If you can answer these questions by reading the previous tutorial, return to th
 
 如果你可以通过阅读前一篇教程来回答这些问题，那么请回到本教程来学习 React 的 useContext 钩子。让我们开始吧……
 
-# React's useContext Hook
+## React's useContext Hook
 
 React's Context is initialized with React's `createContext` top-level API. In this case, we are using React's Context for sharing a theme (e.g. color, paddings, margins, font-sizes) across our React components. For the sake of keeping it simple, the theme will only be a color (e.g. `green`) here:
 

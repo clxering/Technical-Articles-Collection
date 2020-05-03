@@ -26,7 +26,7 @@ let foo = 'what is foo??'
 
 - @jonashavers: That's always better than feeling the need to add a comment to describe what you mean and what the variable is used for. The goal is: "don't make me think"
 
-### Navigate your Code Base with Better Variable Names
+## Navigate your Code Base with Better Variable Names
 
 Having a good descriptive name also make searching and finding a lot easier in a large code base 💯
 

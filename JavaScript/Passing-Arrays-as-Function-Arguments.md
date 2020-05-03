@@ -24,7 +24,7 @@ sandwich(...food);
 
 The ability to turn an array into a list of arguments is super handy with the `Math` functions.
 
-### Example: Find the Largest Number
+## Example: Find the Largest Number
 
 Let's say you want to find the largest number using the `Math.max()` function.
 
@@ -65,7 +65,7 @@ const numbers = [5, 7, 3];
 console.log(...numbers); // 5 7 3
 ```
 
-### Explaining `spread` in non-dev terms
+## Explaining `spread` in non-dev terms
 
 If you find this spread-ing thing still confusing. Maybe let me try to explain it with [Russian nesting dolls](https://en.wikipedia.org/wiki/Matryoshka_doll). So I like to think of the array as Russian nesting dolls. And what spread does is:
 
