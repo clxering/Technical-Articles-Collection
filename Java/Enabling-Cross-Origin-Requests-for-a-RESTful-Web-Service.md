@@ -324,8 +324,8 @@ The service will handle GET requests to /greeting, optionally with a name parame
 
 ```json
 {
-    "id": 1,
-    "content": "Hello, World!"
+  "id": 1,
+  "content": "Hello, World!"
 }
 ```
 
@@ -420,25 +420,43 @@ The @RequestMapping annotation ensures that HTTP requests to /greeting are mappe
 
 The implementation of the method body creates and returns a new Greeting object, with the value of the id attribute based on the next value from the counter and the value of the content based on the query parameter or the default value. It also formats the given name by using the greeting template.
 
-方法体的实现创建并返回一个新的 Greeting 对象，其中 id 属性的值基于计数器的下一个值，内容的值基于查询参数或默认值。它还通过使用问候语模板来格式化给定的名称。
+方法实现创建并返回一个新的 Greeting 对象，其中 id 属性的值基于计数器的下一个值，内容的值基于查询参数或默认值。它还通过使用问候语模板来格式化给定的 name。
 
 A key difference between a traditional MVC controller and the RESTful web service controller shown earlier is the way that the HTTP response body is created. Rather than relying on a view technology to perform server-side rendering of the greeting data to HTML, this RESTful web service controller populates and returns a Greeting object. The object data is written directly to the HTTP response as JSON.
 
-To accomplish this, the @ResponseBody annotation on the greeting() method tells Spring MVC that it does not need to render the greeting object through a server-side view layer. Instead, the returned greeting object is the response body and should be written out directly.
+传统 MVC 控制器和 RESTful web 服务控制器之间的一个关键区别是 HTTP 响应体的创建方式。与依赖视图技术将问候语数据执行服务器端呈现为 HTML 不同，这个 RESTful web 服务控制器填充并返回一个 Greeting 对象。对象数据直接以 JSON 的形式写入 HTTP 响应。
+
+To accomplish this, the `@ResponseBody` annotation on the greeting() method tells Spring MVC that it does not need to render the greeting object through a server-side view layer. Instead, the returned greeting object is the response body and should be written out directly.
+
+为此，greeting() 方法上的 `@ResponseBody` 注解告诉 Spring MVC，它不需要通过服务器端视图层呈现 greeting 对象。相反，返回的 greeting 对象是响应体，应该直接写出来。
 
 The Greeting object must be converted to JSON. Thanks to Spring’s HTTP message converter support, you need not do this conversion manually. Because Jackson is on the classpath, Spring’s MappingJackson2HttpMessageConverter is automatically chosen to convert the Greeting instance to JSON.
 
+Greeting 对象必须转换为 JSON。由于 Spring 的 HTTP 消息转换器支持，不需要手动执行此转换。因为 J ackson 位于类路径中，所以会自动调用 Spring 的 MappingJackson2HttpMessageConverter 将 Greeting 实例转换为 JSON。
+
 ## Enabling CORS
+
+**启用跨域资源共享（CORS）**
 
 You can enable cross-origin resource sharing (CORS) from either in individual controllers or globally. The following topics describe how to do so:
 
+你可以在单个控制器或全局控制器中启用跨源资源共享（CORS）。以下主题描述了如何做到这一点：
+
 - Controller Method CORS Configuration
+
+控制器方法的 CORS 配置
 
 - Global CORS configuration
 
+全局 CORS 配置
+
 ## Controller Method CORS Configuration
 
-So that the RESTful web service will include CORS access control headers in its response, you have to add a @CrossOrigin annotation to the handler method, as the following listing (from src/main/java/com/example/restservicecors/GreetingController.java) shows:
+**控制器方法的 CORS 配置**
+
+So that the RESTful web service will include CORS access control headers in its response, you have to add a @CrossOrigin annotation to the handler method, as the following listing (from `src/main/java/com/example/restservicecors/GreetingController.java`) shows:
+
+为了使 RESTful web 服务在其响应中包含 CORS 访问控制头，必须向处理程序方法添加一个 `@CrossOrigin` 注释，如下所示（来自 `src/main/java/com/example/restservicecors/GreetingController.java`）：
 
 ```java
 	@CrossOrigin(origins = "http://localhost:9000")
@@ -451,27 +469,34 @@ So that the RESTful web service will include CORS access control headers in its 
 
 This @CrossOrigin annotation enables cross-origin resource sharing only for this specific method. By default, its allows all origins, all headers, and the HTTP methods specified in the @RequestMapping annotation. Also, a maxAge of 30 minutes is used. You can customize this behavior by specifying the value of one of the following annotation attributes:
 
+`@CrossOrigin` 注解只支持这个特定方法的跨源资源共享。默认情况下，它允许所有的源、所有的头和在 @RequestMapping 注解中指定的 HTTP 方法。此外，最大使用 30 分钟。可以通过指定下列注解属性之一的值来自定义此行为：
+
 - origins
-
 - methods
-
 - allowedHeaders
-
 - exposedHeaders
-
 - allowCredentials
-
 - maxAge.
 
 In this example, we allow only http://localhost:9000 to send cross-origin requests.
 
+在这里例子中，我们只允许 http://localhost:9000 发送跨域请求。
+
 > You can also add the @CrossOrigin annotation at the controller class level as well, to enable CORS on all handler methods of this class.
+
+你同样可以将 @CrossOrigin 注解应用在类级别，以便让其中所有方法开启 CORS
 
 ## Global CORS configuration
 
+**全局 CORS 配置**
+
 In addition (or as an alternative) to fine-grained annotation-based configuration, you can define some global CORS configuration as well. This is similar to using a Filter but can be declared within Spring MVC and combined with fine-grained @CrossOrigin configuration. By default, all origins and GET, HEAD, and POST methods are allowed.
 
-The following listing (from src/main/java/com/example/restservicecors/GreetingController.java) shows the greetingWithJavaconfig method in the GreetingController class:
+此外(或作为基于细粒度注释的配置的替代方法)，还可以定义一些全局 CORS 配置。这类似于使用过滤器，但可以在 Spring MVC 中声明，并与细粒度的 `@CrossOrigin` 配置相结合。默认情况下，允许使用所有域、GET、HEAD 和 POST 方法。
+
+The following listing (from `src/main/java/com/example/restservicecors/GreetingController.java)` shows the greetingWithJavaconfig method in the GreetingController class:
+
+如下所示（源码参考 `src/main/java/com/example/restservicecors/GreetingController.java)`）：
 
 ```java
 	@GetMapping("/greeting-javaconfig")
@@ -483,7 +508,11 @@ The following listing (from src/main/java/com/example/restservicecors/GreetingCo
 
 > The difference between the greetingWithJavaconfig method and the greeting method (used in the controller-level CORS configuration) is the route (/greeting-javaconfig rather than /greeting) and the presence of the @CrossOrigin origin.
 
+greetingWithJavaconfig 方法和 greeting 方法（在控制器级 CORS 配置中使用）之间的区别是路由(/greeting-javaconfig 而不是 /greeting)和 `@CrossOrigin` 来源的存在。
+
 The following listing (from src/main/java/com/example/restservicecors/RestServiceCorsApplication.java) shows how to add CORS mapping in the application class:
+
+下面的清单(源码路径 `src/main/java/com/example/restservicecors/RestServiceCorsApplication.java`）展示了如何在应用程序类中添加 CORS 映射：
 
 ```java
 	public WebMvcConfigurer corsConfigurer() {
@@ -498,11 +527,19 @@ The following listing (from src/main/java/com/example/restservicecors/RestServic
 
 You can easily change any properties (such as allowedOrigins in the example), as well as apply this CORS configuration to a specific path pattern.
 
+您可以轻松地更改任何属性（例如本例中的 allowedOrigins），也可以将这种 CORS 配置应用于特定的路径模式。
+
 > You can combine global- and controller-level CORS configuration.
+
+你可以结合全局和控制器两种级别的 CORS 配置
 
 ## Creating the Application Class
 
+**生成 Application 类**
+
 The Spring Initializr creates a bare-bones application class for you. The following listing (from initial/src/main/java/com/example/restservicecors/RestServiceCorsApplication.java) shows that initial class:
+
+Spring Initializr 创建了一个基本的应用程序类。下面的清单（来自 `initial/src/main/java/com/example/restservicecors/RestServiceCorsApplication.java`）显示了这个类：
 
 ```java
 package com.example.restservicecors;
@@ -522,6 +559,8 @@ public class RestServiceCorsApplication {
 
 You need to add a method to configure how to handle cross-origin resource sharing. The following listing (from complete/src/main/java/com/example/restservicecors/RestServiceCorsApplication.java) shows how to do so:
 
+你需要添加一个方法来配置如何处理跨源资源共享。下面的清单（来自 `complete/src/main/java/com/example/restservicecors/RestServiceCorsApplication.java`）展示了如何做到这一点：
+
 ```java
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
@@ -535,6 +574,8 @@ You need to add a method to configure how to handle cross-origin resource sharin
 ```
 
 The following listing shows the completed application class:
+
+完整的应用类如下所示：
 
 ```java
 package com.example.restservicecors;
@@ -567,13 +608,25 @@ public class RestServiceCorsApplication {
 
 @SpringBootApplication is a convenience annotation that adds all of the following:
 
-- @Configuration: Tags the class as a source of bean definitions for the application context.
+`@SpringBootApplication` 是一个方便的注解，它添加了以下所有内容：
 
-- @EnableAutoConfiguration: Tells Spring Boot to start adding beans based on classpath settings, other beans, and various property settings. For example, if spring-webmvc is on the classpath, this annotation flags the application as a web application and activates key behaviors, such as setting up a DispatcherServlet.
+- `@Configuration`: Tags the class as a source of bean definitions for the application context.
 
-- @ComponentScan: Tells Spring to look for other components, configurations, and services in the com/example package, letting it find the controllers.
+将该类标记为应用程序上下文的 bean 定义源。
+
+- `@EnableAutoConfiguration`: Tells Spring Boot to start adding beans based on classpath settings, other beans, and various property settings. For example, if spring-webmvc is on the classpath, this annotation flags the application as a web application and activates key behaviors, such as setting up a DispatcherServlet.
+
+告诉 Spring Boot 根据类路径设置、其他 bean 和各种属性设置开始添加 bean。例如，如果 spring-webmvc 位于 classpath，则该注解将应用程序标记为 web 应用程序并激活关键行为，例如设置 DispatcherServlet。
+
+- `@ComponentScan`: Tells Spring to look for other components, configurations, and services in the com/example package, letting it find the controllers.
+
+告诉 Spring 在 com/example 包中查找其他组件、配置和服务，让它查找控制器。
 
 The main() method uses Spring Boot’s SpringApplication.run() method to launch an application. Did you notice that there was not a single line of XML? There is no web.xml file, either. This web application is 100% pure Java and you did not have to deal with configuring any plumbing or infrastructure.
+
+main() 方法使用 Spring Boot 的 SpringApplication.run() 方法来启动应用程序。您注意到没有一行 XML 吗？也没有 web.xml 文件。这个 web 应用程序是 100% 纯 Java 的，不需要配置任何管道或基础设施。
+
+**译注：以下部分过于简单，且不涉及 CORS，不译。**
 
 ## Build an executable JAR
 
@@ -659,11 +712,11 @@ Because the REST service is already running on localhost at port 8080, you need 
 
 Once the client starts, open http://localhost:9000 in your browser, where you should see the following:
 
-（图）
+（原文有图，略）
 
 If the service response includes the CORS headers, then the ID and content are rendered into the page. But if the CORS headers are missing (or insufficiently defined for the client), the browser fails the request and the values are not rendered into the DOM. In that case, you should see the following:
 
-（图）
+（原文有图，略）
 
 ## Summary
 
