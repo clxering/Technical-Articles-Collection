@@ -42,7 +42,7 @@
 - [JS Essentials: Falsy Values](JavaScript/JS-Essentials-Falsy-Values.md)
 - [Refactoring the if Condition](JavaScript/Refactoring-the-if-Condition.md)
 - [2 Ways to Merge Arrays in JavaScript（JavaScript 中合并数组的两种方法）](JavaScript/2-Ways-to-Merge-Arrays-in-JavaScript.md)
-- [3 Ways to Clone Objects in JavaScript](JavaScript/3-Ways-to-Clone-Objects-in-JavaScript.md)
+- [3 Ways to Clone Objects in JavaScript（JavaScript 中拷贝对象的三种方法）](JavaScript/3-Ways-to-Clone-Objects-in-JavaScript.md)
 - [Flatten Array using Array.flat() in JavaScript](<JavaScript/Flatten-Array-using-Array.flat()-in-JavaScript.md>)
 - [5 Ways to Convert a Value to String in JavaScript](JavaScript/5-Ways-to-Convert-a-Value-to-String-in-JavaScript.md)
 - [Passing Arrays as Function Arguments](JavaScript/Passing-Arrays-as-Function-Arguments.md)

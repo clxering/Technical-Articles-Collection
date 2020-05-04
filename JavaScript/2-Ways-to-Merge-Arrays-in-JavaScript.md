@@ -199,7 +199,7 @@ cars.push(...trucks);
 
 Spread was introduced in ES6, so all modern browser supports it. Except for the "I'm too cool" Internet Explorer - no support there 😕. So if you need IE support, you want to use `concat` instead or use a compiler like [Babel](https://babeljs.io/).
 
-扩展运算符是在 ES6 中引入的，所有现代浏览器都支持它。除了「我很酷」的 IE 浏览器（它不支持）。所以如果你需要 IE 支持，你可以使用 `concat` 或者编译器，比如[Babel](https://babeljs.io/)
+扩展运算符是在 ES6 中引入的，所有现代浏览器都支持它。除了「我很酷」的 IE 浏览器（它不支持）。所以如果你需要 IE 支持，你可以使用 `concat` 或者编译器，比如 [Babel](https://babeljs.io/)
 
 - [Browser Support: Spread](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax#Browser_compatibility)
 - [Browser Support: Concat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat#Browser_compatibility)
