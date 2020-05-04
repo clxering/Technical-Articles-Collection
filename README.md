@@ -25,7 +25,7 @@
 - [3 things every java developer should stop doing（每个 Java 开发者都应该停止的三件事）](Java/3-things-every-java-developer-should-stop-doing.md)
 - [Java 8 中的 Streams API 详解](Java/Java-8-中的-Streams-API-详解.md)
 - [Guidelines for using volatile variables（volatile 变量使用指南）](Java/volatile-变量使用指南.md)
-- [Enabling Cross Origin Requests for a RESTful Web Service](Java/Enabling-Cross-Origin-Requests-for-a-RESTful-Web-Service.md)
+- [Enabling Cross Origin Requests for a RESTful Web Service（为 RESTful Web 服务启用跨域请求）](Java/Enabling-Cross-Origin-Requests-for-a-RESTful-Web-Service.md)
 
 ### JavaScript
 
@@ -41,7 +41,7 @@
 - [Colorful Console Message](JavaScript/Colorful-Console-Message.md)
 - [JS Essentials: Falsy Values](JavaScript/JS-Essentials-Falsy-Values.md)
 - [Refactoring the if Condition](JavaScript/Refactoring-the-if-Condition.md)
-- [2 Ways to Merge Arrays in JavaScript](JavaScript/2-Ways-to-Merge-Arrays-in-JavaScript.md)
+- [2 Ways to Merge Arrays in JavaScript（JavaScript 中合并数组的两种方法）](JavaScript/2-Ways-to-Merge-Arrays-in-JavaScript.md)
 - [3 Ways to Clone Objects in JavaScript](JavaScript/3-Ways-to-Clone-Objects-in-JavaScript.md)
 - [Flatten Array using Array.flat() in JavaScript](<JavaScript/Flatten-Array-using-Array.flat()-in-JavaScript.md>)
 - [5 Ways to Convert a Value to String in JavaScript](JavaScript/5-Ways-to-Convert-a-Value-to-String-in-JavaScript.md)
