@@ -72,7 +72,7 @@ If you want to learn more about this, check out Gordon's Zhu [Watch and Code](ht
 
 Using spread will clone your object. Note this will be a shallow copy. As of this post, the spread operator for cloning objects is in Stage 4. So it's not officially in the specifications yet. So if you were to use this, you would need to compile it with Babel (or something similar).
 
-使用扩展运算符克隆你的对象。注意这是一个浅拷贝。在这篇文章中，克隆对象的扩展运算符处于 Stage 4。所以它还没有正式的规范。因此，如果要使用它，需要使用 Babel（或类似的东西）编译它。
+使用扩展运算符拷贝你的对象。注意，这是一个浅拷贝。在这篇文章中，拷贝对象的扩展运算符处于 Stage 4。所以它还没有正式的规范。因此，如果要使用它，需要使用 Babel（或类似的东西）编译它。
 
 ```js
 const food = { beef: "🥩", bacon: "🥓" };
@@ -161,7 +161,7 @@ console.log(
 
 [@OlegVaraksin](https://twitter.com/OlegVaraksin/status/1152850845303824384): The JSON method has troubles with circular dependencies. Furthermore, the order of properties in the cloned object may be different.
 
-@OlegVaraksin：JSON 方法有循环依赖的问题。此外，克隆对象中的属性顺序可能不同。
+@OlegVaraksin：JSON 方法有循环依赖的问题。此外，拷贝对象中的属性顺序可能不同。
 
 ## Shallow Clone vs Deep Clone
 
@@ -291,7 +291,7 @@ food = {
 
 `...` we get an error, because we use spread when creating new objects, and therefore are assigning a whole new object to `food` which was declared with `const`, which is illegal. So we can either choose to declare a new variable to hold our new object in, like the following:
 
-我们会得到一个错误，因为我们在创建新对象时使用了扩展运算符，因此将整个新对象赋值给 `food`，它声明是 `const`，此举是非法的。因此，我们可以选择声明一个新变量来保存我们的新对象，如下所示：
+我们会得到一个错误，因为我们在创建新对象时使用了扩展运算符，将整个新对象赋值给 `food`，它声明为 `const`，所以赋值是非法的。因此，我们可以选择声明一个新变量来保存我们的新对象，如下所示：
 
 ```js
 const food = { beef: "🌽", bacon: "🥓" };
@@ -307,7 +307,7 @@ console.log(newFood);
 
 or we could declare `food` with `let` or `var` which would allow us to assign a whole new object:
 
-或者将 `food` 用 `let` 或 `var` 声明，以便允许我们赋值给一个新对象：
+或者将 `food` 用 `let` 或 `var` 声明，以便允许我们赋值：
 
 ```js
 let food = { beef: '🌽', bacon: '🥓' };
