@@ -10,7 +10,7 @@ In JavaScript, arrays are not true arrays. They are actually objects. So you can
 
 But not a problem! Use `Array.isArray()` -- finally, there is an easier way to check if a value is an actual array 🎉
 
-但不是问题！使用 `Array.isArray()` 就可以了。最后，有一种更简单的方法来检查一个变量是否确为数组。
+但不是问题！有一种更简单的方法来检查一个变量是否确为数组，使用 `Array.isArray()` 就可以了。
 
 ```js
 const books = ['📕', '📙', '📗'];
