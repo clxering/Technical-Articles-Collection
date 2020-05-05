@@ -44,7 +44,7 @@
 - [2 Ways to Merge Arrays in JavaScript（JavaScript 中合并数组的两种方法）](JavaScript/2-Ways-to-Merge-Arrays-in-JavaScript.md)
 - [3 Ways to Clone Objects in JavaScript（JavaScript 中拷贝对象的三种方法）](JavaScript/3-Ways-to-Clone-Objects-in-JavaScript.md)
 - [Flatten Array using Array.flat() in JavaScript](<JavaScript/Flatten-Array-using-Array.flat()-in-JavaScript.md>)
-- [5 Ways to Convert a Value to String in JavaScript](JavaScript/5-Ways-to-Convert-a-Value-to-String-in-JavaScript.md)
+- [5 Ways to Convert a Value to String in JavaScript（JavaScript 中转换数值为字符串的五种方法）](JavaScript/5-Ways-to-Convert-a-Value-to-String-in-JavaScript.md)
 - [Passing Arrays as Function Arguments](JavaScript/Passing-Arrays-as-Function-Arguments.md)
 - [Quick Debug using || with console.log](JavaScript/Quick-Debug-using-II-with-console.log.md)
 - [5-Best-Practices-to-Write-Quality-Arrow-Functions（编写高质量箭头函数的五个最佳实践）](JavaScript/5-Best-Practices-to-Write-Quality-Arrow-Functions.md)

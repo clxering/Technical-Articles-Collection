@@ -246,7 +246,7 @@ Unfortunately, I can't write a test for spread because it's not officially in th
 
 ## Community Input
 
-**社区意见**
+**社区观点**
 
 ## Object.assign vs Spread
 
