@@ -123,7 +123,7 @@ So you typically would NOT use JSON.stringify to convert a value to a string. An
 
 One thing I want to point out because you might not catch it. When you use it on an actual `string` value, it will change it to a string with **quotes**.
 
-我想指出一件事，因为你们可能听不懂。当您在实际的 `string` 值上使用它时，它会将其更改为一个带有 **引号** 的字符串。
+我想指出一件事，因为你们可能听不懂。在实际的 `string` 值上使用它时，它会将其更改为一个带有 **引号** 的字符串。
 
 You can read more about this in Kyle Simpson, "You Don't Know JS series":
 [JSON Stringification](https://github.com/getify/You-Dont-Know-JS/blob/master/types%20%26%20grammar/ch4.md#json-stringification)
@@ -182,7 +182,7 @@ As you can see, the `String()` method handles the `null` and `undefined` quite w
 
 After showing you how all the different methods handle different type of value. Hopefully, you are aware of the differences and you will know what tool to pick up the next time you tackle your code. If you're not sure, `String()` is always a good default 👍
 
-在展示了所有不同的方法如何处理不同类型的值之后。希望你已经意识到了它们之间的区别，并且知道下次处理代码时应该使用什么工具。如果您不确定，`String()` 总是一个好的默认值。
+在展示了所有不同的方法如何处理不同类型的值之后。希望你已经意识到了它们之间的区别，并且知道下次处理代码时应该使用什么工具。如果不确定，`String()` 总是一个好的默认值。
 
 ## Why you shouldn't use `new String()`
 
@@ -263,7 +263,7 @@ alert(str.prop); // "bar"
 
 [@BrunoGiubilei](https://twitter.com/BrunoGiubilei/status/1132959435599618053): when concat empty string, it's mostly correct to declare the empty strings first, because when you concat more one values, the sum has been processed first.
 
-当用空字符串拼接时，首先声明空字符串通常是正确的，因为当您拼接多个值时，累加首先被处理：
+当用空字符串拼接时，首先声明空字符串通常是正确的，因为拼接多个值时，累加首先被处理：
 
 ```js
 1 + 2 + 3 + ""; // 6

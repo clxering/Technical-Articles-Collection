@@ -35,7 +35,7 @@
 - [Use console.table to display your data](JavaScript/Use-console.table-to-display-your-data.md)
 - [Better Array check with Array.isArray](JavaScript/Better-Array-check-with-Array.isArray.md)
 - [ES6 Arrow Functions Cheatsheet](JavaScript/ES6-Arrow-Functions-Cheatsheet.md)
-- [Bad Variable Names to Avoid](JavaScript/Bad-Variable-Names-to-Avoid.md)
+- [Bad Variable Names to Avoid（避免糟糕的变量名）](JavaScript/Bad-Variable-Names-to-Avoid.md)
 - [How to give your boolean variables a better name](JavaScript/How-to-give-your-boolean-variables-a-better-name.md)
 - [Code Smell: No AND in Function name](JavaScript/Code-Smell-No-AND-in-Function-name.md)
 - [Colorful Console Message](JavaScript/Colorful-Console-Message.md)
