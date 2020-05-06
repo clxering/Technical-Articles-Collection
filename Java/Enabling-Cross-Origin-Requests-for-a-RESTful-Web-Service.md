@@ -58,7 +58,7 @@ This service differs slightly from the one described in Building a RESTful Web S
 
 Like most Spring Getting Started guides, you can start from scratch and complete each step or you can bypass basic setup steps that are already familiar to you. Either way, you end up with working code.
 
-就像大多数 Spring 入门指南一样，你可以从头开始并完成每个步骤，也可以跳过您已经熟悉的基本设置步骤。无论哪种方式，您最终得到的都是能够工作的代码。
+就像大多数 Spring 入门指南一样，你可以从头开始并完成每个步骤，也可以跳过已经熟悉的基本设置步骤。无论哪种方式，最终得到的都是能够工作的代码。
 
 To **start from scratch**, move on to Starting with Spring Initializr.
 
@@ -527,7 +527,7 @@ The following listing (from src/main/java/com/example/restservicecors/RestServic
 
 You can easily change any properties (such as allowedOrigins in the example), as well as apply this CORS configuration to a specific path pattern.
 
-您可以轻松地更改任何属性（例如本例中的 allowedOrigins），也可以将这种 CORS 配置应用于特定的路径模式。
+你可以轻松地更改任何属性（例如本例中的 allowedOrigins），也可以将这种 CORS 配置应用于特定的路径模式。
 
 > You can combine global- and controller-level CORS configuration.
 
@@ -624,7 +624,7 @@ public class RestServiceCorsApplication {
 
 The main() method uses Spring Boot’s SpringApplication.run() method to launch an application. Did you notice that there was not a single line of XML? There is no web.xml file, either. This web application is 100% pure Java and you did not have to deal with configuring any plumbing or infrastructure.
 
-main() 方法使用 Spring Boot 的 SpringApplication.run() 方法来启动应用程序。您注意到没有一行 XML 吗？也没有 web.xml 文件。这个 web 应用程序是 100% 纯 Java 的，不需要配置任何管道或基础设施。
+main() 方法使用 Spring Boot 的 SpringApplication.run() 方法来启动应用程序。你注意到没有一行 XML 吗？也没有 web.xml 文件。这个 web 应用程序是 100% 纯 Java 的，不需要配置任何管道或基础设施。
 
 **译注：以下部分过于简单，且不涉及 CORS，不译。**
 

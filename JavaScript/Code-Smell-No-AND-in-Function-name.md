@@ -53,7 +53,7 @@ Seller A:
 
 Buying pre-mixed ingredients limit you to recipes that require ALL 3 items.
 
-购买预先混合的原料，限制您的食谱，需要所有三项。
+购买预先混合的原料，将你的食谱限制在三项原料中。
 
 ```js
 function flourAndSugarAndEgg() {}

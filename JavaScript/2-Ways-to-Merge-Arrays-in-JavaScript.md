@@ -151,7 +151,7 @@ I know some of you are like, duh! I'll just write some conditional to make sure 
 
 So here's the quick rule. If you know you're dealing with arrays, use `spread`. But if you might be dealing with the possibility with a non-array, then use `concat` to merge an array 👍
 
-这就是快速法则。如果您知道正在处理数组，请使用扩展运算符。但如果你可能要处理一个非数组，那么使用 `concat` 来合并一个数组。
+这就是快速法则。如果你知道要处理数组，请使用扩展运算符。但如果你可能要处理一个非数组，那么使用 `concat` 来合并一个数组。
 
 Anyways I just want to point that out, so you can use the most appropriate method depending on the problem you're trying to solve 👍
 
@@ -180,7 +180,7 @@ console.log(trucks); // ['🚚', '🚛']
 
 Also, when you're trying to push an array to another array. You will need to spread it, otherwise, you will end up getting a nested array. Of course, unless that's what you wanted 😜
 
-另外，当你试图将一个数组「push」到另一个数组时。您需要「扩展」它，否则将得到一个嵌套的数组。当然，除非那是你想要的：
+另外，当你试图将一个数组「push」到另一个数组时。你需要「扩展」它，否则将得到一个嵌套的数组。当然，除非那是你想要的：
 
 ```js
 const cars = ['🚗', '🚙'];

@@ -40,7 +40,7 @@ In the code snippet（片段） above, the interface which we named SimpleInterf
 
 However, interfaces in Java can be more complicated（复杂的） than that: they can include nested interfaces, classes, enumerations, annotations (enumerations and annotations will be covered in details in part 5 of the tutorial, How and when to use Enums and Annotations) and constants. For example:
 
-然而，Java 中的接口可能比这更复杂：它们可以包括嵌套的接口、类、枚举、注释（枚举和注释将在本教程的第 5 部分中详细介绍，如何以及何时使用枚举和注释）和常量。例如：
+然而，Java 中的接口可能比这更复杂：它们可以包括嵌套的接口、类、枚举、注解（枚举和注解将在本教程的第 5 部分中详细介绍，如何以及何时使用枚举和注解）和常量。例如：
 
 ```
 package com.javacodegeeks.advanced.design;
@@ -208,7 +208,7 @@ runMe( () -> System.out.println( "Run!" ) );
 
 Additionally, the @FunctionalInterface annotation (annotations will be covered in details in part 5 of the tutorial, How and when to use Enums and Annotations) hints（暗示，提示） the compiler to verify that the interface contains only one abstract method so any changes introduced to the interface in the future will not break this assumption（假设）.
 
-此外，@FunctionalInterface 注释（注释将在本教程的第 5 部分中详细介绍，如何以及何时使用枚举和注释）提示编译器验证该接口只包含一个抽象方法，将来接口引入的任何更改都不能打破这个假设。
+此外，@FunctionalInterface 注解（注解将在本教程的第 5 部分中详细介绍，如何以及何时使用枚举和注解）提示编译器验证该接口只包含一个抽象方法，将来接口引入的任何更改都不能打破这个假设。
 
 ## 5、Abstract classes
 
@@ -301,7 +301,7 @@ Even this small example gives a good idea that immutability is not a first class
 
 There are a couple of great Java source code analyzers like FindBugs) and PMD) which may help a lot by inspecting your code and pointing to the common Java programming flaws. Those tools are great friends of any Java developer.
 
-有一些很棒的 Java 源代码分析程序，比如 FindBugs 和 PMD，它们可以通过检查您的代码并指出常见的 Java 编程缺陷来帮助您。这些工具是任何 Java 开发人员的好朋友。
+有一些很棒的 Java 源代码分析程序，比如 FindBugs 和 PMD，它们可以通过检查代码并指出常见的 Java 编程缺陷来帮助你。这些工具是任何 Java 开发人员的好朋友。
 
 ## 7、Anonymous classes
 
@@ -389,7 +389,7 @@ Inheritance is one of the key concepts of object-oriented programming, serving a
 
 Conceptually, inheritance in Java is implemented using subclassing and the extends keyword, followed by the parent class. The subclass inherits all of the public and protected members of its parent class. Additionally, a subclass inherits the package-private members of the parent class if both reside in the same package. Having said that, it is very important no matter what you are trying to design, to keep the minimal set of the methods which class exposes publicly or to its subclasses. For example, let us take a look on a class Parent and its subclass Child to demonstrate different visibility levels and their effect:
 
-从概念上讲，Java 中的继承是使用子类，即 extends 关键字后加父类实现的。子类继承其父类的所有公共和受保护的成员。此外，如果两个类都驻留在同一个包中，则子类继承父类的包私有成员。尽管如此，无论您试图设计什么，保持类公开或公开其子类的方法的最小集合都是非常重要的。例如，让我们看看一个类父类及其子类，以演示不同的可见性级别及其效果：
+从概念上讲，Java 中的继承是使用子类，即 extends 关键字后加父类实现的。子类继承其父类的所有公共和受保护的成员。此外，如果两个类都驻留在同一个包中，则子类继承父类的包私有成员。尽管如此，无论你试图设计什么，保持类公开或公开其子类的方法的最小集合都是非常重要的。例如，让我们看看一个类父类及其子类，以演示不同的可见性级别及其效果：
 
 ```
 package com.javacodegeeks.advanced.design;
@@ -453,11 +453,11 @@ public class Child extends Parent implements Parent.ProtectedInterface {
 
 Inheritance is a very large topic by itself, with a lot of subtle details specific to Java. However, there are a couple of easy to follow rules which could help a lot to keep your class hierarchies concise. In Java, every subclass may override any inherited method of its parent unless it was declared as final (please refer to the section Final classes and methods).
 
-继承本身就是一个非常大的主题，有许多 Java 特有的细节。然而，有一些易于遵循的规则可以帮助您保持类层次结构的简洁。在 Java 中，每个子类都可以重写其父类的任何继承方法，除非它被声明为 final（请参阅 final 类和方法一节）。
+继承本身就是一个非常大的主题，有许多 Java 特有的细节。然而，有一些易于遵循的规则可以帮助你保持类层次结构的简洁。在 Java 中，每个子类都可以重写其父类的任何继承方法，除非它被声明为 final（请参阅 final 类和方法一节）。
 
 However, there is no special syntax or keyword to mark the method as being overridden which may cause a lot of confusion. That is why the @Override annotation has been introduced: whenever your intention is to override the inherited method, please always use the @Override annotation to indicate that.
 
-但是，没有特殊的语法或关键字将方法标记为被覆盖，这可能会导致很多混乱。这就是为什么引入了@Override 注释:当您打算重写继承的方法时，请始终使用@Override 注释来表示。
+但是，没有特殊的语法或关键字将方法标记为被覆盖，这可能会导致很多混乱。这就是为什么引入了 @Override 注解：当你打算重写继承的方法时，请始终使用 @Override 注解来表示。
 
 Another dilemma Java developers are often facing in design is building class hierarchies (with concrete or abstract classes) versus interface implementations. It is strongly advised to prefer interfaces to classes or abstract classes whenever possible. Interfaces are much more lightweight, easier to test (using mocks) and maintain, plus they minimize the side effects of implementation changes. Many advanced programming techniques like creating class proxies in standard Java library heavily rely on interfaces.
 
@@ -642,7 +642,7 @@ However, the inheritance has its own place, solves real design issues in differe
 
 The concept of encapsulation in object-oriented programming is all about hiding the implementation details (like state, internal methods, etc.) from the outside world. The benefits of encapsulation are maintainability and ease of change. The less intrinsic details classes expose, the more control the developers have over changing their internal implementation, without the fear to break the existing code (a real problem if you are developing a library or framework used by many people).
 
-面向对象编程中封装的概念就是将实现细节（如状态、内部方法等）对外部世界隐藏。封装的好处是可维护性和易于更改。类暴露的内部细节越少，开发人员对更改内部实现的控制就越强，无需担心破坏现有代码（如果您正在开发许多人使用的库或框架，这是一个真正的问题）。
+面向对象编程中封装的概念就是将实现细节（如状态、内部方法等）对外部世界隐藏。封装的好处是可维护性和易于更改。类暴露的内部细节越少，开发人员对更改内部实现的控制就越强，无需担心破坏现有代码（如果你正在开发许多人使用的库或框架，这是一个真正的问题）。
 
 Encapsulation in Java is achieved using visibility and accessibility rules. It is considered a best practice in Java to never expose the fields directly, only by means of getters and setters (if the field is not declared as final). For example:
 
@@ -679,7 +679,7 @@ This example resembles what is being called JavaBeans in Java language: the regu
 
 As we already emphasized in the Inheritance section, please always try to keep the class public contract minimal, following the encapsulation principle. Whatever should not be public, should be private instead (or protected / package private, depending on the problem you are solving). In long run it will pay off, giving you the freedom to evolve your design without introducing breaking changes (or at least minimize them).
 
-正如我们在继承部分中已经强调的，请始终按照封装原则尽量减少类 public 契约。任何不应该公开的内容都应该是私有的（或者受保护/包私有，这取决于您正在解决的问题）。从长远来看，它会给你带来回报，让你在不引入破坏性变化的情况下自由地改进你的设计（或者最小化破坏）。
+正如我们在继承部分中已经强调的，请始终按照封装原则尽量减少类 public 契约。任何不应该公开的内容都应该是私有的（或者受保护/包私有，这取决于你正在解决的问题）。从长远来看，它会给你带来回报，让你在不引入破坏性变化的情况下自由地改进你的设计（或者最小化破坏）。
 
 ## 13、Final classes and methods
 

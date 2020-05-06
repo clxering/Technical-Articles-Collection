@@ -6,7 +6,7 @@
 
 When working with JavaScript, we deal a lot with conditionals, here are the 5 tips for you to write better / cleaner conditionals.
 
-在使用 JavaScript 时，我们会处理很多条件语句，这里有 5 个技巧可以帮助您编写更好、更简洁的条件语句。
+在使用 JavaScript 时，我们会处理很多条件语句，这里有 5 个技巧可以帮助你编写更好、更简洁的条件语句。
 
 ## 1、Use Array.includes for Multiple Criteria
 
@@ -191,7 +191,7 @@ StackOverflow 基于 if/else 编码风格的讨论
 
 I guess the code below might look familiar to you, we always need to check for null / undefined value and assign default value when working with JavaScript:
 
-我想下面的代码对您来说可能很熟悉，我们在使用 JavaScript 时总是需要检查 null 或 undefined 值并分配默认值:
+我想下面的代码对你来说可能很熟悉，我们在使用 JavaScript 时总是需要检查 null 或 undefined 值并分配默认值:
 
 ```js
 function test(fruit, quantity) {
@@ -269,11 +269,11 @@ Since we only need property `name` from fruit, we can destructure the parameter 
 
 We also assign empty object `{}` as default value. If we do not do so, you will get error when executing the line `test(undefined)` - Cannot destructure property name of `undefined` or `null`. because there is no `name` property in undefined.
 
-我们还将空对象 `{}` 指定为默认值。如果我们不这样做，当执行 `test(undefined)`，不能解构 `undefined` 或 `null` 的属性名时，您将会得到错误。因为在 undefined 中没有 `name` 属性。
+我们还将空对象 `{}` 指定为默认值。如果我们不这样做，当执行 `test(undefined)`，不能解构 `undefined` 或 `null` 的属性名时，将会出现错误。因为在 undefined 中没有 `name` 属性。
 
 If you don't mind using 3rd party libraries, there are a few ways to cut down null checking:
 
-如果您不介意使用第三方库，有一些方法可以减少 null 检查：
+如果不介意使用第三方库，有一些方法可以减少 null 检查：
 
 - use [Lodash get](https://lodash.com/docs/4.17.10#get) function
 
@@ -301,7 +301,7 @@ test({ name: 'apple', color: 'red' }); // apple
 
 You may run the demo code [here](https://jsbin.com/bopovajiye/edit?js,console). Besides, if you are a fan of Functional Programming (FP), you may opt to use [Lodash fp](https://github.com/lodash/lodash/wiki/FP-Guide), the functional version of Lodash (method changed to `get` or `getOr`).
 
-您可以在 [这里](https://jsbin.com/bopovajiye/edit?js,console) 运行演示代码。此外，如果你喜欢函数式编程（FP），你可以选择使用 Lodash fp, 即 Lodash 的函数式版本（方法改为 `get` 或 `getOr`）。
+可以在 [这里](https://jsbin.com/bopovajiye/edit?js,console) 运行演示代码。此外，如果你喜欢函数式编程（FP），你可以选择使用 Lodash fp, 即 Lodash 的函数式版本（方法改为 `get` 或 `getOr`）。
 
 ## 4、Favor Map / Object Literal than Switch Statement
 
@@ -366,11 +366,11 @@ function test(color) {
 
 Map is the object type available since ES2015, allow you to store key value pair.
 
-Map 是 ES2015 以后可用的对象类型，允许您存储键值对。
+Map 是 ES2015 以后可用的对象类型，允许存储键值对。
 
 Should we ban the usage of switch statement? Do not limit yourself to that. Personally, I use object literal whenever possible, but I wouldn't set hard rule to block that, use whichever make sense for your scenario.
 
-我们应该禁止使用 switch 语句吗？不要把自己局限于此。就我个人而言，我尽可能地使用对象字面量，但是我不会设置严格的规则来阻止它，使用对您的场景有意义的任何一个。
+我们应该禁止使用 switch 语句吗？不要把自己局限于此。就我个人而言，我尽可能地使用对象字面量，但是我不会设置严格的规则来阻止它，使用对你的场景有意义的任何一个。
 
 Todd Motto has an article that dig deeper on switch statement vs object literal, you may read here.
 

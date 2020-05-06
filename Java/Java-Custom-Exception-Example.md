@@ -64,7 +64,7 @@ The first thing before creating a custom exception, the developer should be able
 
 （3）Does your code throw more than one related exception?
 
-您的代码是否会抛出多个相关异常？
+你的代码是否会抛出多个相关异常？
 
 （4）If you use someone else’s exceptions, will users have access to those exceptions? A similar question is, should your package be independent and self-contained?
 
@@ -72,7 +72,7 @@ The first thing before creating a custom exception, the developer should be able
 
 Now, that you are sure that you really do want a create a custom Exception class we will begin writing the actual program.To create a custom checked exception, we have to sub-class from the `java.lang.Exception` class. And that’s it! Yes, creating a custom exception in java is simple as that!
 
-现在，您确信您确实想要创建一个自定义的异常类，我们将开始编写实际的程序。要创建一个自定义异常，我们必须从 java.lang.Exception 派生子类。是的，在 java 中创建一个自定义异常很简单！
+现在，你确信确实想要创建一个自定义的异常类，我们将开始编写实际的程序。要创建一个自定义异常，我们必须从 java.lang.Exception 派生子类。是的，在 java 中创建一个自定义异常很简单！
 
 ```
 public class CustomException extends Exception{}
