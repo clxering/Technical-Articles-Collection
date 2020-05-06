@@ -37,7 +37,7 @@
 - [ES6 Arrow Functions Cheatsheet](JavaScript/ES6-Arrow-Functions-Cheatsheet.md)
 - [Bad Variable Names to Avoid（避免糟糕的变量名）](JavaScript/Bad-Variable-Names-to-Avoid.md)
 - [How to give your boolean variables a better name](JavaScript/How-to-give-your-boolean-variables-a-better-name.md)
-- [Code Smell: No AND in Function name](JavaScript/Code-Smell-No-AND-in-Function-name.md)
+- [Code Smell: No AND in Function name（函数名不要有 AND 在其中）](JavaScript/Code-Smell-No-AND-in-Function-name.md)
 - [Colorful Console Message](JavaScript/Colorful-Console-Message.md)
 - [JS Essentials: Falsy Values](JavaScript/JS-Essentials-Falsy-Values.md)
 - [Refactoring the if Condition](JavaScript/Refactoring-the-if-Condition.md)
