@@ -32,7 +32,7 @@
 - [5 Tips to Write Better Conditionals in JavaScript（优化 JavaScript 条件语句的 5 个技巧）](JavaScript/5-Tips-to-Write-Better-Conditionals-in-JavaScript.md)
 - [Difference between JavaScript function in href and onclick（JavaScript 函数在 href 和 onclick 中的区别）](JavaScript/Difference-between-JavaScript-function-in-href-and-onclick.md)
 - [How to Remove Array Duplicates in ES6（ES6 中如何删除数组重复元素）](JavaScript/How-to-Remove-Array-Duplicates-in-ES6.md)
-- [Use console.table to display your data](JavaScript/Use-console.table-to-display-your-data.md)
+- [Use console.table to display your data（使用 `console.table` 展示数据）](JavaScript/Use-console.table-to-display-your-data.md)
 - [Better Array check with Array.isArray（Array.isArray 是更好的数组检查方式）](JavaScript/Better-Array-check-with-Array.isArray.md)
 - [ES6 Arrow Functions Cheatsheet](JavaScript/ES6-Arrow-Functions-Cheatsheet.md)
 - [Bad Variable Names to Avoid（避免糟糕的变量名）](JavaScript/Bad-Variable-Names-to-Avoid.md)
