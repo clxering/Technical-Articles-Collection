@@ -36,7 +36,7 @@
 - [Better Array check with Array.isArray（Array.isArray 是更好的数组检查方式）](JavaScript/Better-Array-check-with-Array.isArray.md)
 - [ES6 Arrow Functions Cheatsheet（ES 6 箭头函数问题的备忘）](JavaScript/ES6-Arrow-Functions-Cheatsheet.md)
 - [Bad Variable Names to Avoid（避免糟糕的变量名）](JavaScript/Bad-Variable-Names-to-Avoid.md)
-- [How to give your boolean variables a better name](JavaScript/How-to-give-your-boolean-variables-a-better-name.md)
+- [How to give your boolean variables a better name（怎样给 boolean 变量起一个好名字）](JavaScript/How-to-give-your-boolean-variables-a-better-name.md)
 - [Code Smell: No AND in Function name（函数名不要有 AND 在其中）](JavaScript/Code-Smell-No-AND-in-Function-name.md)
 - [Colorful Console Message（丰富多彩的控制台消息）](JavaScript/Colorful-Console-Message.md)
 - [JS Essentials: Falsy Values](JavaScript/JS-Essentials-Falsy-Values.md)
