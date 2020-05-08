@@ -43,7 +43,7 @@
 - [Refactoring the if Condition（重构 if 条件语句）](JavaScript/Refactoring-the-if-Condition.md)
 - [2 Ways to Merge Arrays in JavaScript（JavaScript 中合并数组的两种方法）](JavaScript/2-Ways-to-Merge-Arrays-in-JavaScript.md)
 - [3 Ways to Clone Objects in JavaScript（JavaScript 中拷贝对象的三种方法）](JavaScript/3-Ways-to-Clone-Objects-in-JavaScript.md)
-- [Flatten Array using Array.flat() in JavaScript](<JavaScript/Flatten-Array-using-Array.flat()-in-JavaScript.md>)
+- [Flatten Array using Array.flat() in JavaScript（JavaScript 中使用 Array.flat() 扁平化数组）](JavaScript/Flatten-Array-using-Array.flat()-in-JavaScript.md)
 - [5 Ways to Convert a Value to String in JavaScript（JavaScript 中转换数值为字符串的五种方法）](JavaScript/5-Ways-to-Convert-a-Value-to-String-in-JavaScript.md)
 - [Passing Arrays as Function Arguments（将数组作为函数参数传递）](JavaScript/Passing-Arrays-as-Function-Arguments.md)
 - [Quick Debug using || with console.log](JavaScript/Quick-Debug-using-II-with-console.log.md)
