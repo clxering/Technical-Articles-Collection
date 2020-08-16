@@ -12,9 +12,9 @@ If you haven't used state management excessively in [React Function Components](
 
 **目录列表**
 
-- [React useState: simple State（React useState：简单状态）](#react-usestate-simple-statereact-usestate%E7%AE%80%E5%8D%95%E7%8A%B6%E6%80%81)
-- [React useReducer: complex State（React useReducer：复杂状态）](#react-usereducer-complex-statereact-usereducer%E5%A4%8D%E6%9D%82%E7%8A%B6%E6%80%81)
-- [React useContext: global State（React useContext：全局状态）](#react-usecontext-global-statereact-usecontext%E5%85%A8%E5%B1%80%E7%8A%B6%E6%80%81)
+- [React useState: simple State（React useState：简单状态）](#react-usestate-simple-state)
+- [React useReducer: complex State（React useReducer：复杂状态）](#react-usereducer-complex-state)
+- [React useContext: global State（React useContext：全局状态）](#react-usecontext-global-state)
 
 ## React useState: simple State
 
