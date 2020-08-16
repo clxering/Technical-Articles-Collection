@@ -24,7 +24,7 @@ If you haven't used state management excessively in [React Function Components](
 
 We start with a list of items -- in our scenario a list of todo items -- which are rendered in our function component with a [JavaScript Map Method for Arrays](https://www.robinwieruch.de/javascript-map-array/). Each todo item rendered as list item receives a [key attribute](https://www.robinwieruch.de/react-list-key) to notify React about its place in the [rendered list](https://www.robinwieruch.de/react-list-component):
 
-我们从一个项目列表开始（在我们的场景中是一个待办事项列表），它在我们的函数组件中使用一个基于 [数组的 JavaScript map 方法（暂无译文）]() 渲染。作为列表项渲染的每个待办事项将接收一个 [key 属性（暂无译文）]() 来告知 React 其在 [渲染列表（暂无译文）]() 中的位置：
+我们从一个项目列表开始（在我们的场景中是一个待办事项列表），它在我们的函数组件中使用一个基于 [数组的 JavaScript map 方法](https://github.com/clxering/Technical-Articles-Collection/blob/master/JavaScript/Deep-Dive-into-JavaScript-Array-Map-Method.md) 渲染。作为列表项渲染的每个待办事项将接收一个 [key 属性（暂无译文）]() 来告知 React 其在 [渲染列表（暂无译文）]() 中的位置：
 
 ```js
 import React from "react";
