@@ -6,7 +6,9 @@
 
 If you haven't used state management excessively in [React Function Components](https://www.robinwieruch.de/react-function-component/), this tutorial may help you to get a better understanding of how [React Hooks](https://www.robinwieruch.de/react-hooks/) -- such as useState, useReducer, and useContext -- can be used in combination for impressive state management in React applications. In this tutorial, we will almost reach the point where these hooks mimic sophisticated state management libraries like [Redux](https://www.robinwieruch.de/react-redux-tutorial/) for globally managed state. Let's dive into the application which we will implement together step by step.
 
-如果你还没有在 [React 函数组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Function-Components.md) 中过多地使用状态管理，本教程可以帮助你更好地理解如何将 [React 钩子](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-React-Hooks.md)（如 useState、useReducer 和 useContext）组合起来，在 React 应用程序中进行状态管理。在本教程中，我们要用钩子模拟复杂的状态管理库，比如全局管理状态的 [Redux（暂无译文）]()。让我们深入研究一个逐步实现的应用程序。
+如果你还没有在 [React 函数组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Function-Components.md) 中过多地使用状态管理，本教程可以帮助你更好地理解如何将 [React 钩子](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-React-Hooks.md)（如 useState、useReducer 和 useContext）组合起来，在 React 应用程序中进行状态管理。在本教程中，我们要用钩子模拟复杂的状态管理库，比如全局管理状态的 [Redux（暂无译文）]()①。让我们深入研究一个逐步实现的应用程序。
+
+**译注 ①：该篇文章年份稍早，性价比正在评估中**
 
 ## Table of Contents
 
@@ -167,7 +169,7 @@ const App = () => {
 
 The submit handler doesn't add the new todo item yet, but it makes the input field's value empty again after submitting the new todo item. Also it prevents the [default behavior of the browser, because otherwise the browser would perform a refresh after the submit button has been clicked](https://www.robinwieruch.de/react-preventdefault).
 
-submit 处理程序目前还不能添加新待办事项，应该在提交新待办事项之后使 input field 的值再次变为空。它还应该防止 [浏览器的默认行为，否则浏览器会在单击 submit 按钮后执行刷新]()。
+submit 处理程序目前还不能添加新待办事项，应该在提交新待办事项之后使 input field 的值再次变为空。它还应该防止 [浏览器的默认行为，否则浏览器会在单击 submit 按钮后执行刷新（暂无译文）]()。
 
 In order to add the todo item to our list of todo items, we need to make the todo items managed as state within the component as well. We can use again the useState hook:
 
@@ -332,7 +334,7 @@ Since we need the id of the todo item in our handler function, and not the event
 
 我们在处理函数中需要待办事项的 id，而不是 event，因此我们使用一个包装箭头函数来传递单个待办事项的标识符给我们的处理程序：
 
-> 译注：直接赋值匿名函数给 onChange 可能会引发性能问题，每次渲染都创建一个匿名对象，还可能引发子组件不必要的重新渲染。
+**译注：直接赋值匿名函数给 onChange 可能会引发性能问题，每次渲染都创建一个匿名对象，还可能引发子组件不必要的重新渲染。**
 
 ```js
 const App = () => {
@@ -434,7 +436,7 @@ That's it. The new todo items are immediately set as state for the list of todo 
 
 - Read more about [React's useState Hook](https://www.robinwieruch.de/react-usestate-hook)
 
-阅读更多：[React 的 useState 钩子]()
+阅读更多：[React 的 useState 钩子（暂缺译文）]()
 
 ## React useReducer: complex State
 
