@@ -4,13 +4,13 @@
 
 This tutorial is part 2 of 2 in this series.
 
-> Part 1: [React Context](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Context.md)
+> Part 1: [React Context](/React/React-Context.md)
 
 ---
 
 [React's Function Components](https://www.robinwieruch.de/react-function-component) come with [React Hooks](https://www.robinwieruch.de/react-hooks) these days. Not only can [React Hooks be used for State in React](https://www.robinwieruch.de/react-state) but also for using React's Context in a more convenient way. This tutorial shows you how to use React's useContext Hook. Before, make sure to read the previous tutorial for getting an introduction to [React's Context](https://www.robinwieruch.de/react-context/):
 
-[React 的函数组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Function-Components.md) 这些天随着 [React 钩子](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-React-Hooks.md) 一起发布。[React 钩子不仅可以用于状态管理（暂缺译文）]()，还可以更方便地应用于 React 上下文。本教程展示如何使用 React 的 useContext 钩子。在此之前，请务必阅读前面的教程以获得对 [React's Context](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Context.md) 的认知：
+[React 的函数组件](/React/React-Function-Components.md) 这些天随着 [React 钩子](/React/What-are-React-Hooks.md) 一起发布。[React 钩子不仅可以用于状态管理（暂缺译文）]()，还可以更方便地应用于 React 上下文。本教程展示如何使用 React 的 useContext 钩子。在此之前，请务必阅读前面的教程以获得对 [React's Context](/React/React-Context.md) 的认知：
 
 - Why React Context?
 - What is React Context?

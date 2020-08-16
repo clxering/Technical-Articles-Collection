@@ -6,7 +6,7 @@
 
 React Function Components -- also known as React Functional Components -- are the status quo of writing modern React applications. In the past, there have been various [React Component Types](https://www.robinwieruch.de/react-component-types/), but with the introduction of [React Hooks](https://www.robinwieruch.de/react-hooks/) it's possible to write your entire application with just functions as React components.
 
-React Function Components（也称为 React 函数组件）是现代 React 应用程序的组成模块。在过去，有多种 [React 组件类型（暂缺译文）]()，但是随着 [React 钩子](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-React-Hooks.md) 的引入，仅用 React 函数组件来编写整个应用程序成为可能。
+React Function Components（也称为 React 函数组件）是现代 React 应用程序的组成模块。在过去，有多种 [React 组件类型（暂缺译文）]()，但是随着 [React 钩子](/React/What-are-React-Hooks.md) 的引入，仅用 React 函数组件来编写整个应用程序成为可能。
 
 This in-depth guide shows you everything about React Function Components -- which are basically **just JavaScript Functions being React Components** which return JSX (React's Syntax) -- so that after you have read this tutorial you should be well prepared to implement modern React applications with them.
 
@@ -211,7 +211,7 @@ Every component we have seen so far can be called Stateless Function Component. 
 
 [React Hooks](https://www.robinwieruch.de/react-hooks/) made it possible to use state (and side-effects) in Function Components. Finally we can create a React Function Component with state! Let's say we moved all logic to our other Function Component and don't pass any props to it:
 
-[React 钩子](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-React-Hooks.md) 使得在函数组件中使用状态（和副作用）成为可能。最后，我们可以创建一个有状态的 React 函数组件！我们把所有的逻辑都移到了另一个函数组件上，并且没有给它传递任何 props：
+[React 钩子](/React/What-are-React-Hooks.md) 使得在函数组件中使用状态（和副作用）成为可能。最后，我们可以创建一个有状态的 React 函数组件！我们把所有的逻辑都移到了另一个函数组件上，并且没有给它传递任何 props：
 
 ```js
 import React from "react";
@@ -289,7 +289,7 @@ By providing an event handler to the input field, we are able to do something wi
 
 _Note: The input field receives the value of the component state too, because you want to control the state (value) of the input field and don't let the native HTML element's internal state take over. Doing it this way, the component has become a [controlled component](https://www.robinwieruch.de/react-controlled-components/)._
 
-_注意：input field 也接收组件状态的值，因为你希望控制输入字段的状态（值），而不让本机 HTML 元素的内部状态接管。这样做，组件就变成了[受控组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-Controlled-Components-in-React.md)。_
+_注意：input field 也接收组件状态的值，因为你希望控制输入字段的状态（值），而不让本机 HTML 元素的内部状态接管。这样做，组件就变成了[受控组件](/React/What-are-Controlled-Components-in-React.md)。_
 
 As you have seen, React Hooks enable us to use state in React (Arrow) Function Components. Whereas you would have used a setState method to write state in a Class Component, you can use the useState hook to write state in a Function Component.
 
@@ -297,7 +297,7 @@ As you have seen, React Hooks enable us to use state in React (Arrow) Function C
 
 _Note: If you want to use [React's Context](https://www.robinwieruch.de/react-context/) in Function Components, check out [React's Context Hook called useContext](https://www.robinwieruch.de/react-usecontext-hook) for reading from React's Context in a component._
 
-注意：如果你想在函数组件中使用 [React 的上下文](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Context.md)，请查看 [React 的上下文钩子 useContext](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/How-to-useContext-in-React.md)，以便从组件中的 React 上下文中读取内容。
+注意：如果你想在函数组件中使用 [React 的上下文](/React/React-Context.md)，请查看 [React 的上下文钩子 useContext](/React/How-to-useContext-in-React.md)，以便从组件中的 React 上下文中读取内容。
 
 ## React Function Component: Event Handler
 

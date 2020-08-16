@@ -6,7 +6,7 @@
 
 If you haven't used state management excessively in [React Function Components](https://www.robinwieruch.de/react-function-component/), this tutorial may help you to get a better understanding of how [React Hooks](https://www.robinwieruch.de/react-hooks/) -- such as useState, useReducer, and useContext -- can be used in combination for impressive state management in React applications. In this tutorial, we will almost reach the point where these hooks mimic sophisticated state management libraries like [Redux](https://www.robinwieruch.de/react-redux-tutorial/) for globally managed state. Let's dive into the application which we will implement together step by step.
 
-如果你还没有在 [React 函数组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Function-Components.md) 中过多地使用状态管理，本教程可以帮助你更好地理解如何将 [React 钩子](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-React-Hooks.md)（如 useState、useReducer 和 useContext）组合起来，在 React 应用程序中进行状态管理。在本教程中，我们要用钩子模拟复杂的状态管理库，比如全局管理状态的 [Redux（暂无译文）]()①。让我们深入研究一个逐步实现的应用程序。
+如果你还没有在 [React 函数组件](/React/React-Function-Components.md) 中过多地使用状态管理，本教程可以帮助你更好地理解如何将 [React 钩子](/React/What-are-React-Hooks.md)（如 useState、useReducer 和 useContext）组合起来，在 React 应用程序中进行状态管理。在本教程中，我们要用钩子模拟复杂的状态管理库，比如全局管理状态的 [Redux（暂无译文）]()①。让我们深入研究一个逐步实现的应用程序。
 
 **译注 ①：该篇文章年份稍早，性价比正在评估中**
 
@@ -24,7 +24,7 @@ If you haven't used state management excessively in [React Function Components](
 
 We start with a list of items -- in our scenario a list of todo items -- which are rendered in our function component with a [JavaScript Map Method for Arrays](https://www.robinwieruch.de/javascript-map-array/). Each todo item rendered as list item receives a [key attribute](https://www.robinwieruch.de/react-list-key) to notify React about its place in the [rendered list](https://www.robinwieruch.de/react-list-component):
 
-我们从一个项目列表开始（在我们的场景中是一个待办事项列表），它在我们的函数组件中使用一个基于 [数组的 JavaScript map 方法](https://github.com/clxering/Technical-Articles-Collection/blob/master/JavaScript/Deep-Dive-into-JavaScript-Array-Map-Method.md) 渲染。作为列表项渲染的每个待办事项将接收一个 [key 属性（暂无译文）]() 来告知 React 其在 [渲染列表（暂无译文）]() 中的位置：
+我们从一个项目列表开始（在我们的场景中是一个待办事项列表），它在我们的函数组件中使用一个基于 [数组的 JavaScript map 方法](/JavaScript/Deep-Dive-into-JavaScript-Array-Map-Method.md) 渲染。作为列表项渲染的每个待办事项将接收一个 [key 属性（暂无译文）]() 来告知 React 其在 [渲染列表（暂无译文）]() 中的位置：
 
 ```js
 import React from "react";
@@ -124,7 +124,7 @@ const App = () => {
 
 Now the input field has become a [controlled input field](https://www.robinwieruch.de/react-controlled-components/), because the value comes directly from the React managed state and the handler changes the state. We implemented our first managed state with the State Hook in React. The whole source code can be seen [here](https://github.com/the-road-to-learn-react/react-with-redux-philosophy/blob/3e6e5a27561bd0e0cc99e39efb853a187ac7339e/src/App.js).
 
-现在 input field 已经变成了 [受控 input field](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-Controlled-Components-in-React.md)，因为值直接来自 React 托管的状态，由处理程序更改状态。我们使用 React 中的状态钩子实现了第一个托管状态。完整的源代码可以在 [这里](https://github.com/the-road-to-learn-react/react-with-redux-philosophy/blob/3e6e5a27561bd0e0cc99e39efb853a187ac7339e/src/App.js) 看到。
+现在 input field 已经变成了 [受控 input field](/React/What-are-Controlled-Components-in-React.md)，因为值直接来自 React 托管的状态，由处理程序更改状态。我们使用 React 中的状态钩子实现了第一个托管状态。完整的源代码可以在 [这里](https://github.com/the-road-to-learn-react/react-with-redux-philosophy/blob/3e6e5a27561bd0e0cc99e39efb853a187ac7339e/src/App.js) 看到。
 
 To continue, let's implement a submit button to add the new todo item to the list of items eventually:
 
@@ -444,7 +444,7 @@ That's it. The new todo items are immediately set as state for the list of todo 
 
 The useState hook is great to manage simple state. However, once you run into more complex state objects or state transitions -- which you want to keep maintainable and predictable --, the [useReducer hook](https://www.robinwieruch.de/react-usereducer-hook/) is a great candidate to manage them. [Here you can find a comparison of when to use the useState or useReducer hook.](https://www.robinwieruch.de/react-usereducer-vs-usestate/) Let's continue implementing our application with the useReducer hook by going through a simpler example first. In our next scenario, we want to add buttons to filter our list of todos for three cases:
 
-useState 钩子是强大的简单状态管理利器。然而，一旦遇到更复杂的状态对象或状态转换（希望保持可维护性和可预测性），[useReducer 钩子（暂缺译文）]() 是管理它们的最佳选项。在 [这里你可以找到何时使用 useState 或 useReducer 钩子的比较](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/How-to-useReducer-in-React.md)。让我们通过一个更简单的示例来继续使用 useReducer 钩子实现我们的应用程序。在我们的下一个场景中，我们想添加三个按钮来过滤我们的待办事项列表：
+useState 钩子是强大的简单状态管理利器。然而，一旦遇到更复杂的状态对象或状态转换（希望保持可维护性和可预测性），[useReducer 钩子（暂缺译文）]() 是管理它们的最佳选项。在 [这里你可以找到何时使用 useState 或 useReducer 钩子的比较](/React/How-to-useReducer-in-React.md)。让我们通过一个更简单的示例来继续使用 useReducer 钩子实现我们的应用程序。在我们的下一个场景中，我们想添加三个按钮来过滤我们的待办事项列表：
 
 - show all todo items（显示所有待办事项）
 - show only complete todo items（仅显示已完成待办事项）
@@ -804,7 +804,7 @@ You have seen how useState and useReducer can be used for simple and complex sta
 
 - Read more about [React's useReducer Hook](https://www.robinwieruch.de/react-usereducer-hook)
 
-阅读更多：[React 的 useReducer 钩子](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/How-to-useReducer-in-React.md)
+阅读更多：[React 的 useReducer 钩子](/React/How-to-useReducer-in-React.md)
 
 ## React useContext: global State
 
@@ -816,7 +816,7 @@ We can take our state management one step further. At the moment, the state is m
 
 Let's dive into [React's Context API and the useContext hook](https://www.robinwieruch.de/react-context/) to mimic more a Redux's philosophy by making state changes available in the whole component tree. Before we can do this, let's refactor our one component into a component tree. First, the App component renders all its child components and passes the necessary state and dispatch functions to them:
 
-让我们深入了解 [React 的上下文 API 和 useContext 钩子](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Context.md)，通过在整个组件树中提供状态更改来更多地模仿 Redux 的思想。在此之前，让我们先将一个组件重构为一个组件树。首先，App 组件渲染其所有的子组件，并将必要的状态和 dispatch 函数传递给它们：
+让我们深入了解 [React 的上下文 API 和 useContext 钩子](/React/React-Context.md)，通过在整个组件树中提供状态更改来更多地模仿 Redux 的思想。在此之前，让我们先将一个组件重构为一个组件树。首先，App 组件渲染其所有的子组件，并将必要的状态和 dispatch 函数传递给它们：
 
 ```js
 const App = () => {
@@ -1095,7 +1095,7 @@ The application works again, but we are able to dispatch changes for our todo li
 
 - Read more about [React's useContext Hook](https://www.robinwieruch.de/react-usecontext-hook)
 
-阅读更多内容：[React 的 useContext 钩子](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/How-to-useContext-in-React.md)
+阅读更多内容：[React 的 useContext 钩子](/React/How-to-useContext-in-React.md)
 
 - Read more about [implementing Redux with React Hooks](https://www.robinwieruch.de/redux-with-react-hooks)
 

@@ -6,7 +6,7 @@
 
 Since [React Hooks](https://www.robinwieruch.de/react-hooks/) have been released, [function components](https://www.robinwieruch.de/react-function-component/) in React can use state and side-effects. There are two main hooks that are used for [modern state management in React](https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext/): useState and useReducer. This tutorial doesn't explain both React hooks in detail, but explains their different use case scenarios. There are many people who ask me whether to use useState or useReducer; that's why I thought getting together all my thoughts in one article is the best thing to deal with it.
 
-自 [React Hooks](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-React-Hooks.md) 发布，React 中的 [函数组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Function-Components.md) 就可以使用状态和副作用。有两个用于 [React 现代状态管理](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-State-Hooks-useReducer-useState-useContext.md) 的重要钩子：useState 和 useReducer。本教程没有详细解释这两个 React 钩子，但是解释了它们不同的应用场景。很多人问我是使用 useState 还是 useReducer；这就是为什么会把我所有的想法集中在一篇文章里，我认为这是解决这个问题的最好办法。
+自 [React Hooks](/React/What-are-React-Hooks.md) 发布，React 中的 [函数组件](/React/React-Function-Components.md) 就可以使用状态和副作用。有两个用于 [React 现代状态管理](/React/React-State-Hooks-useReducer-useState-useContext.md) 的重要钩子：useState 和 useReducer。本教程没有详细解释这两个 React 钩子，但是解释了它们不同的应用场景。很多人问我是使用 useState 还是 useReducer；这就是为什么会把我所有的想法集中在一篇文章里，我认为这是解决这个问题的最好办法。
 
 ## Table of Contents
 
@@ -423,7 +423,7 @@ Now imagine you would perform the same state transitions but with useState inste
 
 The vertical component tree in React becomes deeper once you grow your application. If the state is simple and belongs co-located (state + state trigger) to a component (e.g. [search input field which is made a controlled component](https://www.robinwieruch.de/react-controlled-components/)), using useState may be the perfect fit. The state is encapsulated within this one component:
 
-React 中的垂直组件树在应用程序扩展后会变得更深。如果是简单的状态，并且属于一个组件（例如，[参考 input field，它是一个受控组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-Controlled-Components-in-React.md)），使用 useState 可能是最合适的。状态封装在这一个组件中：
+React 中的垂直组件树在应用程序扩展后会变得更深。如果是简单的状态，并且属于一个组件（例如，[参考 input field，它是一个受控组件](/React/What-are-Controlled-Components-in-React.md)），使用 useState 可能是最合适的。状态封装在这一个组件中：
 
 ```js
 import React, { useState } from "react";
@@ -452,7 +452,7 @@ export default App;
 
 However, sometimes you want to [manage state at a top-level but trigger the state changes](https://www.robinwieruch.de/react-global-state-without-redux/) somewhere deep down in your component tree. It's possible to pass both the updater function from useState or the dispatch function from useReducer [via props](https://www.robinwieruch.de/react-pass-props-to-component/) down the component tree, but using [React's context API](https://www.robinwieruch.de/react-context/) may be a valid alternative to avoid the prop drilling (passing props trough each component level). Then having _one_ dispatch function that is used with different action types and payloads may be the better option than using _multiple_ updater functions from useState that need to be passed down individually. The dispatch function can be passed down _once_ with React's useContext hook. A good example how this works can be seen in this [state management tutorial for React using useContext](https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext/).
 
-然而，有时你希望在顶层管理状态，在组件树深处触发状态更改。虽然可以 [通过 props（暂缺译文）]() 从组件树向下传递 useState 的 updater 函数或 useReducer 的 dispatch 函数，但是使用 [React 的上下文 API](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Context.md) 是避免 props 传递的有效方法（通过每个组件层传递 props）。那么，与使用 useState 需要单独传递的 _多个_ updater 函数相比，使用 _一个_ dispatch 函数与不同的 action 类型和关键数据一起使用可能是更好的选择。dispatch 函数可以通过 React 的 useContext 钩子向下传递 _一次_。在 [使用 useContext 进行 React 的状态管理教程](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-State-Hooks-useReducer-useState-useContext.md) 中可以看到一个很好的案例。
+然而，有时你希望在顶层管理状态，在组件树深处触发状态更改。虽然可以 [通过 props（暂缺译文）]() 从组件树向下传递 useState 的 updater 函数或 useReducer 的 dispatch 函数，但是使用 [React 的上下文 API](/React/React-Context.md) 是避免 props 传递的有效方法（通过每个组件层传递 props）。那么，与使用 useState 需要单独传递的 _多个_ updater 函数相比，使用 _一个_ dispatch 函数与不同的 action 类型和关键数据一起使用可能是更好的选择。dispatch 函数可以通过 React 的 useContext 钩子向下传递 _一次_。在 [使用 useContext 进行 React 的状态管理教程](/React/React-State-Hooks-useReducer-useState-useContext.md) 中可以看到一个很好的案例。
 
 The decision whether to use useState or useReducer isn't always black and white. There are many shades of grey in between. However, I hope the article gave you a few key understandings on when to use useState or useReducer. Here you can find a [GitHub repository](https://github.com/the-road-to-learn-react/react-hooks-usestate-vs-usereducer) with a few examples. The following facts give you a summarized overview, however they only reflect my opinion on this topic:
 
@@ -524,4 +524,4 @@ _注意：如果对类似的比较感兴趣，可查看何时使用 [useReducer 
 
 If you want to go through a more comprehensive example where useState and useReducer are used together, check out this extensive walkthrough for [modern state management in React](https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext/). It almost mimics Redux by using [React's useContext Hook](https://www.robinwieruch.de/react-usecontext-hook) for "global" state management where it's possible to pass down the dispatch function once.
 
-如果你想通过一个更全面的例子来了解 useState 和 useReducer 一起使用的情况，请查看 [React 中关于现代状态管理](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-State-Hooks-useReducer-useState-useContext.md) 的详细介绍。它很大程度上模仿了 Redux，使用 [React 的 useContext 钩子](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/How-to-useContext-in-React.md) 来进行「全局」状态管理，这样就可以只传递 dispatch 函数一次即可。
+如果你想通过一个更全面的例子来了解 useState 和 useReducer 一起使用的情况，请查看 [React 中关于现代状态管理](/React/React-State-Hooks-useReducer-useState-useContext.md) 的详细介绍。它很大程度上模仿了 Redux，使用 [React 的 useContext 钩子](/React/How-to-useContext-in-React.md) 来进行「全局」状态管理，这样就可以只传递 dispatch 函数一次即可。

@@ -1,6 +1,6 @@
 # Deep Dive into JavaScript's Array Map Method
 
-**深入研究 JavaScript 的数组 map 方法**
+**深入研究 JavaScript 数组的 map 方法**
 
 > 转译自：https://www.robinwieruch.de/javascript-map-array
 

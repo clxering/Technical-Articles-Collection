@@ -218,7 +218,7 @@ When should you use React Context? Generally speaking there are two use cases wh
 
 * When you want to have [advanced state management in React with React Hooks](https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext/) for passing state and state updater functions via React Context through your React application. Doing it via React Context allows you to create a shared and global state.
 
-当你希望使用 [React 中的 React hook 进行高级状态管理](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-State-Hooks-useReducer-useState-useContext.md) ，想通过 React 上下文让应用程序传递状态和状态更新函数时。通过 React 上下文可以创建共享的全局状态。
+当你希望使用 [React 中的 React hook 进行高级状态管理](/React/React-State-Hooks-useReducer-useState-useContext.md) ，想通过 React 上下文让应用程序传递状态和状态更新函数时。通过 React 上下文可以创建共享的全局状态。
 
 A running application which uses React's Context can be found in this [GitHub repository](https://github.com/the-road-to-learn-react/react-context-example). After all, React Context is a great way to pass props to deeply nested React components, because it doesn't bother the components in between.
 
@@ -228,4 +228,4 @@ A running application which uses React's Context can be found in this [GitHub re
 
 This tutorial is part 1 of 2 in this series.
 
-> Part 2: [React's useContext Hook](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/How-to-useContext-in-React.md)
+> Part 2: [React's useContext Hook](/React/How-to-useContext-in-React.md)

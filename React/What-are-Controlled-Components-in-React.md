@@ -10,7 +10,7 @@ There are quite a lot of articles about React out there speaking about controlle
 
 Let's take the following input field element which is rendered within our [function component](https://www.robinwieruch.de/react-function-component/). Even though the input field is the uncontrolled input element here, we are often referring to the enclosing App component being the uncontrolled component:
 
-让我们使用下面的 input field 元素，它是在我们的 [函数组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Function-Components.md) 中渲染的。虽然这里的 input field 是非受控的 input 元素，但我们通常说封装它的 App 组件是非受控组件：
+让我们使用下面的 input field 元素，它是在我们的 [函数组件](/React/React-Function-Components.md) 中渲染的。虽然这里的 input field 是非受控的 input 元素，但我们通常说封装它的 App 组件是非受控组件：
 
 ```js
 import React from "react";
@@ -40,7 +40,7 @@ It's an uncontrolled input field, because once you start the application, you ca
 
 Let's see another case where it isn't clear whether we are dealing with an uncontrolled or controlled component. The next example adds [state management](https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext) with [React Hooks](https://www.robinwieruch.de/react-hooks/) to our function component:
 
-让我们来看另一个例子，在这个例子中，我们不清楚是在处理非受控组件还是受控组件。该例子添加了 [状态管理](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-State-Hooks-useReducer-useState-useContext.md) 和 [React 钩子](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/What-are-React-Hooks.md) 到函数组件中：
+让我们来看另一个例子，在这个例子中，我们不清楚是在处理非受控组件还是受控组件。该例子添加了 [状态管理](/React/React-State-Hooks-useReducer-useState-useContext.md) 和 [React 钩子](/React/What-are-React-Hooks.md) 到函数组件中：
 
 ```js
 import React, { useState } from "react";

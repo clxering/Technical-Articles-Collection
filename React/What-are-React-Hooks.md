@@ -16,7 +16,7 @@ In this walkthrough, I want to explain the motivation behind hooks, what will ch
 
 React Hooks were invented by the React team to introduce state management and side-effects in [function components](https://www.robinwieruch.de/react-function-component/). It's their way of making it more effortless to use only React function components without the need to refactor a React function component to a React class component for using lifecycle methods, in order to use have side-effects, or local state. React Hooks enable us to write React applications with only function components.
 
-React 钩子是由 React 团队发明的，用于在 [函数组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Function-Components.md) 中引入状态管理和副作用。这是一种更轻松的方式，只使用 React 函数组件，而不需要将 React 函数组件重构为 React 类组件来使用生命周期方法，以便使用具有副作用或局部状态的方法。React 钩子让我们只使用函数组件就能编写 React 应用程序。
+React 钩子是由 React 团队发明的，用于在 [函数组件](/React/React-Function-Components.md) 中引入状态管理和副作用。这是一种更轻松的方式，只使用 React 函数组件，而不需要将 React 函数组件重构为 React 类组件来使用生命周期方法，以便使用具有副作用或局部状态的方法。React 钩子让我们只使用函数组件就能编写 React 应用程序。
 
 **Unnecessary Component Refactorings:** Previously, only React class components were used for local state management and lifecycle methods. The latter have been essential for introducing side-effects, such as listeners or data fetching, in React class components.
 
@@ -119,7 +119,7 @@ Now, if you would introduce more than one of these side-effects in a React class
 
 **React's Abstraction Hell:** Abstraction and thus reusability were introduced with [Higher-Order Components](https://www.robinwieruch.de/react-higher-order-components/) and [Render Prop Components](https://www.robinwieruch.de/react-render-props/) in React. There is also [React's Context with its Provider and Consumer Components](https://www.robinwieruch.de/react-context/) that introduce another level of abstraction. All of these advanced patterns in React are using so called wrapping components. The implementation of the following components shouldn't be foreign to developers who are creating larger React applications.
 
-**React 的抽象地狱:** 在 React 中引入了 [高阶组件（暂缺译文）]() 和 [属性渲染（暂缺译文）]()，从而引入了可重用性。还有 [React 的上下文及其 Provider 和 Consumer 组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Context.md)，它引入了另一层抽象。React 中的所有这些高级模式都使用了所谓的包装组件。对于创建大型 React 应用程序的开发人员来说，以下组件的实现并不陌生。
+**React 的抽象地狱:** 在 React 中引入了 [高阶组件（暂缺译文）]() 和 [属性渲染（暂缺译文）]()，从而引入了可重用性。还有 [React 的上下文及其 Provider 和 Consumer 组件](/React/React-Context.md)，它引入了另一层抽象。React 中的所有这些高级模式都使用了所谓的包装组件。对于创建大型 React 应用程序的开发人员来说，以下组件的实现并不陌生。
 
 ```js
 import { compose } from "recompose";
@@ -217,7 +217,7 @@ Now, many people argue React shouldn't take JavaScript classes away because peop
 
 - Read more about [React Function Components](https://www.robinwieruch.de/react-function-component/)
 
-阅读有关 [函数组件](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Function-Components.md) 的更多内容。
+阅读有关 [函数组件](/React/React-Function-Components.md) 的更多内容。
 
 ## React Hooks: What changes in React?
 
@@ -441,7 +441,7 @@ export default App;
 
 There is no stopwatch yet. But at least there are is a [conditional rendering](https://www.robinwieruch.de/conditional-rendering-react/) to show either a "Start" or "Stop" button. The state for the boolean flag is managed by the useState hook.
 
-现在还没有秒表。但至少有一个 [条件渲染](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-Conditional-Rendering.md#conditional-rendering-in-react-if) 来显示「Start」或「Stop」按钮。boolean 标志的状态由 useState 钩子管理。
+现在还没有秒表。但至少有一个 [条件渲染](/React/React-Conditional-Rendering.md#conditional-rendering-in-react-if) 来显示「Start」或「Stop」按钮。boolean 标志的状态由 useState 钩子管理。
 
 Let's introduce our side-effect with useEffect that registers an interval. The function used for the interval emits a console logging every second to your developer tools of your browser.
 
@@ -869,7 +869,7 @@ React 钩子是可重用的，这是它们最大的优点，因为有可能形�
 
 - Read more about [React State with Hooks](https://www.robinwieruch.de/react-state-usereducer-usestate-usecontext)
 
-阅读更多关于 [React 钩子的状态管理](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/React-State-Hooks-useReducer-useState-useContext.md) 的内容
+阅读更多关于 [React 钩子的状态管理](/React/React-State-Hooks-useReducer-useState-useContext.md) 的内容
 
 - Read more about [How to fetch data with React Hooks](https://www.robinwieruch.de/react-hooks-fetch-data)
 
@@ -887,7 +887,7 @@ If you want to dive deeper into the state and effect hooks, check out my other R
 
 - [How to useReducer Hook?](https://www.robinwieruch.de/react-usereducer-hook/)
 
-[怎样使用 useReducer 钩子](https://github.com/clxering/Technical-Articles-Collection/blob/master/React/How-to-useReducer-in-React.md)
+[怎样使用 useReducer 钩子](/React/How-to-useReducer-in-React.md)
 
 Check out the official [FAQ](https://reactjs.org/docs/hooks-faq.html) and [Rules](https://reactjs.org/docs/hooks-rules.html) for hooks in React's documentation to learn more about their fine-grained behaviour. In addition, you can checkout [all officially available React Hooks](https://reactjs.org/docs/hooks-reference.html) too.
 

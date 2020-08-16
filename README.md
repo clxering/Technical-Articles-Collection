@@ -48,7 +48,7 @@
 - [Passing Arrays as Function Arguments（将数组作为函数参数传递）](JavaScript/Passing-Arrays-as-Function-Arguments.md)
 - [Quick Debug using || with console.log](JavaScript/Quick-Debug-using-II-with-console.log.md)
 - [5-Best-Practices-to-Write-Quality-Arrow-Functions（编写高质量箭头函数的五个最佳实践）](JavaScript/5-Best-Practices-to-Write-Quality-Arrow-Functions.md)
-- [Deep Dive into JavaScript's Array Map Method](/JavaScript/Deep-Dive-into-JavaScript-Array-Map-Method.md)
+- [Deep Dive into JavaScript's Array Map Method（深入研究 JavaScript 数组的 map 方法）](/JavaScript/Deep-Dive-into-JavaScript-Array-Map-Method.md)
 
 ### React
 
