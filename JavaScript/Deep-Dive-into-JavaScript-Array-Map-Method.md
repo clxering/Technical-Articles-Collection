@@ -6,7 +6,7 @@
 
 The **Map Function** is one of the **many Methods** existing on the **JavaScript Array prototype**. If you want to do a deep dive on prototypical inheritance, here's a great read by Kyle Simpson on [how prototypes work under the hood](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch5.md). For this article it will be sufficient to know that the methods on the Array prototype are available to every array that we declare in our code.
 
-Map 方法是 **JavaScript 数组原型** 的众多方法之一。如果你想深入了解原型继承，这里有一篇由 Kyle Simpson 写的关于 [原型如何在幕后工作（该链接已失效）]() 的文章。对于本文来说，只要知道数组原型上的方法对于在代码中声明的每个数组都可用就足够了。
+map 方法是 **JavaScript 数组原型** 的众多方法之一。如果你想深入了解原型继承，这里有一篇由 Kyle Simpson 写的关于 [原型如何在幕后工作（该链接已失效）]() 的文章。对于本文来说，只要知道数组原型上的方法对于在代码中声明的每个数组都可用就足够了。
 
 Specifically, the Array Map Method operates on an array to run a transformation on every element of the array. It does so through use of a *callback function* which is called for each item of the array. After running the callback function on each item, the Map Method returns *the transformed array*, leaving the *original array* unchanged. Let's take a quick look at how that looks in practice:
 
@@ -57,7 +57,7 @@ console.log(newArray); // [2, 3, 4, 5, 6]
 
 Now you might be asking, why don't we just use a `for` loop instead? After all, we're looping through the array and executing code on each item, we may as well, right? We could even push the transformed items to a new array in order to make sure we don't modify the original array. Why don't we just do this?
 
-现在你可能会问，为什么我们不使用 for 循环呢？毕竟，我们是在遍历数组并在每一个元素上执行代码，对吧？我们甚至可以将转换后的元素推入一个新的数组，以确保我们没有修改原始数组。为什么我们不这么做呢？
+现在你可能会问，为什么我们不使用 for 循环呢？毕竟，我们是在遍历数组并在每一个元素上执行代码，对吧？我们甚至可以将转换后的元素放入一个新的数组，以确保我们没有修改原始数组。为什么我们不这么做呢？
 
 ```js
 const originalArray = [1, 2, 3, 4, 5];
@@ -89,7 +89,7 @@ However, this isn't an article about `map` versus `for` loops! There's plenty of
 
 In the first couple examples, we used the `function` keyword to define our callback function. However, you might also be familiar with the ES2015 (or ES6) [arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions), also known as *lambda* in various programming languages, for anonymous functions. Using the arrow function syntax for the callback function in a Map Method is very common, mainly because it allows us to define all of the logic related to the Map Operation inline without becoming too syntactically burdensome. Here's an example of that same Map Method usage from earlier, but using an arrow function:
 
-在前两个示例中，我们使用 function 关键字来定义回调函数。但是，你可能也熟悉 ES2015 的匿名函数（或 ES6 [箭头函数](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)），在各种编程语言中也称为 lambda。在 map 方法中使用箭头函数作为回调函数的语法是很常见的，这主要是因为它允许我们内联地定义所有与 map 操作相关的逻辑，而不会使语法变得过于繁琐。这里有一个例子，同样的 map 方法，但使用了箭头函数：
+在前两个示例中，我们使用 function 关键字来定义回调函数。但是，你可能也熟悉 ES2015 的匿名函数（或 ES6 [箭头函数](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)），它在多种编程语言中也称为 lambda。在 map 方法中使用箭头函数作为回调函数的语法是很常见的，这主要是因为它允许我们内联地定义所有与 map 操作相关的逻辑，而不会使语法变得过于繁琐。这里有一个例子，同样的 map 方法，但使用了箭头函数：
 
 ```js
 const originalArray = [1, 2, 3, 4, 5];
@@ -155,7 +155,7 @@ myArray.map((value) => {
 
 Even though you might not often need the third argument to `map`, it's still good to know that it exists! Every once in a while you'll come across a situation where it comes in handy—for example, when chaining array methods or when you don't have the array bound to a variable.
 
-尽管你使用 map 时可能不经常需要第三个参数，但知道它的存在仍然很好！每隔一段时间，你就会遇到它非常有用的情况。例如，当链接数组方法或当你没有将数组绑定到变量时。
+尽管你使用 map 时可能不经常需要第三个参数，但知道它的存在仍然很好！你可能会遇到它非常有用的情况。例如，当链接数组方法或当你没有将数组绑定到变量时。
 
 ## How to use the Map Method along with other Array Methods
 
@@ -177,7 +177,7 @@ While `forEach` does iterate through the entire array and it does execute its ca
 
 We can use this characteristic of `map` and `forEach`'s return values to inform us as to when we should use the map Method and when we should use the forEach Method. Since `forEach` doesn't do anything with the return values of its callback function, we can safely assume that whenever we're not using the return value of our callback function, this would be a better use case for `forEach` over `map`. For example, this usage of `map` would be better written with a `forEach`:
 
-我们可以使用 map 和 forEach 返回值的这个特性来提示我们何时应该使用 map 方法，何时应该使用 forEach 方法。因为 forEach 不会对其回调函数的返回值做任何事情，所以我们可以安全地假设，当我们没有使用回调函数的返回值时，这将是 forEach 优于 map 的一个更好的用例。例如，使用 forEach 来编写下列案例将比使用 map 更好：
+我们可以根据 map 和 forEach 返回值的特性来提示我们何时应该使用 map 方法，何时应该使用 forEach 方法。因为 forEach 不会对其回调函数的返回值做任何事情，所以我们可以安全地假设，当我们没有使用回调函数的返回值时，这将是 forEach 优于 map 的一个更好的用例。例如，使用 forEach 来编写下列案例将比使用 map 更好：
 
 ```js
 const myArray = [1, 2, 3, 4];
@@ -209,7 +209,7 @@ console.log(newArray); // [2, 4, 6, 8]
 
 Since we're pushing a value to a new array and transforming the value, we're essentially recreating all the things that `map` does automatically for us. So, to sum `map` and `forEach` up, if your callback returns a value, you're probably gonna be using `map`, and if it doesn't, `forEach` is probably the better choice.
 
-因为我们将一个值推入一个新的数组并转换这个值，我们本质上重新创建了所有 map 为我们自动做的事情。要对 map 和 forEach 求和，如果你的回调返回一个值，你可能会使用 map，如果没有，forEach 可能是更好的选择。
+因为我们将一个值放入新的数组并转换这个值，我们本质上重新创建了所有 map 为我们自动做的事情。要对 map 和 forEach 求和，如果你的回调返回一个值，你可能会使用 map，如果没有，forEach 可能是更好的选择。
 
 ## Using map and filter
 
@@ -219,7 +219,7 @@ filter 方法与 map 方法有几个不同之处。虽然 filter 和 map 都是�
 
 If you're looking to remove or delete an item from your array, `filter` is gonna be your friend. However, we can use the Filter Method in combination with the Map Method to do some cool things. For example, we can use `filter` to sanitize our array's values before we use `map` to transform them:
 
-如果你想从数组中删除元素，filter 会是好选择。然而，我们可以使用 filter 方法和 map 方法结合来做一些很酷的事情。例如，在使用 map 转换数组值之前，我们可以使用 filter 来「过滤」数组值：
+如果你想从数组中删除元素，filter 会是好选择。然而，我们可以将 filter 方法和 map 方法结合来做一些很酷的事情。例如，在使用 map 转换数组值之前，我们可以使用 filter 来「过滤」数组值：
 
 ```js
 const originalArray = [1, 2, undefined, 3];
