@@ -62,6 +62,7 @@
 - [React Conditional Rendering（React 的条件渲染）](React/React-Conditional-Rendering.md)
 - [React Context（React 上下文）](React/React-Context.md)
 - [How to useContext in React（在 React 中如何使用 useContext）](React/How-to-useContext-in-React.md)
+- [How to use React memo（如何使用 memo）](React/How-to-use-React-memo.md)
 
 ### CSS
 
