@@ -2,7 +2,7 @@
 
 > 转译自：https://www.robinwieruch.de/react-usememo-hook
 
-React's useMemo Hook can be used to **optimize the computation costs** of your [React function components](/react-function-component). We will got through an example component to illustrate the problem first, and then solve it with **React's useMemo Hook**.
+React's useMemo Hook can be used to **optimize the computation costs** of your [React function components](https://www.robinwieruch.de/react-function-component). We will got through an example component to illustrate the problem first, and then solve it with **React's useMemo Hook**.
 
 React 的 useMemo 钩子可以用于优化 React [函数组件](/React/React-Function-Components.md) 的计算成本。我们首先通过一个示例组件来说明这个问题，然后使用 React 的 useMemo 钩子来解决它。
 
@@ -10,16 +10,16 @@ Keep in mind that most of the performance optimizations in React are premature. 
 
 请记住，React 中的大多数性能优化都还不成熟。在默认情况下，React 是快速的，所以每次性能优化都是可选的，如果感觉有些东西开始慢了。
 
-_Note: Don't mistake React's useMemo Hook with [React's memo API](/react-memo). While useMemo is used to memoize values, React memo is used to wrap React components to prevent re-renderings._
+_Note: Don't mistake React's useMemo Hook with [React's memo API](https://www.robinwieruch.de/react-memo). While useMemo is used to memoize values, React memo is used to wrap React components to prevent re-renderings._
 
 注意：不要将 React 的 useMemo 钩子与 React 的 memo API 混淆。useMemo 用于记忆值，[React memo API](React/How-to-use-React-memo.md)
 用于包装 React 组件以防止重新渲染。
 
-_Note: Don't mistake React's useMemo Hook with [React's useCallback Hook](/react-usecallback-hook). While useMemo is used to memoize values, useCallback is used to memoize functions._
+_Note: Don't mistake React's useMemo Hook with [React's useCallback Hook](https://www.robinwieruch.de/react-usecallback-hook). While useMemo is used to memoize values, useCallback is used to memoize functions._
 
 注意：不要将 React 的 useMemo 钩子与 React 的 useCallback 钩子混淆。useMemo 用于缓存值，而 [React's useCallback Hook（暂缺译文）]() 用于缓存函数。
 
-Let's take the following example of a React application which [renders a list](/react-list-component) of users and allows us to filter the users by their name. The catch: The filter happens only when a user explicitly clicks a button; not already when the user types into the input field:
+Let's take the following example of a React application which [renders a list](https://www.robinwieruch.de/react-list-component) of users and allows us to filter the users by their name. The catch: The filter happens only when a user explicitly clicks a button; not already when the user types into the input field:
 
 让我们以下面的 React 应用程序为例，该应用程序 [渲染一个列表组件（缺少译文）]() ，并允许我们按用户名过滤用户。注意：过滤只在用户显式地单击按钮时发生；当用户输入字段时不触发：
 
